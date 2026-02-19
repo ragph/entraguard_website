@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  /* Navy primary palette matching brand logo */
+  --color-blue-50:  #edf1fa;
+  --color-blue-100: #d0daef;
+  --color-blue-200: #a0b4df;
+  --color-blue-300: #708ecf;
+  --color-blue-400: #4a6ec2;
+  --color-blue-500: #2a52b4;
+  --color-blue-600: #1a3a94;
+  --color-blue-700: #142e7a;
+  --color-blue-800: #0f2260;
+  --color-blue-900: #091646;
+  --color-blue-950: #010028;
+
+  /* Gold / amber accent */
+  --color-amber-400: #fcb316;
+  --color-amber-500: #e7a305;
+  --color-amber-600: #c78d04;
+
+  /* Emerald green accent */
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+
+  /* Lime accent */
+  --color-lime-400: #b5cc2a;
+  --color-lime-500: #9fb815;
+
+  /* Soft pastel backgrounds */
+  --color-pastel-blue: #edf1fa;
+  --color-pastel-cream: #f5f8e8;
+  --color-pastel-green: #e4f5ed;
+  --color-pastel-mint: #e4f5f0;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 3s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 106.25%;
+  overflow-x: hidden;
+}
+
+:root {
+  --bg-blue-light: #e8f0fe;
+  --bg-cyan-light: #e0f7fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(160deg, #edf1fa 0%, #e0f7fa 35%, #e5ecfa 65%, #e8f0fe 100%);
+  background-attachment: fixed;
+}
+
+/* Swiper pagination */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #a0b4df;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1a3a94;
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* Equal height Swiper slides */
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
+}
