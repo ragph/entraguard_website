@@ -1,4 +1,4 @@
-import { HiCheck, HiCheckCircle, HiChip, HiClipboardList, HiDeviceMobile, HiAcademicCap } from 'react-icons/hi'
+import { HiCheckCircle } from 'react-icons/hi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
 
@@ -11,7 +11,7 @@ function SystemRow({ system, index }) {
       ref={ref}
       className={`flex flex-col md:flex-row items-center gap-10 ${isEven ? 'md:flex-row-reverse' : ''}`}
     >
-      {/* Placeholder image */}
+      {/* System mockup image */}
       <div
         className={`w-full md:w-5/12 shrink-0 transition-all duration-700 ease-out ${
           isVisible
@@ -21,11 +21,11 @@ function SystemRow({ system, index }) {
             : 'opacity-0 -translate-x-16'
         }`}
       >
-        <div className="w-full aspect-4/3 rounded-2xl bg-white/10 border border-white/10 backdrop-blur-sm flex items-center justify-center">
-          <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${system.iconBg}`}>
-            <system.Icon className={`w-8 h-8 ${system.iconColor}`} />
-          </div>
-        </div>
+        <img
+          src={system.image}
+          alt={system.title}
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       {/* Content */}
@@ -39,7 +39,7 @@ function SystemRow({ system, index }) {
         }`}
       >
         <h3 className="text-2xl md:text-4xl font-bold text-white mb-5">{system.title}</h3>
-        <ul className="space-y-3">
+        <ul className="space-y-1">
           {system.features.map((feature) => (
             <li key={feature} className="flex items-start gap-2 bg-white/0 py-4 rounded-2xl text-base md:text-xl text-blue-100">
               <HiCheckCircle className="text-amber-400 mt-0.5 shrink-0 text-2xl" />
@@ -55,9 +55,7 @@ function SystemRow({ system, index }) {
 const systems = [
   {
     title: 'Gate / Access System',
-    iconBg: 'bg-blue-500/20',
-    iconColor: 'text-blue-300',
-    Icon: HiChip,
+    image: '/images/gate-system.png',
     features: [
       'Automated gate control',
       'QR code & ID scanning',
@@ -67,9 +65,7 @@ const systems = [
   },
   {
     title: 'School Administration',
-    iconBg: 'bg-lime-500/20',
-    iconColor: 'text-lime-300',
-    Icon: HiClipboardList,
+    image: '/images/school-system.png',
     features: [
       'Centralized dashboard',
       'Attendance tracking',
@@ -79,9 +75,7 @@ const systems = [
   },
   {
     title: 'Parent Mobile App',
-    iconBg: 'bg-emerald-500/20',
-    iconColor: 'text-emerald-300',
-    Icon: HiDeviceMobile,
+    image: '/images/parent-system.png',
     features: [
       'Real-time notifications',
       'Student check-in/out alerts',
@@ -91,9 +85,7 @@ const systems = [
   },
   {
     title: 'Classroom Management',
-    iconBg: 'bg-amber-400/20',
-    iconColor: 'text-amber-300',
-    Icon: HiAcademicCap,
+    image: '/images/teacher-system.png',
     features: [
       'Attendance automation',
       'Student tracking by room',
@@ -105,8 +97,8 @@ const systems = [
 
 export default function SystemOverview() {
   return (
-    <section className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
-      <div className="max-w-full mx-auto px-4 sm:px-6 md:px-28">
+    <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
           title="Complete System Overview"
           subtitle="Four integrated modules working together to deliver comprehensive school security."

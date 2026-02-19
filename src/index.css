@@ -84,6 +84,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(160deg, #edf1fa 0%, #e0f7fa 35%, #e5ecfa 65%, #e8f0fe 100%);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 /* Swiper pagination */

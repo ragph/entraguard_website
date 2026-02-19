@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const quickLinks = [
@@ -9,10 +10,10 @@ const quickLinks = [
 ]
 
 const solutionLinks = [
-  { label: 'Gate Access System', href: '#features' },
-  { label: 'School Administration', href: '#features' },
-  { label: 'Parent Mobile App', href: '#features' },
-  { label: 'Classroom Management', href: '#features' },
+  { label: 'Gate Access System', href: '#system-overview' },
+  { label: 'School Administration', href: '#system-overview' },
+  { label: 'Parent Mobile App', href: '#system-overview' },
+  { label: 'Classroom Management', href: '#system-overview' },
 ]
 
 const socialLinks = [
@@ -24,13 +25,13 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-gray-300 pt-16 pb-8">
+    <footer className="bg-slate-900 text-gray-300 pt-16 pb-8">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
-          <div>
+          <div className="sm:col-span-2">
             <a href="#home" className="inline-block mb-4">
-              <img src="/images/logo-light.png" alt="EntraGuard" className="h-9 w-auto" />
+              <img src="/images/logo-light.png" alt="EntraGuard" className="h-10 md:h-12 w-auto" />
             </a>
             <p className="text-base leading-relaxed text-gray-400">
               Entraguard is a smart school security system designed to protect students,
@@ -70,9 +71,26 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-base text-gray-400 mb-6">
-              <li>info@entraguard.com</li>
-              <li>+63 912 345 6789</li>
-              <li>Manila, Philippines</li>
+              <li>
+                <a href="mailto:info@entraguard.online" className="hover:text-white transition-colors duration-300">
+                  info@entraguard.online
+                </a>
+              </li>
+              <li>
+                <a href="tel:+63823172944" className="hover:text-white transition-colors duration-300">
+                  (82) 317 2944
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://maps.google.com/?q=Door+5+TMNT+Building+Dona+Vicenta+Drive+JP+Laurel+Ave+Bajada+Davao+City+Philippines+8000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Door #5, TMNT Building, Doña Vicenta Drive, J.P. Laurel Ave., Bajada, Davao City, Philippines, 8000
+                </a>
+              </li>
             </ul>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -80,7 +98,7 @@ export default function Footer() {
                   key={social.label}
                   href="#"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-blue-900 hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-500 flex items-center justify-center text-white hover:text-white transition-all duration-300"
                 >
                   {social.icon}
                 </a>
@@ -90,7 +108,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-blue-900/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="border-t border-gray-500/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left - Copyright */}
           <p className="text-base text-gray-500">
             &copy; {new Date().getFullYear()} Entraguard. All rights reserved.
@@ -98,19 +116,19 @@ export default function Footer() {
 
           {/* Center - Privacy & Terms */}
           <div className="flex gap-6">
-            <a href="#" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
+            <Link to="/privacy-policy" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
               Privacy Policy
-            </a>
-            <a href="#" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
+            </Link>
+            <Link to="/terms-of-service" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
               Terms of Service
-            </a>
+            </Link>
           </div>
 
           {/* Right - Powered By */}
-          <div className="flex items-center gap-2">
+          <a href="https://www.ragph.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <span className="text-sm text-gray-500">Powered by</span>
-            <img src="/images/rag.png" alt="RAG IT Solutions" className="h-8 w-auto" />
-          </div>
+            <img src="/images/rag.png" alt="RAG IT Solutions" className="h-7 w-auto" />
+          </a>
         </div>
       </div>
     </footer>

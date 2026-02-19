@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useIsMobile } from '../hooks/useIsMobile'
@@ -69,6 +70,15 @@ export default function WhoWeAre() {
   const eased = easeOut(progress)
   const mobile = useIsMobile()
 
+  // Merge both refs so both hooks always track the element
+  const mergedRef = useCallback(
+    (node) => {
+      mobileRef.current = node
+      desktopRef.current = node
+    },
+    [mobileRef, desktopRef]
+  )
+
   const imageDesktopStyle = {
     transform: `scale(${0.2 + eased * 0.8})`,
     opacity: eased,
@@ -81,7 +91,7 @@ export default function WhoWeAre() {
   return (
     <section
       id="about"
-      ref={mobile ? mobileRef : desktopRef}
+      ref={mergedRef}
       className="py-20"
     >
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">

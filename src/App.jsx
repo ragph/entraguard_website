@@ -10,10 +10,11 @@ import Pricing from './components/Pricing'
 import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
       <WhoWeAre />
@@ -26,6 +27,7 @@ export default function App() {
       <CTA />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

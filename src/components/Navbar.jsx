@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Features', href: '#features' },
   { label: 'About', href: '#about' },
+  { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -15,6 +16,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -32,6 +36,8 @@ export default function Navbar() {
   }, [open])
 
   useEffect(() => {
+    if (!isHomePage) return
+
     const sectionIds = navLinks.map((link) => link.href.slice(1))
     const sections = sectionIds
       .map((id) => document.getElementById(id))
@@ -53,32 +59,49 @@ export default function Navbar() {
 
     sections.forEach((section) => observer.observe(section))
     return () => sections.forEach((section) => observer.unobserve(section))
-  }, [])
+  }, [isHomePage])
 
   const scrollTo = useCallback((e, href) => {
     e.preventDefault()
     const id = href.slice(1)
+    setOpen(false)
+
+    if (!isHomePage) {
+      // Navigate to home page with hash
+      navigate('/' + href)
+      return
+    }
+
     const el = document.getElementById(id)
     if (!el) return
 
     const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
     window.scrollTo({ top, behavior: 'smooth' })
-    setOpen(false)
-  }, [])
+  }, [isHomePage, navigate])
 
-  const atHero = !scrolled
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (isHomePage && location.hash) {
+      const id = location.hash.slice(1)
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => {
+          const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
+          window.scrollTo({ top, behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [isHomePage, location.hash])
+
+  const atHero = !scrolled && isHomePage
   const mobileOpen = open
-  const showDark = atHero && !mobileOpen
-  const logoSrc = atHero && !mobileOpen ? '/images/logo-light.png' : '/images/logo.png'
+  const showDark = isHomePage && atHero && !mobileOpen
+  const logoSrc = showDark ? '/images/logo-light.png' : '/images/logo.png'
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-500 ${
-        showDark
-          ? 'bg-transparent'
-          : mobileOpen && atHero
-            ? 'bg-white backdrop-blur-md md:bg-transparent'
-            : 'bg-white/80 backdrop-blur-md'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        showDark ? 'bg-transparent' : 'bg-white shadow-sm'
       }`}
     >
       <div className="mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between h-16">
@@ -94,14 +117,14 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.slice(1)
+            const isActive = isHomePage && activeSection === link.href.slice(1)
             return (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => scrollTo(e, link.href)}
                 className={`transition-colors duration-300 text-base font-semibold ${
-                  atHero
+                  showDark
                     ? isActive
                       ? 'text-amber-400'
                       : 'text-white/80 hover:text-white'
@@ -121,7 +144,7 @@ export default function Navbar() {
           href="#pricing"
           onClick={(e) => scrollTo(e, '#pricing')}
           className={`hidden md:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
-            atHero
+            showDark
               ? 'bg-white text-blue-950 hover:bg-slate-200'
               : 'bg-amber-400 hover:bg-amber-500 text-blue-950'
           }`}
@@ -149,7 +172,7 @@ export default function Navbar() {
       >
         <div className="px-4 sm:px-6 pb-5 pt-2 flex flex-col gap-1">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.slice(1)
+            const isActive = isHomePage && activeSection === link.href.slice(1)
             return (
               <a
                 key={link.label}

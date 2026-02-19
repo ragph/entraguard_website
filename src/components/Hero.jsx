@@ -19,7 +19,7 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative overflow-hidden pt-32 md:pt-0 md:pb-0 -mt-16 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
+      className="relative overflow-hidden pt-32 md:pt-4 md:pb-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
     >
       {/* Background underlay image */}
       <div

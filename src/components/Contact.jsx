@@ -7,17 +7,17 @@ const contactInfo = [
   {
     icon: <HiMail className="text-xl" />,
     label: 'Email',
-    value: 'info@entraguard.com',
+    value: 'info@entraguard.online',
   },
   {
     icon: <HiPhone className="text-xl" />,
     label: 'Phone',
-    value: '+63 912 345 6789',
+    value: '(82) 317 2944',
   },
   {
     icon: <HiLocationMarker className="text-xl" />,
     label: 'Address',
-    value: 'Manila, Philippines',
+    value: 'Door #5, TMNT Building, Doña Vicenta Drive, J.P. Laurel Ave., Bajada, Davao City, Philippines, 8000',
   },
 ]
 

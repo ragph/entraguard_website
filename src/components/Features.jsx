@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import {
   HiIdentification,
   HiBell,
@@ -5,41 +6,39 @@ import {
   HiStatusOnline,
   HiExclamation,
   HiServer,
-  HiFingerPrint,
 } from 'react-icons/hi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useScrollProgress } from '../hooks/useScrollProgress'
-import { useIsMobile } from '../hooks/useIsMobile'
 import SectionHeading from './SectionHeading'
 
 const features = [
   {
-    icon: <HiIdentification className="text-2xl text-gray-600" />,
+    icon: <HiIdentification className="text-2xl text-amber-500" />,
     title: 'ID & Photo Verification',
     description: 'Multi-factor identity verification combining photo recognition and ID card scanning.',
   },
   {
-    icon: <HiBell className="text-2xl text-gray-600" />,
+    icon: <HiBell className="text-2xl text-amber-500" />,
     title: 'Real-Time Notifications',
     description: 'Instant push notifications to parents and staff for every entry, exit, and security event.',
   },
   {
-    icon: <HiChartBar className="text-2xl text-gray-600" />,
+    icon: <HiChartBar className="text-2xl text-amber-500" />,
     title: 'Advanced Analytics',
     description: 'Comprehensive analytics with visual reports on attendance patterns and security data.',
   },
   {
-    icon: <HiStatusOnline className="text-2xl text-gray-600" />,
+    icon: <HiStatusOnline className="text-2xl text-amber-500" />,
     title: 'Offline Capability',
     description: 'Continue operating seamlessly even without internet — data syncs when connection restores.',
   },
   {
-    icon: <HiExclamation className="text-2xl text-gray-600" />,
+    icon: <HiExclamation className="text-2xl text-amber-500" />,
     title: 'Emergency Management',
     description: 'One-tap lockdown, emergency broadcasts, and real-time headcount during critical events.',
   },
   {
-    icon: <HiServer className="text-2xl text-gray-600" />,
+    icon: <HiServer className="text-2xl text-amber-500" />,
     title: 'Scalable Architecture',
     description: 'Cloud-native infrastructure that grows with you — from a single school to an entire district.',
   },
@@ -52,7 +51,7 @@ function easeOut(t) {
 function FeatureBlock({ feature }) {
   return (
     <div className="flex flex-col items-center gap-3 max-w-lg">
-      <div className="w-12 h-12 rounded-full bg-gray-200 shrink-0 flex items-center justify-center">
+      <div className="w-12 h-12 rounded-full bg-blue-800 shrink-0 flex items-center justify-center">
         {feature.icon}
       </div>
       <div className="text-center">
@@ -66,11 +65,19 @@ function FeatureBlock({ feature }) {
 export default function Features() {
   const [mobileRef, isVisible] = useScrollAnimation(0.1)
   const [desktopRef, progress] = useScrollProgress(500)
-  const mobile = useIsMobile(1024)
   const eased = easeOut(progress)
 
+  // Merge both refs so both hooks always track the element
+  const mergedRef = useCallback(
+    (node) => {
+      mobileRef.current = node
+      desktopRef.current = node
+    },
+    [mobileRef, desktopRef]
+  )
+
   return (
-    <section id="features" ref={mobile ? mobileRef : desktopRef} className="py-20">
+    <section id="features" ref={mergedRef} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-0">
         <SectionHeading
           title="Advanced Security Features"
@@ -120,13 +127,13 @@ export default function Features() {
 
             {/* Center shield (scales up) */}
             <div
-              className="shrink-0 w-44 h-44 rounded-full bg-gradient-to-br from-blue-900 to-blue-950 flex items-center justify-center shadow-xl"
+              className="shrink-0 w-60 h-w-60 flex items-center justify-center"
               style={{
                 transform: `scale(${0.3 + eased * 0.7})`,
                 opacity: eased,
               }}
             >
-              <HiFingerPrint className="text-7xl text-white" />
+              <img src="/images/entraguard.png" alt="Entraguard" className="w-full h-full object-contain" />
             </div>
 
             {/* Right column (slides from right) */}

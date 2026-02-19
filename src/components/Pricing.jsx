@@ -43,7 +43,7 @@ export default function Pricing() {
               <ul className="space-y-4">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3 text-base text-gray-700">
-                    <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                       <HiCheck className="text-xs" />
                     </span>
                     {feature}

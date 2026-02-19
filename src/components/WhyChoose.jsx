@@ -12,7 +12,7 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     icon: <HiFingerPrint className="text-2xl" />,
-    color: 'bg-blue-100 text-blue-600',
+    color: 'bg-blue-100 text-blue-500',
     title: 'Advanced Identity',
     description: 'Biometric and photo-based verification ensures only authorized individuals enter school premises.',
   },
@@ -36,13 +36,13 @@ const features = [
   },
   {
     icon: <HiExclamationCircle className="text-2xl" />,
-    color: 'bg-amber-400/20 text-amber-600',
+    color: 'bg-red-400/20 text-red-600',
     title: 'Emergency Readiness',
     description: 'Instant lockdown capabilities and emergency protocols to respond to critical situations fast.',
   },
   {
     icon: <HiGlobe className="text-2xl" />,
-    color: 'bg-blue-200 text-blue-600',
+    color: 'bg-purple-200 text-purple-600',
     title: 'Unlimited Scalability',
     description: 'Whether one school or a hundred, Entraguard scales seamlessly with your growing needs.',
   },

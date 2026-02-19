@@ -1,4 +1,5 @@
 import { HiStar, HiUserCircle } from 'react-icons/hi'
+import { FaQuoteLeft } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, FreeMode } from 'swiper/modules'
 import 'swiper/css'
@@ -47,7 +48,10 @@ const testimonials = [
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-white h-full flex flex-col min-h-[280px]">
+    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-white h-full flex flex-col min-h-[280px] relative">
+      {/* Quote icon */}
+      <FaQuoteLeft className="absolute top-4 right-4 text-4xl text-blue-100" />
+
       {/* Stars */}
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
@@ -56,7 +60,7 @@ function TestimonialCard({ testimonial }) {
       </div>
 
       <p className="text-gray-600 text-base leading-relaxed mb-6 italic flex-1">
-        &ldquo;{testimonial.quote}&rdquo;
+        {testimonial.quote}
       </p>
 
       <div className="flex items-center gap-3">
