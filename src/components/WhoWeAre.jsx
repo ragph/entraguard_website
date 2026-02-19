@@ -124,8 +124,8 @@ export default function WhoWeAre() {
                 alt="Family protected by EntraGuard"
                 className="w-72 sm:w-96 md:w-md h-auto"
               />
-              <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-amber-400/30 rounded-full -z-10" />
-              <div className="absolute -top-2 -left-4 w-16 h-16 bg-emerald-400/30 rounded-full -z-10" />
+              <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-emerald-400 rounded-full -z-10" />
+              <div className="absolute -top-2 -left-4 w-16 h-16 bg-blue-500 rounded-full -z-10" />
             </div>
           </div>
 
