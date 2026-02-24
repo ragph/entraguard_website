@@ -21,7 +21,7 @@ export default function App() {
       <WhyChoose />
       <SystemOverview />
       <Features />
-      <Stats />
+      {/* <Stats /> */}
       <Testimonials />
       <Pricing />
       <CTA />

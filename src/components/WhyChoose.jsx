@@ -4,33 +4,33 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     image: '/images/identity.png',
-    title: 'Advanced Identity',
-    description: 'Biometric and photo-based verification ensures only authorized individuals enter school premises.',
+    title: 'Real-Time Entry Monitoring',
+    description: 'Advanced RFID-based kiosk scanning logs every student entry and exit instantly — giving schools accurate, automated attendance records.',
   },
   {
     image: '/images/quality-assurance.png',
-    title: 'Secure Environment',
-    description: 'Multi-layered security protocols create a safe environment for students, staff, and visitors.',
+    title: 'Parent Peace of Mind',
+    description: 'Parents receive instant notifications when their child enters or exits school, along with subject-level attendance updates and school announcements.',
   },
   {
     image: '/images/opportunity.png',
-    title: 'Entrance Management',
-    description: 'Smart gates and access points with automated logging of every entry and exit in real time.',
+    title: 'Smarter Attendance Management',
+    description: 'Teachers can easily track classroom attendance, student logs, and subject performance within a streamlined, easy-to-use system.',
   },
   {
     image: '/images/data-monitoring.png',
-    title: 'Administrative Efficiency',
-    description: 'Streamlined dashboards for school admins to manage attendance, reports, and security alerts.',
+    title: 'Centralized Admin Dashboard',
+    description: 'School administrators gain full visibility through a comprehensive dashboard with real-time monitoring and attendance analytics.',
   },
   {
-    image: '/images/health-service.png',
-    title: 'Emergency Readiness',
-    description: 'Instant lockdown capabilities and emergency protocols to respond to critical situations fast.',
+    image: '/images/computer-device.png',
+    title: 'Intelligent Analytics',
+    description: 'AI-powered insights help schools identify attendance patterns, improve engagement, and make data-driven decisions.',
   },
   {
     image: '/images/growth.png',
-    title: 'Unlimited Scalability',
-    description: 'Whether one school or a hundred, Entraguard scales seamlessly with your growing needs.',
+    title: 'Built to Scale',
+    description: 'From a single campus to an entire district, Entraguard grows with your institution — seamlessly and reliably.',
   },
 ]
 
@@ -41,8 +41,8 @@ export default function WhyChoose() {
     <section ref={ref} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Why Choose EntraGuard"
-          subtitle="Built with cutting-edge technology and designed with schools in mind, Entraguard delivers unmatched security and peace of mind."
+          title="Why Schools Choose Entraguard"
+          subtitle="Built for modern campuses, Entraguard connects parents, teachers, and administrators through real-time attendance visibility and intelligent monitoring."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

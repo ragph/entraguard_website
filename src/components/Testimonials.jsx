@@ -10,37 +10,37 @@ import SectionHeading from './SectionHeading'
 const testimonials = [
   {
     quote:
-      'Entraguard has completely changed how we manage school security. The real-time alerts give me peace of mind knowing my child is safe.',
+      'Now I know exactly when my child arrives at school. The instant notifications give me peace of mind every single day.',
     name: 'Maria Santos',
     role: 'Parent',
   },
   {
     quote:
-      'The admin dashboard is incredibly intuitive. We reduced unauthorized entries by 95% in the first month. Absolutely game-changing.',
+      'The dashboard gives us full visibility across our campus. Attendance monitoring has never been this clear and efficient.',
     name: 'Principal Garcia',
     role: 'School Administrator',
   },
   {
     quote:
-      'As a parent of three, getting instant notifications when my kids arrive at school is priceless. The app is so easy to use.',
+      'I love being able to see not just entry and exit, but also subject attendance updates. It keeps me involved in my child\'s education.',
     name: 'James Reyes',
     role: 'Parent',
   },
   {
     quote:
-      'The emergency lockdown feature alone makes Entraguard worth it. Response time went from minutes to seconds.',
+      'Entraguard modernized how we manage attendance. Everything is automated and organized.',
     name: 'Dr. Ana Cruz',
-    role: 'School Principal',
+    role: 'Principal',
   },
   {
     quote:
-      'We piloted Entraguard across 12 schools in our district. The centralized dashboard gives us full visibility across every campus.',
+      'Having centralized data across multiple schools allows us to make smarter, data-driven decisions.',
     name: 'Mark Villanueva',
     role: 'District Administrator',
   },
   {
     quote:
-      'I love that I get a notification the moment my daughter enters school. It gives our whole family peace of mind every morning.',
+      'It feels good knowing I\'m always updated about my daughter\'s school day.',
     name: 'Lisa Tan',
     role: 'Parent',
   },
@@ -82,7 +82,7 @@ export default function Testimonials() {
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="What Our Community Says"
-          subtitle="Trusted by parents, administrators, and educators across the Philippines."
+          subtitle="Entraguard connects families, classrooms, and campuses through real-time visibility."
           className="[&_h2]:text-blue-950 [&_p]:text-blue-950/70"
           dotColors={['bg-white', 'bg-white', 'bg-white']}
         />

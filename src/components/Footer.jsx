@@ -10,10 +10,10 @@ const quickLinks = [
 ]
 
 const solutionLinks = [
-  { label: 'Gate Access System', href: '#system-overview' },
-  { label: 'School Administration', href: '#system-overview' },
+  { label: 'Smart RFID Kiosk System', href: '#system-overview' },
+  { label: 'School Administration Platform', href: '#system-overview' },
   { label: 'Parent Mobile App', href: '#system-overview' },
-  { label: 'Classroom Management', href: '#system-overview' },
+  { label: 'Teacher Management System', href: '#system-overview' },
 ]
 
 const socialLinks = [

@@ -2,10 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const stats = [
-  { end: 4, suffix: '', label: 'Integrated Modules' },
-  { text: '24/7', label: 'System Uptime' },
-  { end: 100, suffix: '%', label: 'Data Encryption' },
-  { end: 60, suffix: '+', label: 'Partner Schools' },
+  { end: 4, suffix: '', label: 'Integrated Platforms' },
+  { text: 'Real-Time', label: 'Entry & Attendance Updates' },
+  { text: 'Instant', label: 'Parent Notifications' },
+  { text: 'Growing', label: 'Partner Schools Nationwide' },
 ]
 
 const DURATION = 2000

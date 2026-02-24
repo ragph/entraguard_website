@@ -8,12 +8,12 @@ const leftCards = [
   {
     title: 'Our Mission',
     description:
-      'To revolutionize school security by providing intelligent, accessible, and reliable entry management systems that protect every student.',
+      'To modernize school attendance and campus monitoring by delivering real-time visibility for parents, teachers, and administrators — all in one intelligent platform.',
   },
   {
     title: 'Our Vision',
     description:
-      'A world where every school entrance is secure, every parent is informed, and every child is safe — powered by smart technology.',
+      'A future where every parent feels confident, every teacher stays organized, and every school operates with clarity — powered by smart, connected technology.',
   },
 ]
 
@@ -21,12 +21,12 @@ const rightCards = [
   {
     title: 'Our Values',
     description:
-      'Safety first. Innovation always. We believe in transparency, reliability, and building trust between schools, parents, and communities.',
+      'Clarity. Reliability. Trust. We believe schools thrive when parents are informed, teachers are empowered, and administrators have real-time insights.',
   },
   {
     title: 'Our Commitment',
     description:
-      'We are committed to continuously improving EntraGuard — delivering fast, secure, and dependable solutions so schools can focus on education, not security concerns.',
+      'We are committed to continuously improving Entraguard — delivering fast, reliable, and intelligent tools that help schools focus on education while families stay informed every step of the day.',
   },
 ]
 
@@ -121,7 +121,7 @@ export default function WhoWeAre() {
             >
               <img
                 src="/images/family.png"
-                alt="Family protected by EntraGuard"
+                alt="Parent receiving real-time school attendance notification"
                 className="w-72 sm:w-96 md:w-md h-auto"
               />
               <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-emerald-400 rounded-full -z-10" />

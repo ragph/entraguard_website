@@ -14,33 +14,33 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     icon: <HiIdentification className="text-2xl text-amber-500" />,
-    title: 'ID & Photo Verification',
-    description: 'Multi-factor identity verification combining photo recognition and ID card scanning.',
+    title: 'RFID Smart Attendance',
+    description: 'Automated kiosk-based RFID scanning eliminates manual logging and ensures accurate, real-time student check-in and check-out.',
   },
   {
     icon: <HiBell className="text-2xl text-amber-500" />,
-    title: 'Real-Time Notifications',
-    description: 'Instant push notifications to parents and staff for every entry, exit, and security event.',
+    title: 'Instant Parent Notifications',
+    description: 'Parents receive immediate push notifications for every school arrival, dismissal, and subject attendance update.',
   },
   {
     icon: <HiChartBar className="text-2xl text-amber-500" />,
-    title: 'Advanced Analytics',
-    description: 'Comprehensive analytics with visual reports on attendance patterns and security data.',
+    title: 'Attendance Analytics & Insights',
+    description: 'Visual dashboards and AI-driven reports help schools understand attendance trends and student engagement.',
   },
   {
     icon: <HiStatusOnline className="text-2xl text-amber-500" />,
-    title: 'Offline Capability',
-    description: 'Continue operating seamlessly even without internet — data syncs when connection restores.',
+    title: 'Seamless System Integration',
+    description: 'All modules — kiosk, teacher, parent, and admin — work together in one synchronized ecosystem.',
   },
   {
     icon: <HiExclamation className="text-2xl text-amber-500" />,
-    title: 'Emergency Management',
-    description: 'One-tap lockdown, emergency broadcasts, and real-time headcount during critical events.',
+    title: 'Reliable Offline Sync',
+    description: 'Even during internet interruptions, attendance data is safely stored and automatically synced once connection is restored.',
   },
   {
     icon: <HiServer className="text-2xl text-amber-500" />,
-    title: 'Scalable Architecture',
-    description: 'Cloud-native infrastructure that grows with you — from a single school to an entire district.',
+    title: 'Cloud-Based & Scalable',
+    description: 'Built on secure cloud infrastructure to support growing schools and districts without complexity.',
   },
 ]
 
@@ -80,8 +80,8 @@ export default function Features() {
     <section id="features" ref={mergedRef} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-0">
         <SectionHeading
-          title="Advanced Security Features"
-          subtitle="Powered by modern technology to keep schools safe and parents informed."
+          title="Smart Features for a Modern Campus"
+          subtitle="Designed to deliver clarity, confidence, and control."
         />
 
         {/* Mobile: stacked list */}

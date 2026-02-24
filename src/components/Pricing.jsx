@@ -3,13 +3,14 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
 
 const features = [
-  'Full access to all security modules',
-  'Real-time parent notifications',
+  'Smart RFID kiosk system',
+  'Parent mobile app access',
+  'Teacher management platform',
   'Admin dashboard & analytics',
-  'Unlimited gate integrations',
-  'Emergency management tools',
-  'Dedicated support team',
-  '99.9% uptime guarantee',
+  'Real-time notifications',
+  'AI attendance insights',
+  'Unlimited classroom integrations',
+  'Cloud hosting & maintenance',
   'Free onboarding & training',
 ]
 
@@ -20,8 +21,8 @@ export default function Pricing() {
     <section id="pricing" ref={ref} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Simple Pricing. Full Access."
-          subtitle="One plan. Everything included. No hidden fees."
+          title="Simple Pricing. Complete Campus Visibility."
+          subtitle="One platform. Full access. Built for modern schools."
         />
 
         <div className="flex justify-center">
@@ -56,7 +57,7 @@ export default function Pricing() {
               href="#contact"
               className="block w-full bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full py-4 text-center transition-all duration-300"
             >
-              Start Your Free Trial
+              Request a Demo
             </a>
           </div>
         </div>

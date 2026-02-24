@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="text-center">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Privacy Policy</h1>
-              <p className="text-blue-200 mt-1">Your privacy is our priority</p>
+              <p className="text-blue-200 mt-1">Your data, your trust — our responsibility</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
               {/* Quick Contact Card */}
               <div className="mt-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
                 <h4 className="font-semibold mb-2">Have Questions?</h4>
-                <p className="text-blue-100 text-sm mb-4">Our privacy team is here to help you understand our policies.</p>
+                <p className="text-blue-100 text-sm mb-4">Our team is here to help you understand how we handle your data.</p>
                 <a
                   href="mailto:info@entraguard.online"
                   className="inline-flex items-center gap-2 bg-white text-blue-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
@@ -127,10 +127,10 @@ export default function PrivacyPolicy() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed">
-                      Welcome to Entraguard. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our school security and access management system.
+                      Welcome to Entraguard. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our smart school attendance and campus monitoring platform.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      By using Entraguard services, you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data.
+                      By using Entraguard services — including our RFID kiosk system, parent mobile app, teacher management system, and school administration platform — you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data.
                     </p>
                   </div>
                 </section>
@@ -149,24 +149,25 @@ export default function PrivacyPolicy() {
                         <h4 className="font-semibold text-gray-900 mb-2">Personal Information</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
                           <li>• Names and contact details of students, parents, and staff</li>
-                          <li>• Student identification numbers and class assignments</li>
+                          <li>• Student identification numbers and class/section assignments</li>
                           <li>• Parent/guardian relationships and emergency contacts</li>
                           <li>• Account credentials and authentication data</li>
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Biometric Data</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">RFID & Attendance Data</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
-                          <li>• Fingerprint templates for secure gate access</li>
-                          <li>• Facial recognition data (if enabled by your school)</li>
+                          <li>• RFID card identifiers linked to student profiles</li>
+                          <li>• Entry and exit timestamps recorded via kiosk scanning</li>
+                          <li>• Subject-level attendance records from teacher systems</li>
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Usage & Access Data</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Usage & Platform Data</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
-                          <li>• Entry and exit timestamps</li>
                           <li>• Device information and IP addresses</li>
-                          <li>• App usage patterns and preferences</li>
+                          <li>• App usage patterns and notification preferences</li>
+                          <li>• Dashboard activity and report generation logs</li>
                         </ul>
                       </div>
                     </div>
@@ -184,11 +185,12 @@ export default function PrivacyPolicy() {
                     </p>
                     <div className="space-y-3">
                       {[
-                        'Verify identity and manage secure gate access',
-                        'Send real-time notifications to parents about student arrivals and departures',
-                        'Enable school administrators to manage student records and attendance',
+                        'Record and manage student attendance via RFID kiosk scanning',
+                        'Send real-time notifications to parents about student entry, exit, and subject attendance',
+                        'Enable teachers to track classroom attendance and student performance per subject',
+                        'Provide school administrators with centralized dashboards, analytics, and reporting tools',
+                        'Deliver AI-powered attendance insights to help schools make data-driven decisions',
                         'Provide customer support and respond to inquiries',
-                        'Analyze usage patterns to improve system performance',
                         'Comply with legal obligations and protect against fraud',
                       ].map((item, index) => (
                         <div key={index} className="flex items-start gap-3">
@@ -214,7 +216,7 @@ export default function PrivacyPolicy() {
                     <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-4">
                       <h4 className="font-semibold text-amber-800 mb-2">With Your School</h4>
                       <p className="text-amber-700 text-sm">
-                        Schools using Entraguard have access to student and staff data for administrative purposes, including attendance tracking and emergency management.
+                        Schools using Entraguard have access to student and staff data for administrative purposes, including attendance monitoring, analytics, performance reporting, and campus-wide announcements.
                       </p>
                     </div>
                     <div className="bg-gray-50 rounded-xl p-5 mb-4">
@@ -264,10 +266,10 @@ export default function PrivacyPolicy() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Retention</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed">
-                      We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy. Student records are typically retained for the duration of enrollment plus any additional period required by law or school policy.
+                      We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy. Student records and attendance data are typically retained for the duration of enrollment plus any additional period required by law or school policy.
                     </p>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      Access logs and biometric data may be retained for security and compliance purposes. Upon account termination or upon request, we will delete or anonymize personal data within 30 days, unless retention is required by law.
+                      RFID scan logs and attendance records may be retained for reporting and compliance purposes. Upon account termination or upon request, we will delete or anonymize personal data within 30 days, unless retention is required by law.
                     </p>
                   </div>
                 </section>

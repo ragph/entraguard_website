@@ -62,7 +62,7 @@ export default function TermsOfService() {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="text-center">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Terms of Service</h1>
-              <p className="text-blue-200 mt-1">Please read these terms carefully</p>
+              <p className="text-blue-200 mt-1">Please read these terms carefully before using our platform</p>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
@@ -107,7 +107,7 @@ export default function TermsOfService() {
               {/* Quick Contact Card */}
               <div className="mt-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
                 <h4 className="font-semibold mb-2">Need Clarification?</h4>
-                <p className="text-blue-100 text-sm mb-4">Contact our team if you have questions about these terms.</p>
+                <p className="text-blue-100 text-sm mb-4">Our team is happy to help you understand these terms and how they apply to your school.</p>
                 <a
                   href="mailto:info@entraguard.online"
                   className="inline-flex items-center gap-2 bg-white text-blue-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
@@ -128,11 +128,11 @@ export default function TermsOfService() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Acceptance of Terms</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed">
-                      By accessing or using Entraguard's school security and access management system ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+                      By accessing or using Entraguard's smart school attendance and campus monitoring platform ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
                     </p>
                     <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mt-4">
                       <p className="text-blue-800 text-sm">
-                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Schools, administrators, parents, and staff using our platform are all subject to these Terms.
+                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Schools, administrators, teachers, parents, and staff using our platform — including the RFID kiosk system, parent mobile app, teacher management system, and administration dashboard — are all subject to these Terms.
                       </p>
                     </div>
                   </div>
@@ -145,25 +145,31 @@ export default function TermsOfService() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Services</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed mb-4">
-                      Entraguard provides a comprehensive school security platform that includes:
+                      Entraguard provides a comprehensive smart school attendance and campus monitoring platform that includes:
                     </p>
                     <div className="grid gap-4">
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Gate Access System</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Smart RFID Kiosk System</h4>
                         <p className="text-gray-600 text-sm">
-                          Biometric and card-based access control for secure entry and exit management at school gates.
+                          Automated RFID-based kiosk scanning for real-time student entry and exit logging with instant attendance recording.
+                        </p>
+                      </div>
+                      <div className="bg-gray-50 rounded-xl p-5">
+                        <h4 className="font-semibold text-gray-900 mb-2">School Administration Platform</h4>
+                        <p className="text-gray-600 text-sm">
+                          Centralized dashboard for school administrators with campus-wide attendance monitoring, AI analytics, announcement management, and performance reporting.
                         </p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
                         <h4 className="font-semibold text-gray-900 mb-2">Parent Mobile Application</h4>
                         <p className="text-gray-600 text-sm">
-                          Real-time notifications and monitoring tools for parents to track their children's school attendance.
+                          Real-time notifications for student entry and exit, subject-level attendance tracking, school announcements, and activity visibility.
                         </p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Administrative Dashboard</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Teacher Management System</h4>
                         <p className="text-gray-600 text-sm">
-                          Comprehensive management tools for school administrators to oversee student records, attendance, and security.
+                          Classroom attendance recording, per-subject student tracking, attendance performance monitoring, and seamless integration with the school system.
                         </p>
                       </div>
                     </div>
@@ -177,14 +183,14 @@ export default function TermsOfService() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">User Accounts</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed mb-4">
-                      When creating an account with us, you must provide accurate and complete information. You are responsible for:
+                      When creating an account with us — whether as a school administrator, teacher, or parent — you must provide accurate and complete information. You are responsible for:
                     </p>
                     <div className="space-y-3">
                       {[
                         'Maintaining the confidentiality of your account credentials',
-                        'All activities that occur under your account',
-                        'Notifying us immediately of any unauthorized access',
-                        'Ensuring your contact information remains current',
+                        'All activities that occur under your account, including attendance records and notifications',
+                        'Notifying us immediately of any unauthorized access to your account',
+                        'Ensuring your contact information and student-linked data remain current',
                       ].map((item, index) => (
                         <div key={index} className="flex items-start gap-3">
                           <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -195,7 +201,7 @@ export default function TermsOfService() {
                       ))}
                     </div>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      We reserve the right to suspend or terminate accounts that violate these Terms or engage in fraudulent activity.
+                      We reserve the right to suspend or terminate accounts that violate these Terms, misuse attendance data, or engage in fraudulent activity.
                     </p>
                   </div>
                 </section>
@@ -211,10 +217,10 @@ export default function TermsOfService() {
                     </p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       {[
-                        { title: 'Authorized Access', desc: 'Only access features and data you are authorized to use' },
-                        { title: 'Accurate Information', desc: 'Provide truthful and accurate information at all times' },
-                        { title: 'Respect Privacy', desc: 'Respect the privacy and rights of other users' },
-                        { title: 'Compliance', desc: 'Comply with all applicable laws and regulations' },
+                        { title: 'Authorized Access', desc: 'Only access features, attendance data, and student records you are authorized to view' },
+                        { title: 'Accurate Information', desc: 'Provide truthful and accurate information about students, guardians, and school details' },
+                        { title: 'Respect Privacy', desc: 'Respect the privacy of students, parents, teachers, and other platform users' },
+                        { title: 'Compliance', desc: 'Comply with all applicable laws, school policies, and data protection regulations' },
                       ].map((item, index) => (
                         <div key={index} className="bg-green-50 border border-green-100 rounded-xl p-4">
                           <h4 className="font-semibold text-green-800 mb-1">{item.title}</h4>
@@ -238,15 +244,19 @@ export default function TermsOfService() {
                       <ul className="space-y-2 text-red-800 text-sm">
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Attempting to gain unauthorized access to any part of the Service</span>
+                          <span>Attempting to gain unauthorized access to any part of the platform or attendance data</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Using another person's credentials without authorization</span>
+                          <span>Using another person's credentials or RFID card without authorization</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Interfering with or disrupting the Service or servers</span>
+                          <span>Tampering with kiosk hardware, RFID scanners, or attendance records</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                          <span>Interfering with or disrupting the Service, servers, or connected systems</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -254,11 +264,11 @@ export default function TermsOfService() {
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Reverse engineering or attempting to extract source code</span>
+                          <span>Reverse engineering or attempting to extract source code from any Entraguard module</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Using the Service for any illegal or unauthorized purpose</span>
+                          <span>Using the Service or student data for any illegal or unauthorized purpose</span>
                         </li>
                       </ul>
                     </div>
@@ -295,12 +305,12 @@ export default function TermsOfService() {
                       We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including breach of these Terms.
                     </p>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may contact your school administrator or reach out to us directly.
+                      Upon termination, your right to use the Service — including the parent app, teacher system, admin dashboard, and RFID kiosk access — will immediately cease. If you wish to terminate your account, you may contact your school administrator or reach out to us directly.
                     </p>
                     <div className="bg-gray-50 rounded-xl p-5 mt-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Post-Termination</h4>
                       <p className="text-gray-600 text-sm">
-                        All provisions of the Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+                        All provisions of the Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability. Attendance records may be retained by the school as required by institutional or legal policy.
                       </p>
                     </div>
                   </div>

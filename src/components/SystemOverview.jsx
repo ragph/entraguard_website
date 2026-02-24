@@ -54,43 +54,44 @@ function SystemRow({ system, index }) {
 
 const systems = [
   {
-    title: 'Gate / Access System',
+    title: 'Smart RFID Kiosk System',
     image: '/images/gate-system.png',
     features: [
-      'Automated gate control',
-      'QR code & ID scanning',
-      'Real-time entry logging',
-      'Visitor management portal',
+      'Advanced RFID student scanning',
+      'Instant entry & exit logging',
+      'Automated attendance recording',
+      'Real-time data sync to school system',
     ],
   },
   {
-    title: 'School Administration',
+    title: 'School Administration Platform',
     image: '/images/school-system.png',
     features: [
-      'Centralized dashboard',
-      'Attendance tracking',
-      'Security alert management',
-      'Staff access control',
+      'Centralized real-time dashboard',
+      'Campus-wide attendance monitoring',
+      'AI attendance analytics',
+      'Announcement management',
+      'Performance insights & reporting',
     ],
   },
   {
     title: 'Parent Mobile App',
     image: '/images/parent-system.png',
     features: [
-      'Real-time notifications',
-      'Student check-in/out alerts',
-      'Emergency announcements',
-      'Digital authorization',
+      'Instant entry & exit notifications',
+      'Subject-level attendance tracking',
+      'School & classroom announcements',
+      'Activity visibility & student logs',
     ],
   },
   {
-    title: 'Classroom Management',
+    title: 'Teacher Management System',
     image: '/images/teacher-system.png',
     features: [
-      'Attendance automation',
-      'Student tracking by room',
-      'Teacher access permissions',
-      'Emergency headcount tools',
+      'Classroom attendance recording',
+      'Student attendance per subject',
+      'Attendance performance monitoring',
+      'Seamless integration with school system',
     ],
   },
 ]
@@ -100,8 +101,8 @@ export default function SystemOverview() {
     <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
-          title="Complete System Overview"
-          subtitle="Four integrated modules working together to deliver comprehensive school security."
+          title="Complete Entraguard Ecosystem"
+          subtitle="Four integrated platforms working together to create a smarter, more connected campus."
           light
         />
 

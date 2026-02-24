@@ -1,0 +1,662 @@
+================================================================================
+                    ENTRAGUARD WEBSITE - FULL CONTENT AUDIT
+================================================================================
+  Website URL: https://entraguard.online/
+  Framework: React 19 + Vite + Tailwind CSS
+  Section Order (as rendered on homepage):
+    1. Navbar
+    2. Hero
+    3. Who We Are (About)
+    4. Why Choose EntraGuard
+    5. System Overview
+    6. Features
+    7. Stats
+    8. Testimonials
+    9. Pricing
+    10. CTA (Call to Action)
+    11. Contact
+    12. Footer
+  Separate Pages: Privacy Policy, Terms of Service
+================================================================================
+
+
+================================================================================
+  SECTION 1: NAVBAR
+  File: src/components/Navbar.jsx
+================================================================================
+
+Navigation Links:
+  - Home (#home)
+  - About (#about)
+  - Features (#features)
+  - Pricing (#pricing)
+  - Contact (#contact)
+
+CTA Button Text: "Get Started" (links to #pricing)
+
+Logo Images:
+  - Light version: /images/logo-light.png (used on transparent/hero background)
+  - Dark version: /images/logo.png (used on scrolled white background)
+
+
+================================================================================
+  SECTION 2: HERO
+  File: src/components/Hero.jsx
+================================================================================
+
+Badge Text:
+  "Smart School Attendance System"
+
+Headline:
+  "Smart Attendance, Safer Campus, Happier Parents"
+
+Subheadline / Description:
+  "Entraguard is a smart school attendance system that tracks student entry and
+   exit in real time, sends instant notifications to parents, and gives
+   administrators full visibility -- all in one platform."
+
+CTA Buttons:
+  - "Get Started" (links to #pricing)
+  - "Learn More" (links to #about)
+
+Images:
+  - Hero image: /images/hero-img.png (alt: "Student protected by EntraGuard")
+  - Background: Unsplash school image (opacity 10%)
+
+
+================================================================================
+  SECTION 3: WHO WE ARE (ABOUT)
+  File: src/components/WhoWeAre.jsx
+  Section ID: #about
+================================================================================
+
+Section Title: "Who We Are"
+
+Card 1 - Our Mission:
+  "To revolutionize school security by providing intelligent, accessible, and
+   reliable entry management systems that protect every student."
+
+Card 2 - Our Vision:
+  "A world where every school entrance is secure, every parent is informed, and
+   every child is safe -- powered by smart technology."
+
+Card 3 - Our Values:
+  "Safety first. Innovation always. We believe in transparency, reliability,
+   and building trust between schools, parents, and communities."
+
+Card 4 - Our Commitment:
+  "We are committed to continuously improving EntraGuard -- delivering fast,
+   secure, and dependable solutions so schools can focus on education, not
+   security concerns."
+
+Center Image: /images/family.png (alt: "Family protected by EntraGuard")
+
+
+================================================================================
+  SECTION 4: WHY CHOOSE ENTRAGUARD
+  File: src/components/WhyChoose.jsx
+================================================================================
+
+Section Title: "Why Choose EntraGuard"
+Section Subtitle:
+  "Built with cutting-edge technology and designed with schools in mind,
+   Entraguard delivers unmatched security and peace of mind."
+
+Feature 1 - Advanced Identity:
+  Image: /images/identity.png
+  "Biometric and photo-based verification ensures only authorized individuals
+   enter school premises."
+
+Feature 2 - Secure Environment:
+  Image: /images/quality-assurance.png
+  "Multi-layered security protocols create a safe environment for students,
+   staff, and visitors."
+
+Feature 3 - Entrance Management:
+  Image: /images/opportunity.png
+  "Smart gates and access points with automated logging of every entry and
+   exit in real time."
+
+Feature 4 - Administrative Efficiency:
+  Image: /images/data-monitoring.png
+  "Streamlined dashboards for school admins to manage attendance, reports,
+   and security alerts."
+
+Feature 5 - Emergency Readiness:
+  Image: /images/health-service.png
+  "Instant lockdown capabilities and emergency protocols to respond to
+   critical situations fast."
+
+Feature 6 - Unlimited Scalability:
+  Image: /images/growth.png
+  "Whether one school or a hundred, Entraguard scales seamlessly with your
+   growing needs."
+
+
+================================================================================
+  SECTION 5: SYSTEM OVERVIEW
+  File: src/components/SystemOverview.jsx
+  Section ID: #system-overview
+================================================================================
+
+Section Title: "Complete System Overview"
+Section Subtitle:
+  "Four integrated modules working together to deliver comprehensive school
+   security."
+
+Module 1 - Gate / Access System:
+  Image: /images/gate-system.png
+  Features:
+    - Automated gate control
+    - QR code & ID scanning
+    - Real-time entry logging
+    - Visitor management portal
+
+Module 2 - School Administration:
+  Image: /images/school-system.png
+  Features:
+    - Centralized dashboard
+    - Attendance tracking
+    - Security alert management
+    - Staff access control
+
+Module 3 - Parent Mobile App:
+  Image: /images/parent-system.png
+  Features:
+    - Real-time notifications
+    - Student check-in/out alerts
+    - Emergency announcements
+    - Digital authorization
+
+Module 4 - Classroom Management:
+  Image: /images/teacher-system.png
+  Features:
+    - Attendance automation
+    - Student tracking by room
+    - Teacher access permissions
+    - Emergency headcount tools
+
+
+================================================================================
+  SECTION 6: FEATURES (Advanced Security Features)
+  File: src/components/Features.jsx
+  Section ID: #features
+================================================================================
+
+Section Title: "Advanced Security Features"
+Section Subtitle:
+  "Powered by modern technology to keep schools safe and parents informed."
+
+Feature 1 - ID & Photo Verification:
+  Icon: HiIdentification
+  "Multi-factor identity verification combining photo recognition and ID
+   card scanning."
+
+Feature 2 - Real-Time Notifications:
+  Icon: HiBell
+  "Instant push notifications to parents and staff for every entry, exit,
+   and security event."
+
+Feature 3 - Advanced Analytics:
+  Icon: HiChartBar
+  "Comprehensive analytics with visual reports on attendance patterns and
+   security data."
+
+Feature 4 - Offline Capability:
+  Icon: HiStatusOnline
+  "Continue operating seamlessly even without internet -- data syncs when
+   connection restores."
+
+Feature 5 - Emergency Management:
+  Icon: HiExclamation
+  "One-tap lockdown, emergency broadcasts, and real-time headcount during
+   critical events."
+
+Feature 6 - Scalable Architecture:
+  Icon: HiServer
+  "Cloud-native infrastructure that grows with you -- from a single school
+   to an entire district."
+
+Center Image: /images/entraguard.png (Entraguard shield/logo)
+
+
+================================================================================
+  SECTION 7: STATS
+  File: src/components/Stats.jsx
+================================================================================
+
+Stat 1: "4" - Integrated Modules
+Stat 2: "24/7" - System Uptime
+Stat 3: "100%" - Data Encryption
+Stat 4: "60+" - Partner Schools
+
+
+================================================================================
+  SECTION 8: TESTIMONIALS
+  File: src/components/Testimonials.jsx
+================================================================================
+
+Section Title: "What Our Community Says"
+Section Subtitle:
+  "Trusted by parents, administrators, and educators across the Philippines."
+
+Testimonial 1:
+  Name: Maria Santos
+  Role: Parent
+  Quote: "Entraguard has completely changed how we manage school security.
+   The real-time alerts give me peace of mind knowing my child is safe."
+
+Testimonial 2:
+  Name: Principal Garcia
+  Role: School Administrator
+  Quote: "The admin dashboard is incredibly intuitive. We reduced unauthorized
+   entries by 95% in the first month. Absolutely game-changing."
+
+Testimonial 3:
+  Name: James Reyes
+  Role: Parent
+  Quote: "As a parent of three, getting instant notifications when my kids
+   arrive at school is priceless. The app is so easy to use."
+
+Testimonial 4:
+  Name: Dr. Ana Cruz
+  Role: School Principal
+  Quote: "The emergency lockdown feature alone makes Entraguard worth it.
+   Response time went from minutes to seconds."
+
+Testimonial 5:
+  Name: Mark Villanueva
+  Role: District Administrator
+  Quote: "We piloted Entraguard across 12 schools in our district. The
+   centralized dashboard gives us full visibility across every campus."
+
+Testimonial 6:
+  Name: Lisa Tan
+  Role: Parent
+  Quote: "I love that I get a notification the moment my daughter enters
+   school. It gives our whole family peace of mind every morning."
+
+
+================================================================================
+  SECTION 9: PRICING
+  File: src/components/Pricing.jsx
+  Section ID: #pricing
+================================================================================
+
+Section Title: "Simple Pricing. Full Access."
+Section Subtitle: "One plan. Everything included. No hidden fees."
+
+Price: PHP 180.00 per month per student
+Billing: Billed monthly
+
+Included Features:
+  - Full access to all security modules
+  - Real-time parent notifications
+  - Admin dashboard & analytics
+  - Unlimited gate integrations
+  - Emergency management tools
+  - Dedicated support team
+  - 99.9% uptime guarantee
+  - Free onboarding & training
+
+CTA Button: "Start Your Free Trial" (links to #contact)
+
+
+================================================================================
+  SECTION 10: CALL TO ACTION (CTA)
+  File: src/components/CTA.jsx
+================================================================================
+
+Headline:
+  "Ready to Modernize Your School's Attendance System?"
+
+Description:
+  "Join hundreds of schools and thousands of parents who trust Entraguard's
+   smart attendance system to track every student, notify every parent, and
+   secure every campus -- in real time."
+
+CTA Button: "Get Started" (links to #pricing)
+
+Image: /images/cta.png (alt: "Student celebrating with EntraGuard")
+
+
+================================================================================
+  SECTION 11: CONTACT
+  File: src/components/Contact.jsx
+  Section ID: #contact
+================================================================================
+
+Section Title: "Get In Touch"
+Section Subtitle:
+  "Have questions about Entraguard? We'd love to hear from you. Send us a
+   message and we'll get back to you as soon as possible."
+
+Contact Information:
+  Email: info@entraguard.online
+  Phone: (82) 317 2944
+  Address: Door #5, TMNT Building, Dona Vicenta Drive, J.P. Laurel Ave.,
+           Bajada, Davao City, Philippines, 8000
+
+Form Fields:
+  - Full Name (placeholder: "Juan Dela Cruz")
+  - Email Address (placeholder: "you@example.com")
+  - Subject (placeholder: "How can we help?")
+  - Message (placeholder: "Tell us more about your inquiry...")
+  - Submit Button: "Send Message"
+
+Success Message: "Thank you! Your message has been sent successfully."
+
+
+================================================================================
+  SECTION 12: FOOTER
+  File: src/components/Footer.jsx
+================================================================================
+
+Brand Description:
+  "Entraguard is a smart school security system designed to protect students,
+   empower parents, and streamline school administration."
+
+Quick Links:
+  - Home
+  - About Us
+  - Features
+  - Pricing
+  - Contact
+
+Solutions:
+  - Gate Access System
+  - School Administration
+  - Parent Mobile App
+  - Classroom Management
+
+Contact (repeated):
+  Email: info@entraguard.online
+  Phone: (82) 317 2944
+  Address: Door #5, TMNT Building, Dona Vicenta Drive, J.P. Laurel Ave.,
+           Bajada, Davao City, Philippines, 8000
+
+Social Links (no URLs set, all link to "#"):
+  - Facebook
+  - Twitter
+  - Instagram
+  - LinkedIn
+
+Bottom Bar:
+  - Copyright: "(c) [current year] Entraguard. All rights reserved."
+  - Privacy Policy (links to /privacy-policy)
+  - Terms of Service (links to /terms-of-service)
+  - "Powered by" RAG IT Solutions (links to https://www.ragph.com/)
+    Image: /images/rag.png
+
+
+================================================================================
+  PAGE: INDEX.HTML (SEO & Meta)
+  File: index.html
+================================================================================
+
+Page Title: "Entraguard - Smart School Security System"
+
+Meta Description:
+  "Entraguard is a smart school security system that ensures the safety of
+   students with advanced access control and real-time monitoring."
+
+Open Graph Title: "Entraguard - Smart School Security System"
+Open Graph Description:
+  "Entraguard is a smart school security system that ensures the safety of
+   students with advanced access control and real-time monitoring."
+Open Graph Image: https://entraguard.online/og-image.jpg
+
+Twitter Card: summary_large_image
+Twitter Title: "Entraguard - Smart School Security System"
+Twitter Description: (same as OG description)
+
+Font: Montserrat (weights: 400, 500, 600, 700, 800)
+
+
+================================================================================
+  PAGE: PRIVACY POLICY
+  File: src/pages/PrivacyPolicy.jsx
+  Route: /privacy-policy
+================================================================================
+
+Page Title: "Privacy Policy"
+Subtitle: "Your privacy is our priority"
+Read Time: "5 min read"
+
+--- Introduction ---
+  "Welcome to Entraguard. We are committed to protecting your privacy and
+   ensuring the security of your personal information. This Privacy Policy
+   explains how we collect, use, disclose, and safeguard your information
+   when you use our school security and access management system."
+
+  "By using Entraguard services, you agree to the collection and use of
+   information in accordance with this policy. We encourage you to read this
+   document carefully to understand our practices regarding your data."
+
+--- Information We Collect ---
+  Personal Information:
+    - Names and contact details of students, parents, and staff
+    - Student identification numbers and class assignments
+    - Parent/guardian relationships and emergency contacts
+    - Account credentials and authentication data
+
+  Biometric Data:
+    - Fingerprint templates for secure gate access
+    - Facial recognition data (if enabled by your school)
+
+  Usage & Access Data:
+    - Entry and exit timestamps
+    - Device information and IP addresses
+    - App usage patterns and preferences
+
+--- How We Use Your Information ---
+  1. Verify identity and manage secure gate access
+  2. Send real-time notifications to parents about student arrivals
+     and departures
+  3. Enable school administrators to manage student records and attendance
+  4. Provide customer support and respond to inquiries
+  5. Analyze usage patterns to improve system performance
+  6. Comply with legal obligations and protect against fraud
+
+--- Data Sharing & Disclosure ---
+  "We do not sell your personal information."
+
+  With Your School:
+    "Schools using Entraguard have access to student and staff data for
+     administrative purposes, including attendance tracking and emergency
+     management."
+
+  Service Providers:
+    "We work with trusted third-party providers for hosting, analytics,
+     and support services. These providers are contractually bound to
+     protect your data."
+
+  Legal Requirements:
+    "We may disclose information when required by law, court order, or
+     to protect the rights and safety of Entraguard, our users, or others."
+
+--- Data Security ---
+  Encryption:
+    "All data is encrypted in transit and at rest using AES-256 encryption"
+  Access Controls:
+    "Role-based access ensures only authorized personnel can view
+     sensitive data"
+  Regular Audits:
+    "We conduct regular security audits and penetration testing"
+  Secure Infrastructure:
+    "Our systems are hosted on secure, certified cloud infrastructure"
+
+--- Data Retention ---
+  "We retain personal information only for as long as necessary to fulfill
+   the purposes outlined in this policy. Student records are typically
+   retained for the duration of enrollment plus any additional period
+   required by law or school policy."
+
+  "Access logs and biometric data may be retained for security and
+   compliance purposes. Upon account termination or upon request, we will
+   delete or anonymize personal data within 30 days, unless retention is
+   required by law."
+
+--- Your Rights ---
+  Access: "Request a copy of the personal data we hold about you"
+  Correction: "Request correction of inaccurate or incomplete data"
+  Deletion: "Request deletion of your personal data"
+  Portability: "Receive your data in a structured, machine-readable format"
+  Objection: "Object to certain processing of your personal data"
+
+  "To exercise these rights, please contact us using the information below."
+
+--- Contact Us ---
+  Email: info@entraguard.online
+  Phone: (82) 317 2944
+  Address: Door #5, TMNT Building, Dona Vicenta Drive, J.P. Laurel Ave.,
+           Bajada, Davao City, Philippines, 8000
+
+Sidebar Quick Contact Card:
+  Title: "Have Questions?"
+  Text: "Our privacy team is here to help you understand our policies."
+  Button: "Contact Us" (mailto: info@entraguard.online)
+
+
+================================================================================
+  PAGE: TERMS OF SERVICE
+  File: src/pages/TermsOfService.jsx
+  Route: /terms-of-service
+================================================================================
+
+Page Title: "Terms of Service"
+Subtitle: "Please read these terms carefully"
+Read Time: "7 min read"
+
+--- Acceptance of Terms ---
+  "By accessing or using Entraguard's school security and access management
+   system ('Service'), you agree to be bound by these Terms of Service
+   ('Terms'). If you disagree with any part of these terms, you may not
+   access the Service."
+
+  Important Notice:
+    "These Terms constitute a legally binding agreement between you and
+     Entraguard. Schools, administrators, parents, and staff using our
+     platform are all subject to these Terms."
+
+--- Our Services ---
+  "Entraguard provides a comprehensive school security platform that includes:"
+
+  Gate Access System:
+    "Biometric and card-based access control for secure entry and exit
+     management at school gates."
+
+  Parent Mobile Application:
+    "Real-time notifications and monitoring tools for parents to track
+     their children's school attendance."
+
+  Administrative Dashboard:
+    "Comprehensive management tools for school administrators to oversee
+     student records, attendance, and security."
+
+--- User Accounts ---
+  "When creating an account with us, you must provide accurate and complete
+   information. You are responsible for:"
+    1. Maintaining the confidentiality of your account credentials
+    2. All activities that occur under your account
+    3. Notifying us immediately of any unauthorized access
+    4. Ensuring your contact information remains current
+
+  "We reserve the right to suspend or terminate accounts that violate
+   these Terms or engage in fraudulent activity."
+
+--- Acceptable Use ---
+  "You agree to use the Service only for lawful purposes and in accordance
+   with these Terms."
+
+  Authorized Access: "Only access features and data you are authorized to use"
+  Accurate Information: "Provide truthful and accurate information at all times"
+  Respect Privacy: "Respect the privacy and rights of other users"
+  Compliance: "Comply with all applicable laws and regulations"
+
+--- Prohibited Activities ---
+  - Attempting to gain unauthorized access to any part of the Service
+  - Using another person's credentials without authorization
+  - Interfering with or disrupting the Service or servers
+  - Transmitting malware, viruses, or harmful code
+  - Reverse engineering or attempting to extract source code
+  - Using the Service for any illegal or unauthorized purpose
+
+--- Limitation of Liability ---
+  "To the maximum extent permitted by applicable law, Entraguard and its
+   affiliates shall not be liable for any indirect, incidental, special,
+   consequential, or punitive damages, including but not limited to loss
+   of profits, data, or goodwill."
+
+  Notice:
+    "Our total liability for any claims arising from your use of the
+     Service shall not exceed the amount paid by your institution to
+     Entraguard in the twelve (12) months preceding the claim."
+
+  "We do not warrant that the Service will be uninterrupted, error-free,
+   or completely secure, although we strive to maintain high availability
+   and security standards."
+
+--- Termination ---
+  "We may terminate or suspend your account and access to the Service
+   immediately, without prior notice or liability, for any reason,
+   including breach of these Terms."
+
+  "Upon termination, your right to use the Service will immediately cease.
+   If you wish to terminate your account, you may contact your school
+   administrator or reach out to us directly."
+
+  Post-Termination:
+    "All provisions of the Terms which by their nature should survive
+     termination shall survive, including ownership provisions, warranty
+     disclaimers, indemnity, and limitations of liability."
+
+--- Governing Law ---
+  "These Terms shall be governed by and construed in accordance with the
+   laws of the Republic of the Philippines, without regard to its conflict
+   of law provisions."
+
+  "Any disputes arising out of or relating to these Terms or the Service
+   shall be resolved exclusively in the courts located in Davao City,
+   Philippines."
+
+--- Contact Us ---
+  Email: info@entraguard.online
+  Phone: (82) 317 2944
+  Address: Door #5, TMNT Building, Dona Vicenta Drive, J.P. Laurel Ave.,
+           Bajada, Davao City, Philippines, 8000
+
+Sidebar Quick Contact Card:
+  Title: "Need Clarification?"
+  Text: "Contact our team if you have questions about these terms."
+  Button: "Contact Us" (mailto: info@entraguard.online)
+
+
+================================================================================
+  NOTES FOR CONTENT UPDATE
+================================================================================
+
+1. The website currently uses "Smart School Security System" in SEO meta
+   and "Smart School Attendance System" in the hero badge -- these should
+   be consistent.
+
+2. The hero description focuses on "attendance tracking" while much of the
+   rest of the site emphasizes "security" -- the messaging should be aligned
+   to the actual Entraguard project scope.
+
+3. Testimonials use Filipino names (Maria Santos, Principal Garcia, James
+   Reyes, Dr. Ana Cruz, Mark Villanueva, Lisa Tan) -- verify if these should
+   be real or clearly marked as placeholder.
+
+4. Stats section claims "60+ Partner Schools" -- verify accuracy.
+
+5. Pricing is set at PHP 180.00/month/student -- verify current pricing.
+
+6. Social media links in footer all point to "#" (no actual URLs set).
+
+7. Contact form currently has no backend integration (just resets form
+   on submit).
+
+8. The "Powered by RAG IT Solutions" link goes to https://www.ragph.com/
+
+================================================================================
