@@ -10,7 +10,6 @@ const quickLinks = [
 ]
 
 const solutionLinks = [
-  { label: 'Smart RFID Kiosk System', href: '#system-overview' },
   { label: 'School Administration Platform', href: '#system-overview' },
   { label: 'Parent Mobile App', href: '#system-overview' },
   { label: 'Teacher Management System', href: '#system-overview' },

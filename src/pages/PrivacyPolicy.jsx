@@ -3,6 +3,7 @@ import { HiShieldCheck, HiDatabase, HiLockClosed, HiUserGroup, HiGlobe, HiMail, 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
+import { scrollTo } from '../lib/lenis'
 
 const sections = [
   { id: 'introduction', label: 'Introduction', icon: HiDocumentText },
@@ -18,9 +19,8 @@ const sections = [
 export default function PrivacyPolicy() {
   const [activeSection, setActiveSection] = useState('introduction')
 
-  // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo(0, 0)
+    scrollTo(0, { immediate: true })
   }, [])
 
   useEffect(() => {
@@ -45,10 +45,7 @@ export default function PrivacyPolicy() {
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id)
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 100
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    if (el) scrollTo(el, { offset: -100 })
   }
 
   return (
@@ -130,7 +127,7 @@ export default function PrivacyPolicy() {
                       Welcome to Entraguard. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our smart school attendance and campus monitoring platform.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      By using Entraguard services — including our RFID kiosk system, parent mobile app, teacher management system, and school administration platform — you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data.
+                      By using Entraguard services — including our parent mobile app, teacher management system, and school administration platform — you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data.
                     </p>
                   </div>
                 </section>
@@ -158,7 +155,7 @@ export default function PrivacyPolicy() {
                         <h4 className="font-semibold text-gray-900 mb-2">RFID & Attendance Data</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
                           <li>• RFID card identifiers linked to student profiles</li>
-                          <li>• Entry and exit timestamps recorded via kiosk scanning</li>
+                          <li>• Entry and exit timestamps recorded via RFID scanning</li>
                           <li>• Subject-level attendance records from teacher systems</li>
                         </ul>
                       </div>
@@ -185,7 +182,7 @@ export default function PrivacyPolicy() {
                     </p>
                     <div className="space-y-3">
                       {[
-                        'Record and manage student attendance via RFID kiosk scanning',
+                        'Record and manage student attendance via RFID scanning',
                         'Send real-time notifications to parents about student entry, exit, and subject attendance',
                         'Enable teachers to track classroom attendance and student performance per subject',
                         'Provide school administrators with centralized dashboards, analytics, and reporting tools',

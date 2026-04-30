@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
+import { scrollTo } from '../lib/lenis'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -61,13 +62,12 @@ export default function Navbar() {
     return () => sections.forEach((section) => observer.unobserve(section))
   }, [isHomePage])
 
-  const scrollTo = useCallback((e, href) => {
+  const handleNavClick = useCallback((e, href) => {
     e.preventDefault()
     const id = href.slice(1)
     setOpen(false)
 
     if (!isHomePage) {
-      // Navigate to home page with hash
       navigate('/' + href)
       return
     }
@@ -75,19 +75,16 @@ export default function Navbar() {
     const el = document.getElementById(id)
     if (!el) return
 
-    const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
-    window.scrollTo({ top, behavior: 'smooth' })
+    scrollTo(el, { offset: -NAVBAR_HEIGHT })
   }, [isHomePage, navigate])
 
-  // Handle hash scrolling after navigation
   useEffect(() => {
     if (isHomePage && location.hash) {
       const id = location.hash.slice(1)
       const el = document.getElementById(id)
       if (el) {
         setTimeout(() => {
-          const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT
-          window.scrollTo({ top, behavior: 'smooth' })
+          scrollTo(el, { offset: -NAVBAR_HEIGHT })
         }, 100)
       }
     }
@@ -108,7 +105,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          onClick={(e) => scrollTo(e, '#home')}
+          onClick={(e) => handleNavClick(e, '#home')}
           className="flex items-center"
         >
           <img src={logoSrc} alt="EntraGuard" className="h-8 sm:h-9 w-auto transition-all duration-300" />
@@ -122,7 +119,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => scrollTo(e, link.href)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`transition-colors duration-300 text-base font-semibold ${
                   showDark
                     ? isActive
@@ -142,7 +139,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <a
           href="#pricing"
-          onClick={(e) => scrollTo(e, '#pricing')}
+          onClick={(e) => handleNavClick(e, '#pricing')}
           className={`hidden md:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
             showDark
               ? 'bg-white text-blue-950 hover:bg-slate-200'
@@ -177,7 +174,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => scrollTo(e, link.href)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`transition-colors duration-300 text-base font-medium py-3 text-center border-b border-gray-100 ${
                   isActive
                     ? 'text-blue-600 font-semibold'
@@ -190,7 +187,7 @@ export default function Navbar() {
           })}
           <a
             href="#pricing"
-            onClick={(e) => scrollTo(e, '#pricing')}
+            onClick={(e) => handleNavClick(e, '#pricing')}
             className="bg-amber-400 hover:bg-amber-500 text-blue-950 text-base font-semibold rounded-full px-6 py-2.5 text-center transition-all duration-300"
           >
             Get Started

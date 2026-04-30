@@ -15,7 +15,7 @@ const features = [
   {
     icon: <HiIdentification className="text-2xl text-amber-500" />,
     title: 'RFID Smart Attendance',
-    description: 'Automated kiosk-based RFID scanning eliminates manual logging and ensures accurate, real-time student check-in and check-out.',
+    description: 'Automated RFID scanning eliminates manual logging and ensures accurate, real-time student check-in and check-out.',
   },
   {
     icon: <HiBell className="text-2xl text-amber-500" />,
@@ -30,7 +30,7 @@ const features = [
   {
     icon: <HiStatusOnline className="text-2xl text-amber-500" />,
     title: 'Seamless System Integration',
-    description: 'All modules — kiosk, teacher, parent, and admin — work together in one synchronized ecosystem.',
+    description: 'All modules — teacher, parent, and admin — work together in one synchronized ecosystem.',
   },
   {
     icon: <HiExclamation className="text-2xl text-amber-500" />,

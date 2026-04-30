@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react'
 import { HiArrowUp } from 'react-icons/hi'
+import { scrollTo } from '../lib/lenis'
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     function handleScroll() {
-      setIsVisible(window.scrollY > 400)
+      const scrolledPastTrigger = window.scrollY > 400
+      const distanceFromBottom =
+        document.documentElement.scrollHeight - window.scrollY - window.innerHeight
+      const nearFooter = distanceFromBottom < 120
+      setIsVisible(scrolledPastTrigger && !nearFooter)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollTo(0)
   }
 
   return (

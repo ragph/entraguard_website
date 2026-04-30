@@ -3,7 +3,6 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
 
 const features = [
-  'Smart RFID kiosk system',
   'Parent mobile app access',
   'Teacher management platform',
   'Admin dashboard & analytics',
@@ -34,7 +33,7 @@ export default function Pricing() {
             <div className="text-center mb-8">
               <p className="text-gray-500 text-base font-medium mb-2">Per Month Per Student</p>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600">&#8369;180</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600">&#8369;80</span>
                 <span className="text-gray-400 text-lg">.00</span>
               </div>
               <p className="text-gray-500 text-base mt-2">Billed monthly</p>

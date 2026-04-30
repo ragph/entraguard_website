@@ -54,16 +54,6 @@ function SystemRow({ system, index }) {
 
 const systems = [
   {
-    title: 'Smart RFID Kiosk System',
-    image: '/images/gate-system.png',
-    features: [
-      'Advanced RFID student scanning',
-      'Instant entry & exit logging',
-      'Automated attendance recording',
-      'Real-time data sync to school system',
-    ],
-  },
-  {
     title: 'School Administration Platform',
     image: '/images/school-system.png',
     features: [

@@ -5,7 +5,7 @@ const features = [
   {
     image: '/images/identity.png',
     title: 'Real-Time Entry Monitoring',
-    description: 'Advanced RFID-based kiosk scanning logs every student entry and exit instantly — giving schools accurate, automated attendance records.',
+    description: 'Advanced RFID scanning logs every student entry and exit instantly — giving schools accurate, automated attendance records.',
   },
   {
     image: '/images/quality-assurance.png',

@@ -3,6 +3,7 @@ import { HiDocumentText, HiUserCircle, HiShieldCheck, HiExclamationCircle, HiBan
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
+import { scrollTo } from '../lib/lenis'
 
 const sections = [
   { id: 'acceptance', label: 'Acceptance of Terms', icon: HiCheckCircle },
@@ -19,9 +20,8 @@ const sections = [
 export default function TermsOfService() {
   const [activeSection, setActiveSection] = useState('acceptance')
 
-  // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo(0, 0)
+    scrollTo(0, { immediate: true })
   }, [])
 
   useEffect(() => {
@@ -46,10 +46,7 @@ export default function TermsOfService() {
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id)
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 100
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    if (el) scrollTo(el, { offset: -100 })
   }
 
   return (
@@ -132,7 +129,7 @@ export default function TermsOfService() {
                     </p>
                     <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mt-4">
                       <p className="text-blue-800 text-sm">
-                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Schools, administrators, teachers, parents, and staff using our platform — including the RFID kiosk system, parent mobile app, teacher management system, and administration dashboard — are all subject to these Terms.
+                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Schools, administrators, teachers, parents, and staff using our platform — including the parent mobile app, teacher management system, and administration dashboard — are all subject to these Terms.
                       </p>
                     </div>
                   </div>
@@ -148,12 +145,6 @@ export default function TermsOfService() {
                       Entraguard provides a comprehensive smart school attendance and campus monitoring platform that includes:
                     </p>
                     <div className="grid gap-4">
-                      <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Smart RFID Kiosk System</h4>
-                        <p className="text-gray-600 text-sm">
-                          Automated RFID-based kiosk scanning for real-time student entry and exit logging with instant attendance recording.
-                        </p>
-                      </div>
                       <div className="bg-gray-50 rounded-xl p-5">
                         <h4 className="font-semibold text-gray-900 mb-2">School Administration Platform</h4>
                         <p className="text-gray-600 text-sm">
@@ -252,7 +243,7 @@ export default function TermsOfService() {
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Tampering with kiosk hardware, RFID scanners, or attendance records</span>
+                          <span>Tampering with RFID scanners or attendance records</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -305,7 +296,7 @@ export default function TermsOfService() {
                       We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including breach of these Terms.
                     </p>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      Upon termination, your right to use the Service — including the parent app, teacher system, admin dashboard, and RFID kiosk access — will immediately cease. If you wish to terminate your account, you may contact your school administrator or reach out to us directly.
+                      Upon termination, your right to use the Service — including the parent app, teacher system, and admin dashboard — will immediately cease. If you wish to terminate your account, you may contact your school administrator or reach out to us directly.
                     </p>
                     <div className="bg-gray-50 rounded-xl p-5 mt-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Post-Termination</h4>

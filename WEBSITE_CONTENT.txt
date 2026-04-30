@@ -141,18 +141,10 @@ Feature 6 - Unlimited Scalability:
 
 Section Title: "Complete System Overview"
 Section Subtitle:
-  "Four integrated modules working together to deliver comprehensive school
+  "Three integrated modules working together to deliver comprehensive school
    security."
 
-Module 1 - Gate / Access System:
-  Image: /images/gate-system.png
-  Features:
-    - Automated gate control
-    - QR code & ID scanning
-    - Real-time entry logging
-    - Visitor management portal
-
-Module 2 - School Administration:
+Module 1 - School Administration:
   Image: /images/school-system.png
   Features:
     - Centralized dashboard
@@ -160,7 +152,7 @@ Module 2 - School Administration:
     - Security alert management
     - Staff access control
 
-Module 3 - Parent Mobile App:
+Module 2 - Parent Mobile App:
   Image: /images/parent-system.png
   Features:
     - Real-time notifications
@@ -168,7 +160,7 @@ Module 3 - Parent Mobile App:
     - Emergency announcements
     - Digital authorization
 
-Module 4 - Classroom Management:
+Module 3 - Classroom Management:
   Image: /images/teacher-system.png
   Features:
     - Attendance automation
