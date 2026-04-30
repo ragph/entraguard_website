@@ -152,11 +152,11 @@ export default function PrivacyPolicy() {
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">RFID & Attendance Data</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Attendance Data</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
-                          <li>• RFID card identifiers linked to student profiles</li>
-                          <li>• Entry and exit timestamps recorded via RFID scanning</li>
-                          <li>• Subject-level attendance records from teacher systems</li>
+                          <li>• Subject-level attendance records entered by teachers</li>
+                          <li>• Attendance timestamps and class period details</li>
+                          <li>• Notifications sent to parents about classroom attendance</li>
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
@@ -182,8 +182,8 @@ export default function PrivacyPolicy() {
                     </p>
                     <div className="space-y-3">
                       {[
-                        'Record and manage student attendance via RFID scanning',
-                        'Send real-time notifications to parents about student entry, exit, and subject attendance',
+                        'Record and manage classroom attendance entered by teachers',
+                        'Send real-time notifications to parents when teachers mark subject attendance',
                         'Enable teachers to track classroom attendance and student performance per subject',
                         'Provide school administrators with centralized dashboards, analytics, and reporting tools',
                         'Deliver AI-powered attendance insights to help schools make data-driven decisions',
@@ -266,7 +266,7 @@ export default function PrivacyPolicy() {
                       We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy. Student records and attendance data are typically retained for the duration of enrollment plus any additional period required by law or school policy.
                     </p>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      RFID scan logs and attendance records may be retained for reporting and compliance purposes. Upon account termination or upon request, we will delete or anonymize personal data within 30 days, unless retention is required by law.
+                      Attendance records may be retained for reporting and compliance purposes. Upon account termination or upon request, we will delete or anonymize personal data within 30 days, unless retention is required by law.
                     </p>
                   </div>
                 </section>

@@ -68,7 +68,7 @@ const systems = [
     title: 'Parent Mobile App',
     image: '/images/parent-system.png',
     features: [
-      'Instant entry & exit notifications',
+      'Instant subject attendance notifications',
       'Subject-level attendance tracking',
       'School & classroom announcements',
       'Activity visibility & student logs',
@@ -92,7 +92,7 @@ export default function SystemOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
           title="Complete Entraguard Ecosystem"
-          subtitle="Four integrated platforms working together to create a smarter, more connected campus."
+          subtitle="Three integrated platforms working together to create a smarter, more connected campus."
           light
         />
 

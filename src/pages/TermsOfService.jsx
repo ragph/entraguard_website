@@ -154,7 +154,7 @@ export default function TermsOfService() {
                       <div className="bg-gray-50 rounded-xl p-5">
                         <h4 className="font-semibold text-gray-900 mb-2">Parent Mobile Application</h4>
                         <p className="text-gray-600 text-sm">
-                          Real-time notifications for student entry and exit, subject-level attendance tracking, school announcements, and activity visibility.
+                          Instant subject attendance notifications, subject-level tracking, school announcements, and activity visibility.
                         </p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
@@ -239,11 +239,11 @@ export default function TermsOfService() {
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Using another person's credentials or RFID card without authorization</span>
+                          <span>Using another person's credentials without authorization</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                          <span>Tampering with RFID scanners or attendance records</span>
+                          <span>Tampering with attendance records or system data</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <HiBan className="w-4 h-4 mt-0.5 flex-shrink-0" />

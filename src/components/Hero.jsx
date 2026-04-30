@@ -42,11 +42,11 @@ export default function Hero() {
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
             Smart Attendance,{' '}
-            <span className="text-amber-400">Confident Parents.,</span>{' '}
+            <span className="text-amber-400">Confident Parents,</span>{' '}
             Modern Campuses
           </h1>
           <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto md:mx-0">
-            Entraguard is a smart school attendance system that tracks student entry and exit in real time, sends instant notifications to parents, and gives administrators full visibility — all in one platform.
+            Entraguard is a smart school attendance platform that digitizes classroom tracking, delivers real-time parent notifications, and provides administrators with complete visibility — all in one secure, unified system.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-10">

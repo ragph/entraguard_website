@@ -10,7 +10,7 @@ import SectionHeading from './SectionHeading'
 const testimonials = [
   {
     quote:
-      'Now I know exactly when my child arrives at school. The instant notifications give me peace of mind every single day.',
+      'Now I know the moment my child shows up to class. The instant notifications give me peace of mind every single day.',
     name: 'Maria Santos',
     role: 'Parent',
   },
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      'I love being able to see not just entry and exit, but also subject attendance updates. It keeps me involved in my child\'s education.',
+      'I love seeing subject-level attendance updates throughout the day. It keeps me involved in my child\'s education.',
     name: 'James Reyes',
     role: 'Parent',
   },

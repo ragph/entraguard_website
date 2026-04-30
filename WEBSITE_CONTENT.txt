@@ -51,8 +51,8 @@ Headline:
   "Smart Attendance, Safer Campus, Happier Parents"
 
 Subheadline / Description:
-  "Entraguard is a smart school attendance system that tracks student entry and
-   exit in real time, sends instant notifications to parents, and gives
+  "Entraguard is a smart school attendance system that lets teachers record
+   classroom attendance digitally, instantly notifies parents, and gives
    administrators full visibility -- all in one platform."
 
 CTA Buttons:
@@ -102,20 +102,20 @@ Section Subtitle:
   "Built with cutting-edge technology and designed with schools in mind,
    Entraguard delivers unmatched security and peace of mind."
 
-Feature 1 - Advanced Identity:
+Feature 1 - Teacher-Led Attendance:
   Image: /images/identity.png
-  "Biometric and photo-based verification ensures only authorized individuals
-   enter school premises."
+  "Teachers record classroom attendance digitally per subject — every entry
+   is instantly synced across the platform for accurate, up-to-date records."
 
-Feature 2 - Secure Environment:
+Feature 2 - Parent Peace of Mind:
   Image: /images/quality-assurance.png
-  "Multi-layered security protocols create a safe environment for students,
-   staff, and visitors."
+  "Parents receive instant notifications when their child's attendance is
+   marked, along with subject-level updates and school announcements."
 
-Feature 3 - Entrance Management:
+Feature 3 - Smarter Attendance Management:
   Image: /images/opportunity.png
-  "Smart gates and access points with automated logging of every entry and
-   exit in real time."
+  "Teachers can easily track classroom attendance, student logs, and subject
+   performance within a streamlined, easy-to-use system."
 
 Feature 4 - Administrative Efficiency:
   Image: /images/data-monitoring.png
@@ -155,10 +155,10 @@ Module 1 - School Administration:
 Module 2 - Parent Mobile App:
   Image: /images/parent-system.png
   Features:
-    - Real-time notifications
-    - Student check-in/out alerts
-    - Emergency announcements
-    - Digital authorization
+    - Instant subject attendance notifications
+    - Subject-level attendance tracking
+    - School & classroom announcements
+    - Activity visibility & student logs
 
 Module 3 - Classroom Management:
   Image: /images/teacher-system.png
@@ -186,8 +186,8 @@ Feature 1 - ID & Photo Verification:
 
 Feature 2 - Real-Time Notifications:
   Icon: HiBell
-  "Instant push notifications to parents and staff for every entry, exit,
-   and security event."
+  "Instant push notifications to parents the moment a teacher marks subject
+   attendance — every class, every day."
 
 Feature 3 - Advanced Analytics:
   Icon: HiChartBar
@@ -247,8 +247,8 @@ Testimonial 2:
 Testimonial 3:
   Name: James Reyes
   Role: Parent
-  Quote: "As a parent of three, getting instant notifications when my kids
-   arrive at school is priceless. The app is so easy to use."
+  Quote: "I love seeing subject-level attendance updates throughout the day.
+   It keeps me involved in my child's education."
 
 Testimonial 4:
   Name: Dr. Ana Cruz
@@ -265,8 +265,8 @@ Testimonial 5:
 Testimonial 6:
   Name: Lisa Tan
   Role: Parent
-  Quote: "I love that I get a notification the moment my daughter enters
-   school. It gives our whole family peace of mind every morning."
+  Quote: "It feels good knowing I'm always updated about my daughter's
+   school day."
 
 
 ================================================================================
@@ -282,13 +282,13 @@ Price: PHP 180.00 per month per student
 Billing: Billed monthly
 
 Included Features:
-  - Full access to all security modules
-  - Real-time parent notifications
+  - Parent mobile app access
+  - Teacher management platform
   - Admin dashboard & analytics
-  - Unlimited gate integrations
-  - Emergency management tools
-  - Dedicated support team
-  - 99.9% uptime guarantee
+  - Real-time notifications
+  - AI attendance insights
+  - Unlimited classroom integrations
+  - Cloud hosting & maintenance
   - Free onboarding & training
 
 CTA Button: "Start Your Free Trial" (links to #contact)
@@ -356,10 +356,9 @@ Quick Links:
   - Contact
 
 Solutions:
-  - Gate Access System
-  - School Administration
+  - School Administration Platform
   - Parent Mobile App
-  - Classroom Management
+  - Teacher Management System
 
 Contact (repeated):
   Email: info@entraguard.online
@@ -432,19 +431,20 @@ Read Time: "5 min read"
     - Parent/guardian relationships and emergency contacts
     - Account credentials and authentication data
 
-  Biometric Data:
-    - Fingerprint templates for secure gate access
-    - Facial recognition data (if enabled by your school)
+  Attendance Data:
+    - Subject-level attendance records entered by teachers
+    - Attendance timestamps and class period details
+    - Notifications sent to parents about classroom attendance
 
-  Usage & Access Data:
-    - Entry and exit timestamps
+  Usage & Platform Data:
     - Device information and IP addresses
     - App usage patterns and preferences
+    - Dashboard activity and report generation logs
 
 --- How We Use Your Information ---
-  1. Verify identity and manage secure gate access
-  2. Send real-time notifications to parents about student arrivals
-     and departures
+  1. Record and manage classroom attendance entered by teachers
+  2. Send real-time notifications to parents when teachers mark subject
+     attendance
   3. Enable school administrators to manage student records and attendance
   4. Provide customer support and respond to inquiries
   5. Analyze usage patterns to improve system performance
@@ -484,10 +484,9 @@ Read Time: "5 min read"
    retained for the duration of enrollment plus any additional period
    required by law or school policy."
 
-  "Access logs and biometric data may be retained for security and
-   compliance purposes. Upon account termination or upon request, we will
-   delete or anonymize personal data within 30 days, unless retention is
-   required by law."
+  "Attendance records may be retained for reporting and compliance purposes.
+   Upon account termination or upon request, we will delete or anonymize
+   personal data within 30 days, unless retention is required by law."
 
 --- Your Rights ---
   Access: "Request a copy of the personal data we hold about you"
@@ -534,17 +533,18 @@ Read Time: "7 min read"
 --- Our Services ---
   "Entraguard provides a comprehensive school security platform that includes:"
 
-  Gate Access System:
-    "Biometric and card-based access control for secure entry and exit
-     management at school gates."
+  School Administration Platform:
+    "Centralized dashboard with campus-wide attendance monitoring, AI
+     analytics, announcement management, and performance reporting."
 
   Parent Mobile Application:
-    "Real-time notifications and monitoring tools for parents to track
-     their children's school attendance."
+    "Instant subject attendance notifications, subject-level tracking,
+     school announcements, and activity visibility."
 
-  Administrative Dashboard:
-    "Comprehensive management tools for school administrators to oversee
-     student records, attendance, and security."
+  Teacher Management System:
+    "Classroom attendance recording, per-subject student tracking,
+     attendance performance monitoring, and seamless integration with
+     the school system."
 
 --- User Accounts ---
   "When creating an account with us, you must provide accurate and complete

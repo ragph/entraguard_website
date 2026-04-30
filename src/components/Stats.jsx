@@ -2,8 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const stats = [
-  { end: 4, suffix: '', label: 'Integrated Platforms' },
-  { text: 'Real-Time', label: 'Entry & Attendance Updates' },
+  { end: 3, suffix: '', label: 'Integrated Platforms' },
+  { text: 'Real-Time', label: 'Subject Attendance Updates' },
   { text: 'Instant', label: 'Parent Notifications' },
   { text: 'Growing', label: 'Partner Schools Nationwide' },
 ]

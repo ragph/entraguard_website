@@ -14,13 +14,13 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     icon: <HiIdentification className="text-2xl text-amber-500" />,
-    title: 'RFID Smart Attendance',
-    description: 'Automated RFID scanning eliminates manual logging and ensures accurate, real-time student check-in and check-out.',
+    title: 'Digital Subject Attendance',
+    description: 'Teachers record attendance digitally for every subject — replacing paper logbooks with accurate, real-time records.',
   },
   {
     icon: <HiBell className="text-2xl text-amber-500" />,
     title: 'Instant Parent Notifications',
-    description: 'Parents receive immediate push notifications for every school arrival, dismissal, and subject attendance update.',
+    description: 'Parents receive push notifications the moment a teacher marks attendance — every subject, every day.',
   },
   {
     icon: <HiChartBar className="text-2xl text-amber-500" />,

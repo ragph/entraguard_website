@@ -4,33 +4,33 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     image: '/images/identity.png',
-    title: 'Real-Time Entry Monitoring',
-    description: 'Advanced RFID scanning logs every student entry and exit instantly — giving schools accurate, automated attendance records.',
+    title: 'Accurate, Real-Time Classroom Attendance',
+    description: 'Teachers record attendance per subject with instant synchronization across the system — eliminating manual errors and ensuring reliable, up-to-date student records at all times.',
   },
   {
     image: '/images/quality-assurance.png',
-    title: 'Parent Peace of Mind',
-    description: 'Parents receive instant notifications when their child enters or exits school, along with subject-level attendance updates and school announcements.',
+    title: 'Instant Parent Notifications & Visibility',
+    description: 'Parents receive real-time alerts when teachers mark attendance, along with subject-level updates and school announcements — improving transparency and trust.',
   },
   {
     image: '/images/opportunity.png',
-    title: 'Smarter Attendance Management',
-    description: 'Teachers can easily track classroom attendance, student logs, and subject performance within a streamlined, easy-to-use system.',
+    title: 'Streamlined Attendance & Student Tracking',
+    description: 'Easily monitor attendance logs, subject records, and student activity in one intuitive system designed to simplify daily operations for teachers and staff.',
   },
   {
     image: '/images/data-monitoring.png',
-    title: 'Centralized Admin Dashboard',
-    description: 'School administrators gain full visibility through a comprehensive dashboard with real-time monitoring and attendance analytics.',
+    title: 'Unified Administrative Control Center',
+    description: 'Administrators gain full visibility through a centralized dashboard with real-time monitoring, reporting tools, and system-wide attendance oversight.',
   },
   {
     image: '/images/computer-device.png',
-    title: 'Intelligent Analytics',
-    description: 'AI-powered insights help schools identify attendance patterns, improve engagement, and make data-driven decisions.',
+    title: 'Actionable Insights with Smart Analytics',
+    description: 'Identify trends, detect absentee patterns, and support data-driven decisions with built-in analytics designed to improve student engagement and performance.',
   },
   {
     image: '/images/growth.png',
-    title: 'Built to Scale',
-    description: 'From a single campus to an entire district, Entraguard grows with your institution — seamlessly and reliably.',
+    title: 'Scalable for Schools, Districts, and Beyond',
+    description: 'From single campuses to multi-school deployments, Entraguard is built to grow with your institution — delivering consistent performance, reliability, and flexibility.',
   },
 ]
 
