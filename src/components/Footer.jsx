@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaTiktok, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaFacebookF } from 'react-icons/fa'
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
@@ -15,12 +15,13 @@ const solutionLinks = [
   { label: 'Teacher Communication', href: '#features' },
 ]
 
-// TODO: replace each `href` with the real EntraGuard profile URL.
+// Add more entries here as the other social accounts go live.
 const socialLinks = [
-  { icon: <FaFacebookF />, label: 'Facebook', href: 'https://facebook.com/' },
-  { icon: <FaTiktok />, label: 'TikTok', href: 'https://tiktok.com/' },
-  { icon: <FaInstagram />, label: 'Instagram', href: 'https://instagram.com/' },
-  { icon: <FaYoutube />, label: 'YouTube', href: 'https://youtube.com/' },
+  {
+    icon: <FaFacebookF />,
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61589757824545',
+  },
 ]
 
 export default function Footer() {
