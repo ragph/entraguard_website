@@ -39,7 +39,7 @@ export default function WhyChoose() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/5 ${
+              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-gray-200/50 transition-all duration-300 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
