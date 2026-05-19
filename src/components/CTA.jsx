@@ -5,7 +5,7 @@ export default function CTA() {
 
   return (
     <section ref={ref} className="py-20">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-20">
         <div
           className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl p-6 sm:p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-2 overflow-hidden relative transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -39,6 +39,10 @@ export default function CTA() {
             <img
               src="/images/cta.png"
               alt="Student celebrating with EntraGuard"
+              width={1158}
+              height={1268}
+              loading="lazy"
+              decoding="async"
               className="w-full lg:w-[500px] h-auto -mb-10 sm:-mb-16"
             />
           </div>

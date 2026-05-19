@@ -52,7 +52,7 @@ export default function Stats() {
 
   return (
     <section ref={ref} className="py-16 md:py-24">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div
           className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl py-10 sm:py-16 md:py-20 px-4 sm:px-10 md:px-16 transition-all duration-700 relative overflow-hidden ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

@@ -24,6 +24,10 @@ function SystemRow({ system, index }) {
         <img
           src={system.image}
           alt={system.title}
+          width={774}
+          height={722}
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto object-contain"
         />
       </div>

@@ -9,7 +9,7 @@ export default function SectionHeading({ title, subtitle, light = false, classNa
   return (
     <div ref={ref} className={`mb-10 md:mb-16 px-2 ${className}`}>
       <h2
-        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight transition-all duration-700 ${
+        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight max-w-4xl mx-auto px-4 transition-all duration-700 ${
           light ? 'text-white' : 'text-blue-950'
         } ${subtitle ? 'mb-4 md:mb-5' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >

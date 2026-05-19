@@ -11,8 +11,14 @@ import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import { useDocumentMeta } from './hooks/useDocumentMeta'
 
 export default function App() {
+  useDocumentMeta(
+    'Entraguard - A Parent-Centered School Companion',
+    'Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.'
+  )
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />

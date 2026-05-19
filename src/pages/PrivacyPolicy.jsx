@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
 import { scrollTo } from '../lib/lenis'
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
 const sections = [
   { id: 'introduction', label: 'Introduction', icon: HiDocumentText },
@@ -18,6 +19,11 @@ const sections = [
 
 export default function PrivacyPolicy() {
   const [activeSection, setActiveSection] = useState('introduction')
+
+  useDocumentMeta(
+    'Privacy Policy — EntraGuard',
+    'How EntraGuard collects, uses, and protects your data — our privacy commitment to parents, students, and schools.'
+  )
 
   useEffect(() => {
     scrollTo(0, { immediate: true })
@@ -75,7 +81,7 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* Content */}
-      <div className="max-w-max mx-auto px-4 md:px-24 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-24 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar - Table of Contents */}
           <aside className="lg:w-80 flex-shrink-0">

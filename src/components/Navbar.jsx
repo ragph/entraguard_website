@@ -108,7 +108,15 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#home')}
           className="flex items-center"
         >
-          <img src={logoSrc} alt="EntraGuard" className="h-8 sm:h-9 w-auto transition-all duration-300" />
+          <img
+            src={logoSrc}
+            alt="EntraGuard"
+            width={2100}
+            height={426}
+            loading="eager"
+            decoding="async"
+            className="h-8 sm:h-9 w-auto transition-all duration-300"
+          />
         </a>
 
         {/* Desktop Links */}
@@ -156,6 +164,8 @@ export default function Navbar() {
             showDark ? 'text-white' : 'text-gray-700'
           }`}
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <HiX /> : <HiMenu />}
         </button>
@@ -163,8 +173,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
+        aria-hidden={!open}
+        inert={open ? undefined : true}
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >
         <div className="px-4 sm:px-6 pb-5 pt-2 flex flex-col gap-1">

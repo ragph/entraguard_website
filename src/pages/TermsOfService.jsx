@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
 import { scrollTo } from '../lib/lenis'
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
 const sections = [
   { id: 'acceptance', label: 'Acceptance of Terms', icon: HiCheckCircle },
@@ -19,6 +20,11 @@ const sections = [
 
 export default function TermsOfService() {
   const [activeSection, setActiveSection] = useState('acceptance')
+
+  useDocumentMeta(
+    'Terms of Service — EntraGuard',
+    'The terms governing your use of the EntraGuard parent-school companion platform.'
+  )
 
   useEffect(() => {
     scrollTo(0, { immediate: true })
@@ -76,7 +82,7 @@ export default function TermsOfService() {
       </div>
 
       {/* Content */}
-      <div className="max-w-max mx-auto px-4 md:px-24 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-24 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar - Table of Contents */}
           <aside className="lg:w-80 flex-shrink-0">

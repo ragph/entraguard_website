@@ -79,7 +79,7 @@ export default function Testimonials() {
 
   return (
     <section ref={ref} className="py-24 bg-amber-400">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="What Parents Are Saying"
           subtitle="Real peace of mind, from parents who always know how their child's school day is going."

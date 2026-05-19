@@ -94,7 +94,7 @@ export default function WhoWeAre() {
       ref={mergedRef}
       className="py-20"
     >
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading title="Who We Are" />
 
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
@@ -122,7 +122,11 @@ export default function WhoWeAre() {
               <img
                 src="/images/family.png"
                 alt="Parent receiving real-time school attendance notification"
-                className="w-72 sm:w-96 md:w-md h-auto"
+                width={1207}
+                height={1195}
+                loading="lazy"
+                decoding="async"
+                className="w-72 sm:w-96 md:w-[28rem] h-auto"
               />
               <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-emerald-400 rounded-full -z-10" />
               <div className="absolute -top-2 -left-4 w-16 h-16 bg-blue-500 rounded-full -z-10" />

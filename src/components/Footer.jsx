@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { FaFacebookF, FaTiktok, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
@@ -15,22 +15,31 @@ const solutionLinks = [
   { label: 'Teacher Communication', href: '#features' },
 ]
 
+// TODO: replace each `href` with the real EntraGuard profile URL.
 const socialLinks = [
-  { icon: <FaFacebookF />, label: 'Facebook' },
-  { icon: <FaTwitter />, label: 'Twitter' },
-  { icon: <FaInstagram />, label: 'Instagram' },
-  { icon: <FaLinkedinIn />, label: 'LinkedIn' },
+  { icon: <FaFacebookF />, label: 'Facebook', href: 'https://facebook.com/' },
+  { icon: <FaTiktok />, label: 'TikTok', href: 'https://tiktok.com/' },
+  { icon: <FaInstagram />, label: 'Instagram', href: 'https://instagram.com/' },
+  { icon: <FaYoutube />, label: 'YouTube', href: 'https://youtube.com/' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-gray-300 pt-16 pb-8">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2">
             <a href="#home" className="inline-block mb-4">
-              <img src="/images/logo-light.png" alt="EntraGuard" className="h-10 md:h-12 w-auto" />
+              <img
+                src="/images/logo-light.png"
+                alt="EntraGuard"
+                width={2100}
+                height={426}
+                loading="lazy"
+                decoding="async"
+                className="h-10 md:h-12 w-auto"
+              />
             </a>
             <p className="text-base leading-relaxed text-gray-400">
               Entraguard is a parent-first school companion that keeps you connected
@@ -95,7 +104,9 @@ export default function Footer() {
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-500 flex items-center justify-center text-white hover:text-white transition-all duration-300"
                 >
@@ -126,7 +137,15 @@ export default function Footer() {
           {/* Right - Powered By */}
           <a href="https://www.ragph.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <span className="text-sm text-gray-500">Powered by</span>
-            <img src="/images/rag.png" alt="RAG IT Solutions" className="h-7 w-auto" />
+            <img
+              src="/images/rag.png"
+              alt="RAG IT Solutions"
+              width={1153}
+              height={548}
+              loading="lazy"
+              decoding="async"
+              className="h-7 w-auto"
+            />
           </a>
         </div>
       </div>

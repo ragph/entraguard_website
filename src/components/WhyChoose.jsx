@@ -29,7 +29,7 @@ export default function WhyChoose() {
 
   return (
     <section ref={ref} className="py-20">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Built for Parents. Designed for Peace of Mind."
           subtitle="Entraguard keeps you connected to your child's daily progress — real-time attendance, grades, and direct communication with teachers, all in one app."
@@ -45,7 +45,15 @@ export default function WhyChoose() {
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >
               <div className="w-16 h-16 mx-auto mb-5">
-                <img src={feature.image} alt={feature.title} className="w-full h-full object-contain" />
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  width={512}
+                  height={512}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <h3 className="text-xl font-bold text-blue-950 mb-3">{feature.title}</h3>
               <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>

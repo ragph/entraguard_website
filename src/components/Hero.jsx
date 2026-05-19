@@ -30,7 +30,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-max relative mx-auto px-4 sm:px-6 md:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-0">
+      <div className="max-w-7xl relative mx-auto px-4 sm:px-6 md:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-0">
         {/* Left Content */}
         <div
           className={`flex-1 text-center md:text-left md:pt-32 md:pb-24 transition-all duration-700 ${
@@ -77,7 +77,12 @@ export default function Hero() {
         >
           <img
             src="/images/hero-img.png"
-            alt="Student protected by EntraGuard" 
+            alt="Student protected by EntraGuard"
+            width={1122}
+            height={1268}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full max-w-2xl h-auto mt-28"
           />
         </div>
@@ -91,6 +96,11 @@ export default function Hero() {
           <img
             src="/images/hero-img.png"
             alt="Student protected by EntraGuard"
+            width={1122}
+            height={1268}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-72 sm:w-80 h-auto drop-shadow-lg"
           />
         </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { submitForm } from '../lib/web3forms'
 import SectionHeading from './SectionHeading'
 
 const contactInfo = [
@@ -23,18 +24,31 @@ const contactInfo = [
 
 export default function Contact() {
   const [ref, isVisible] = useScrollAnimation(0.1)
-  const [submitted, setSubmitted] = useState(false)
+  // status: 'idle' | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState('idle')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    e.target.reset()
-    setTimeout(() => setSubmitted(false), 4000)
+    const form = e.target
+    setStatus('sending')
+
+    try {
+      const ok = await submitForm(new FormData(form))
+      if (ok) {
+        setStatus('success')
+        form.reset()
+        setTimeout(() => setStatus('idle'), 6000)
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
     <section id="contact" ref={ref} className="py-20">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Get In Touch"
           subtitle="Have questions about Entraguard? We'd love to hear from you. Send us a message and we'll get back to you as soon as possible."
@@ -131,16 +145,32 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Honeypot — bots fill this, humans can't see it */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
+
               <button
                 type="submit"
-                className="w-full md:w-auto bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-10 py-3.5 text-base transition-all duration-300 cursor-pointer"
+                disabled={status === 'sending'}
+                className="w-full md:w-auto bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-10 py-3.5 text-base transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
               </button>
 
-              {submitted && (
+              {status === 'success' && (
                 <p className="mt-4 text-green-600 font-medium text-sm animate-fade-in">
                   Thank you! Your message has been sent successfully.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="mt-4 text-red-600 font-medium text-sm animate-fade-in">
+                  Something went wrong. Please try again, or email us directly at info@entraguard.online.
                 </p>
               )}
             </form>

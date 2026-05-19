@@ -56,7 +56,7 @@ function FeatureBlock({ feature }) {
       </div>
       <div className="text-center">
         <h3 className="text-xl font-bold text-blue-950 mb-2">{feature.title}</h3>
-        <p className="text-gray-500 text-md leading-relaxed">{feature.description}</p>
+        <p className="text-gray-500 text-base leading-relaxed">{feature.description}</p>
       </div>
     </div>
   )
@@ -78,7 +78,7 @@ export default function Features() {
 
   return (
     <section id="features" ref={mergedRef} className="py-20">
-      <div className="max-w-max mx-auto px-4 sm:px-6 md:px-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
         <SectionHeading
           title="Everything You Need to Stay Connected to Your Child's School Life"
           subtitle="Real-time visibility into attendance, grades, and your child's daily progress."
@@ -127,13 +127,21 @@ export default function Features() {
 
             {/* Center shield (scales up) */}
             <div
-              className="shrink-0 w-60 h-w-60 flex items-center justify-center"
+              className="shrink-0 w-60 h-60 flex items-center justify-center"
               style={{
                 transform: `scale(${0.3 + eased * 0.7})`,
                 opacity: eased,
               }}
             >
-              <img src="/images/entraguard.png" alt="Entraguard" className="w-full h-full object-contain" />
+              <img
+                src="/images/entraguard.png"
+                alt="Entraguard"
+                width={878}
+                height={878}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* Right column (slides from right) */}
