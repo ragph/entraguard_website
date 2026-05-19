@@ -10,9 +10,9 @@ const quickLinks = [
 ]
 
 const solutionLinks = [
-  { label: 'School Administration Platform', href: '#system-overview' },
-  { label: 'Parent Mobile App', href: '#system-overview' },
-  { label: 'Teacher Management System', href: '#system-overview' },
+  { label: 'Real-Time Attendance', href: '#features' },
+  { label: 'Grades & Performance', href: '#features' },
+  { label: 'Teacher Communication', href: '#features' },
 ]
 
 const socialLinks = [
@@ -33,8 +33,8 @@ export default function Footer() {
               <img src="/images/logo-light.png" alt="EntraGuard" className="h-10 md:h-12 w-auto" />
             </a>
             <p className="text-base leading-relaxed text-gray-400">
-              Entraguard is a smart school security system designed to protect students,
-              empower parents, and streamline school administration.
+              Entraguard is a parent-first school companion that keeps you connected
+              to your child's attendance, grades, and school day — in real time.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Solutions</h4>
+            <h4 className="text-white font-semibold mb-4">What You Get</h4>
             <ul className="space-y-2">
               {solutionLinks.map((link) => (
                 <li key={link.label}>

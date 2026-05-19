@@ -124,10 +124,10 @@ export default function PrivacyPolicy() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed">
-                      Welcome to Entraguard. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our smart school attendance and campus monitoring platform.
+                      Welcome to Entraguard. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use Entraguard, our parent-centered school companion app for real-time attendance, grades, and school communication.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      By using Entraguard services — including our parent mobile app, teacher management system, and school administration platform — you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data.
+                      By using the Entraguard parent app and its related services, you agree to the collection and use of information in accordance with this policy. We encourage you to read this document carefully to understand our practices regarding your data and your child's information.
                     </p>
                   </div>
                 </section>
@@ -152,11 +152,12 @@ export default function PrivacyPolicy() {
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Attendance Data</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Attendance & Academic Data</h4>
                         <ul className="text-gray-600 space-y-1 text-sm">
                           <li>• Subject-level attendance records entered by teachers</li>
+                          <li>• Grades, performance reports, and evaluation insights</li>
                           <li>• Attendance timestamps and class period details</li>
-                          <li>• Notifications sent to parents about classroom attendance</li>
+                          <li>• Notifications and messages shared with parents</li>
                         </ul>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
@@ -182,11 +183,11 @@ export default function PrivacyPolicy() {
                     </p>
                     <div className="space-y-3">
                       {[
-                        'Record and manage classroom attendance entered by teachers',
-                        'Send real-time notifications to parents when teachers mark subject attendance',
-                        'Enable teachers to track classroom attendance and student performance per subject',
-                        'Provide school administrators with centralized dashboards, analytics, and reporting tools',
-                        'Deliver AI-powered attendance insights to help schools make data-driven decisions',
+                        'Deliver real-time classroom attendance notifications to parents',
+                        'Give parents access to grades, performance reports, and evaluation insights',
+                        'Enable direct communication between parents, teachers, and the school',
+                        "Let teachers record subject-level attendance and share grades with parents",
+                        "Provide performance insights that help parents understand their child's progress",
                         'Provide customer support and respond to inquiries',
                         'Comply with legal obligations and protect against fraud',
                       ].map((item, index) => (

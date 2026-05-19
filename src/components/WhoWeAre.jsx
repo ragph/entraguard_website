@@ -8,12 +8,12 @@ const leftCards = [
   {
     title: 'Our Mission',
     description:
-      'To modernize school attendance and campus monitoring by delivering real-time visibility for parents, teachers, and administrators — all in one intelligent platform.',
+      "To keep parents connected to their child's school day — delivering real-time attendance, grades, and updates the moment they happen, all in one secure app.",
   },
   {
     title: 'Our Vision',
     description:
-      'A future where every parent feels confident, every teacher stays organized, and every school operates with clarity — powered by smart, connected technology.',
+      "A future where every parent feels confident and informed about their child's education — never left guessing, never waiting until the end of the day.",
   },
 ]
 
@@ -21,12 +21,12 @@ const rightCards = [
   {
     title: 'Our Values',
     description:
-      'Clarity. Reliability. Trust. We believe schools thrive when parents are informed, teachers are empowered, and administrators have real-time insights.',
+      "Clarity. Reliability. Trust. We believe peace of mind comes from knowing — so we give parents an honest, real-time window into their child's school life.",
   },
   {
     title: 'Our Commitment',
     description:
-      'We are committed to continuously improving Entraguard — delivering fast, reliable, and intelligent tools that help schools focus on education while families stay informed every step of the day.',
+      "We are committed to continuously improving Entraguard — making it simpler, faster, and more dependable so parents stay close to their child's progress, wherever they are.",
   },
 ]
 

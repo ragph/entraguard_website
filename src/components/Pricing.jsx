@@ -3,14 +3,13 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
 
 const features = [
-  'Parent mobile app access',
-  'Teacher management platform',
-  'Admin dashboard & analytics',
-  'Real-time notifications',
-  'AI attendance insights',
-  'Unlimited classroom integrations',
-  'Cloud hosting & maintenance',
-  'Free onboarding & training',
+  'Real-time classroom attendance notifications',
+  'Full access to grades and performance reports',
+  'Direct communication with teachers and school',
+  'Subject-level attendance tracking (roll call visibility)',
+  'Performance insights and evaluation tracking',
+  'Secure parent mobile app access',
+  'Continuous updates and system improvements',
 ]
 
 export default function Pricing() {
@@ -20,8 +19,8 @@ export default function Pricing() {
     <section id="pricing" ref={ref} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Simple Pricing. Complete Campus Visibility."
-          subtitle="One platform. Full access. Built for modern schools."
+          title="Affordable Peace of Mind for Every Parent"
+          subtitle="Less than ₱1 per day to stay connected to your child's education."
         />
 
         <div className="flex justify-center">
@@ -33,7 +32,7 @@ export default function Pricing() {
             <div className="text-center mb-8">
               <p className="text-gray-500 text-base font-medium mb-2">Per Student / Year</p>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600">&#8369;80</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600">&#8369;99</span>
                 <span className="text-gray-400 text-lg">.00</span>
               </div>
               <p className="text-gray-500 text-base mt-2">Billed annually</p>
@@ -56,7 +55,7 @@ export default function Pricing() {
               href="#contact"
               className="block w-full bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full py-4 text-center transition-all duration-300"
             >
-              Request a Demo
+              Get Started for Your Child Today
             </a>
           </div>
         </div>

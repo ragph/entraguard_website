@@ -20,17 +20,17 @@ export default function CTA() {
           {/* Left */}
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Ready to Modernize Your School's Attendance System?
+              Stay Connected. Stay Informed. Stay Confident.
             </h2>
             <p className="text-blue-100 text-sm sm:text-base mb-6 md:mb-8 max-w-xl">
-              Join hundreds of schools and thousands of parents who trust Entraguard's
-              smart attendance system to track every student, notify every parent, and secure every campus — in real time.
+              Join parents who choose clarity and peace of mind — with real-time
+              updates on attendance, grades, and school activity, all in one app.
             </p>
             <a
               href="#pricing"
               className="inline-block bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold rounded-full px-8 py-3.5 transition-all duration-300"
             >
-              Get Started
+              Get Started for Your Child
             </a>
           </div>
 

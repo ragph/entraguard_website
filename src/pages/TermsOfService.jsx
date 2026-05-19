@@ -125,11 +125,11 @@ export default function TermsOfService() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Acceptance of Terms</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed">
-                      By accessing or using Entraguard's smart school attendance and campus monitoring platform ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+                      By accessing or using Entraguard, our parent-centered school companion app ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
                     </p>
                     <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mt-4">
                       <p className="text-blue-800 text-sm">
-                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Schools, administrators, teachers, parents, and staff using our platform — including the parent mobile app, teacher management system, and administration dashboard — are all subject to these Terms.
+                        <strong>Important:</strong> These Terms constitute a legally binding agreement between you and Entraguard. Parents, as well as the teachers, staff, and schools that support the Service, are all subject to these Terms.
                       </p>
                     </div>
                   </div>
@@ -142,25 +142,25 @@ export default function TermsOfService() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Services</h2>
                   <div className="prose prose-gray max-w-none">
                     <p className="text-gray-600 leading-relaxed mb-4">
-                      Entraguard provides a comprehensive smart school attendance and campus monitoring platform that includes:
+                      Entraguard provides a parent-centered school companion app that keeps parents connected to their child's school day, supported by tools for teachers and schools:
                     </p>
                     <div className="grid gap-4">
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">School Administration Platform</h4>
-                        <p className="text-gray-600 text-sm">
-                          Centralized dashboard for school administrators with campus-wide attendance monitoring, AI analytics, announcement management, and performance reporting.
-                        </p>
-                      </div>
-                      <div className="bg-gray-50 rounded-xl p-5">
                         <h4 className="font-semibold text-gray-900 mb-2">Parent Mobile Application</h4>
                         <p className="text-gray-600 text-sm">
-                          Instant subject attendance notifications, subject-level tracking, school announcements, and activity visibility.
+                          Real-time classroom attendance notifications, grades and performance reports, evaluation insights, school announcements, and direct communication with teachers.
                         </p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-5">
-                        <h4 className="font-semibold text-gray-900 mb-2">Teacher Management System</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">Teacher Tools</h4>
                         <p className="text-gray-600 text-sm">
-                          Classroom attendance recording, per-subject student tracking, attendance performance monitoring, and seamless integration with the school system.
+                          Allow teachers to record subject-level attendance, share grades and evaluations, and communicate updates that sync to parents in real time.
+                        </p>
+                      </div>
+                      <div className="bg-gray-50 rounded-xl p-5">
+                        <h4 className="font-semibold text-gray-900 mb-2">School Support</h4>
+                        <p className="text-gray-600 text-sm">
+                          Schools adopt and administer the Service so that attendance, grade records, and announcements delivered to parents are verified and official.
                         </p>
                       </div>
                     </div>
@@ -296,7 +296,7 @@ export default function TermsOfService() {
                       We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including breach of these Terms.
                     </p>
                     <p className="text-gray-600 leading-relaxed mt-4">
-                      Upon termination, your right to use the Service — including the parent app, teacher system, and admin dashboard — will immediately cease. If you wish to terminate your account, you may contact your school administrator or reach out to us directly.
+                      Upon termination, your right to use the Service — including the Entraguard parent app — will immediately cease. If you wish to terminate your account, you may contact your child's school or reach out to us directly.
                     </p>
                     <div className="bg-gray-50 rounded-xl p-5 mt-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Post-Termination</h4>

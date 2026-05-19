@@ -54,34 +54,33 @@ function SystemRow({ system, index }) {
 
 const systems = [
   {
-    title: 'School Administration Platform',
-    image: '/images/school-system.png',
-    features: [
-      'Centralized real-time dashboard',
-      'Campus-wide attendance monitoring',
-      'AI attendance analytics',
-      'Announcement management',
-      'Performance insights & reporting',
-    ],
-  },
-  {
-    title: 'Parent Mobile App',
+    title: 'Your Parent Mobile App',
     image: '/images/parent-system.png',
     features: [
-      'Instant subject attendance notifications',
-      'Subject-level attendance tracking',
-      'School & classroom announcements',
-      'Activity visibility & student logs',
+      'Real-time classroom attendance notifications',
+      'Grades & subject performance reports',
+      'Performance evaluation insights',
+      'School & teacher announcements',
+      'Direct communication with teachers',
     ],
   },
   {
-    title: 'Teacher Management System',
+    title: 'Backed by Your Child\'s Teachers',
     image: '/images/teacher-system.png',
     features: [
-      'Classroom attendance recording',
-      'Student attendance per subject',
-      'Attendance performance monitoring',
-      'Seamless integration with school system',
+      'Teachers mark classroom attendance per subject',
+      'Subject-level roll call you can see instantly',
+      'Grades and evaluations shared with parents',
+      'Updates synced to your app the moment they happen',
+    ],
+  },
+  {
+    title: 'Trusted by the School',
+    image: '/images/school-system.png',
+    features: [
+      'Verified, accurate attendance and grade records',
+      'Official school announcements delivered to parents',
+      'A secure, school-adopted platform you can rely on',
     ],
   },
 ]
@@ -91,8 +90,8 @@ export default function SystemOverview() {
     <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
-          title="Complete Entraguard Ecosystem"
-          subtitle="Three integrated platforms working together to create a smarter, more connected campus."
+          title="One App for Your Child's Whole School Day"
+          subtitle="Real-time attendance, grades, and communication — built around what every parent wants to know, and backed by teachers and the school."
           light
         />
 

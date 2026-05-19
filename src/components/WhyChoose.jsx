@@ -4,33 +4,23 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     image: '/images/identity.png',
-    title: 'Accurate, Real-Time Classroom Attendance',
-    description: 'Teachers record attendance per subject with instant synchronization across the system — eliminating manual errors and ensuring reliable, up-to-date student records at all times.',
-  },
-  {
-    image: '/images/quality-assurance.png',
-    title: 'Instant Parent Notifications & Visibility',
-    description: 'Parents receive real-time alerts when teachers mark attendance, along with subject-level updates and school announcements — improving transparency and trust.',
-  },
-  {
-    image: '/images/opportunity.png',
-    title: 'Streamlined Attendance & Student Tracking',
-    description: 'Easily monitor attendance logs, subject records, and student activity in one intuitive system designed to simplify daily operations for teachers and staff.',
-  },
-  {
-    image: '/images/data-monitoring.png',
-    title: 'Unified Administrative Control Center',
-    description: 'Administrators gain full visibility through a centralized dashboard with real-time monitoring, reporting tools, and system-wide attendance oversight.',
-  },
-  {
-    image: '/images/computer-device.png',
-    title: 'Actionable Insights with Smart Analytics',
-    description: 'Identify trends, detect absentee patterns, and support data-driven decisions with built-in analytics designed to improve student engagement and performance.',
+    title: 'Real-Time Classroom Visibility',
+    description: 'Know exactly when your child enters every class with instant roll call notifications — no more guessing if they made it to school.',
   },
   {
     image: '/images/growth.png',
-    title: 'Scalable for Schools, Districts, and Beyond',
-    description: 'From single campuses to multi-school deployments, Entraguard is built to grow with your institution — delivering consistent performance, reliability, and flexibility.',
+    title: 'Stay Updated on Academic Performance',
+    description: "Access grades, subject performance, and evaluation reports anytime — so you're always aware of your child's progress.",
+  },
+  {
+    image: '/images/opportunity.png',
+    title: 'Direct Communication with Teachers',
+    description: 'Receive announcements, updates, and communicate directly with teachers and the school — all in one place.',
+  },
+  {
+    image: '/images/quality-assurance.png',
+    title: 'Daily Peace of Mind',
+    description: "From attendance to performance, Entraguard keeps you connected to your child's school life — wherever you are.",
   },
 ]
 
@@ -41,11 +31,11 @@ export default function WhyChoose() {
     <section ref={ref} className="py-20">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Why Schools Choose Entraguard"
-          subtitle="Built for modern campuses, Entraguard connects parents, teachers, and administrators through real-time attendance visibility and intelligent monitoring."
+          title="Built for Parents. Designed for Peace of Mind."
+          subtitle="Entraguard keeps you connected to your child's daily progress — real-time attendance, grades, and direct communication with teachers, all in one app."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}

@@ -16,9 +16,9 @@ const testimonials = [
   },
   {
     quote:
-      'The dashboard gives us full visibility across our campus. Attendance monitoring has never been this clear and efficient.',
-    name: 'Principal Garcia',
-    role: 'School Administrator',
+      'I can see my son\'s grades and performance reports right on my phone. I no longer wait for report cards to know how he\'s doing.',
+    name: 'Grace Mendoza',
+    role: 'Parent',
   },
   {
     quote:
@@ -28,15 +28,15 @@ const testimonials = [
   },
   {
     quote:
-      'Entraguard modernized how we manage attendance. Everything is automated and organized.',
-    name: 'Dr. Ana Cruz',
-    role: 'Principal',
+      'Being able to message my daughter\'s teacher directly through the app makes me feel truly connected to her school.',
+    name: 'Dennis Aquino',
+    role: 'Parent',
   },
   {
     quote:
-      'Having centralized data across multiple schools allows us to make smarter, data-driven decisions.',
-    name: 'Mark Villanueva',
-    role: 'District Administrator',
+      'For less than a peso a day, I always know if my child made it to every class. It\'s the best peace of mind I\'ve had.',
+    name: 'Rowena Lim',
+    role: 'Parent',
   },
   {
     quote:
@@ -81,8 +81,8 @@ export default function Testimonials() {
     <section ref={ref} className="py-24 bg-amber-400">
       <div className="max-w-max mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="What Our Community Says"
-          subtitle="Entraguard connects families, classrooms, and campuses through real-time visibility."
+          title="What Parents Are Saying"
+          subtitle="Real peace of mind, from parents who always know how their child's school day is going."
           className="[&_h2]:text-blue-950 [&_p]:text-blue-950/70"
           dotColors={['bg-white', 'bg-white', 'bg-white']}
         />

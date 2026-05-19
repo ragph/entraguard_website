@@ -38,27 +38,30 @@ export default function Hero() {
           }`}
         >
           <span className="inline-block bg-emerald-400/20 text-emerald-400 text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
-            Smart School Attendance System
+            A Parent-First School Companion
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
-            Smart Attendance,{' '}
-            <span className="text-amber-400">Confident Parents,</span>{' '}
-            Modern Campuses
+            Know Your Child's School Day —{' '}
+            <span className="text-amber-400">Every Step, Every Class,</span>{' '}
+            In Real Time.
           </h1>
-          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-xl mx-auto md:mx-0">
-            Entraguard is a smart school attendance platform that digitizes classroom tracking, delivers real-time parent notifications, and provides administrators with complete visibility — all in one secure, unified system.
+          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-4 max-w-xl mx-auto md:mx-0">
+            Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.
+          </p>
+          <p className="text-amber-300 text-base sm:text-lg font-semibold mb-6 md:mb-8 max-w-xl mx-auto md:mx-0">
+            Because peace of mind shouldn't wait until the end of the day.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
             <a
               href="#pricing"
-              className="bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
+              className="flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
-              Get Started
+              Get Started for Your Child
             </a>
             <a
               href="#about"
-              className="border-2 border-white text-white hover:bg-white/10 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
+              className="flex items-center justify-center border-2 border-white text-white hover:bg-white/10 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
               Learn More
             </a>
