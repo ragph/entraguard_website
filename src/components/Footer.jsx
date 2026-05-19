@@ -26,13 +26,13 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-gray-300 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2">
             <a href="#home" className="inline-block mb-4">
               <img
-                src="/images/logo-light.png"
+                src="/images/logo-light.webp"
                 alt="EntraGuard"
                 width={2100}
                 height={426}

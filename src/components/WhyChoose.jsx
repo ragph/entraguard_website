@@ -3,22 +3,22 @@ import SectionHeading from './SectionHeading'
 
 const features = [
   {
-    image: '/images/identity.png',
+    image: '/images/identity.webp',
     title: 'Real-Time Classroom Visibility',
     description: 'Know exactly when your child enters every class with instant roll call notifications — no more guessing if they made it to school.',
   },
   {
-    image: '/images/growth.png',
+    image: '/images/growth.webp',
     title: 'Stay Updated on Academic Performance',
     description: "Access grades, subject performance, and evaluation reports anytime — so you're always aware of your child's progress.",
   },
   {
-    image: '/images/opportunity.png',
+    image: '/images/opportunity.webp',
     title: 'Direct Communication with Teachers',
     description: 'Receive announcements, updates, and communicate directly with teachers and the school — all in one place.',
   },
   {
-    image: '/images/quality-assurance.png',
+    image: '/images/quality-assurance.webp',
     title: 'Daily Peace of Mind',
     description: "From attendance to performance, Entraguard keeps you connected to your child's school life — wherever you are.",
   },
@@ -29,7 +29,7 @@ export default function WhyChoose() {
 
   return (
     <section ref={ref} className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Built for Parents. Designed for Peace of Mind."
           subtitle="Entraguard keeps you connected to your child's daily progress — real-time attendance, grades, and direct communication with teachers, all in one app."
@@ -39,7 +39,7 @@ export default function WhyChoose() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center transition-all duration-300 border border-gray-200/50 ${
+              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-950/5 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}

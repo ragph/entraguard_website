@@ -17,7 +17,7 @@ export default function Pricing() {
 
   return (
     <section id="pricing" ref={ref} className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Affordable Peace of Mind for Every Parent"
           subtitle="Less than ₱1 per day to stay connected to your child's education."

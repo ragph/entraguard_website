@@ -48,7 +48,7 @@ const testimonials = [
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-white h-full flex flex-col min-h-[280px] relative">
+    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm h-full flex flex-col min-h-[280px] relative">
       {/* Quote icon */}
       <FaQuoteLeft className="absolute top-4 right-4 text-4xl text-blue-100" />
 
@@ -79,7 +79,7 @@ export default function Testimonials() {
 
   return (
     <section ref={ref} className="py-24 bg-amber-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="What Parents Are Saying"
           subtitle="Real peace of mind, from parents who always know how their child's school day is going."

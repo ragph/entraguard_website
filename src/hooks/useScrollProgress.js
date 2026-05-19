@@ -26,12 +26,22 @@ export function useScrollProgress(travelPx = 300) {
       setProgress(Math.min(1, Math.max(0, raw)))
     }
 
+    let rafId = null
+    const onScroll = () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        update()
+        rafId = null
+      })
+    }
+
     update()
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update, { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
     return () => {
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [travelPx])
 

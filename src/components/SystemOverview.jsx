@@ -59,7 +59,7 @@ function SystemRow({ system, index }) {
 const systems = [
   {
     title: 'Your Parent Mobile App',
-    image: '/images/parent-system.png',
+    image: '/images/parent-system.webp',
     features: [
       'Real-time classroom attendance notifications',
       'Grades & subject performance reports',
@@ -70,7 +70,7 @@ const systems = [
   },
   {
     title: 'Backed by Your Child\'s Teachers',
-    image: '/images/teacher-system.png',
+    image: '/images/teacher-system.webp',
     features: [
       'Teachers mark classroom attendance per subject',
       'Subject-level roll call you can see instantly',
@@ -80,7 +80,7 @@ const systems = [
   },
   {
     title: 'Trusted by the School',
-    image: '/images/school-system.png',
+    image: '/images/school-system.webp',
     features: [
       'Verified, accurate attendance and grade records',
       'Official school announcements delivered to parents',
@@ -92,7 +92,7 @@ const systems = [
 export default function SystemOverview() {
   return (
     <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
           title="One App for Your Child's Whole School Day"
           subtitle="Real-time attendance, grades, and communication — built around what every parent wants to know, and backed by teachers and the school."

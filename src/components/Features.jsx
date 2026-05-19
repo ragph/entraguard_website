@@ -78,7 +78,7 @@ export default function Features() {
 
   return (
     <section id="features" ref={mergedRef} className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-0">
         <SectionHeading
           title="Everything You Need to Stay Connected to Your Child's School Life"
           subtitle="Real-time visibility into attendance, grades, and your child's daily progress."

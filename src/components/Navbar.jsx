@@ -93,7 +93,7 @@ export default function Navbar() {
   const atHero = !scrolled && isHomePage
   const mobileOpen = open
   const showDark = isHomePage && atHero && !mobileOpen
-  const logoSrc = showDark ? '/images/logo-light.png' : '/images/logo.png'
+  const logoSrc = showDark ? '/images/logo-light.webp' : '/images/logo.webp'
 
   return (
     <nav
@@ -128,6 +128,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
+                aria-current={isActive ? 'page' : undefined}
                 className={`transition-colors duration-300 text-base font-semibold ${
                   showDark
                     ? isActive
@@ -188,6 +189,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
+                aria-current={isActive ? 'page' : undefined}
                 className={`transition-colors duration-300 text-base font-medium py-3 text-center border-b border-gray-100 ${
                   isActive
                     ? 'text-blue-600 font-semibold'

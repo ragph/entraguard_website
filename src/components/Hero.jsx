@@ -6,13 +6,21 @@ export default function Hero() {
   const bgRef = useRef(null)
 
   useEffect(() => {
+    let rafId = null
     const onScroll = () => {
-      if (bgRef.current) {
-        bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`
-      }
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        if (bgRef.current) {
+          bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`
+        }
+        rafId = null
+      })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
@@ -30,14 +38,14 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl relative mx-auto px-4 sm:px-6 md:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-0">
+      <div className="max-w-[1720px] relative mx-auto px-4 sm:px-6 md:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-0">
         {/* Left Content */}
         <div
           className={`flex-1 text-center md:text-left md:pt-32 md:pb-24 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="inline-block bg-emerald-400/20 text-emerald-400 text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-emerald-400/20 text-emerald-200 text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
             A Parent-First School Companion
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
@@ -76,7 +84,7 @@ export default function Hero() {
           }`}
         >
           <img
-            src="/images/hero-img.png"
+            src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"
             width={1122}
             height={1268}
@@ -94,7 +102,7 @@ export default function Hero() {
           }`}
         >
           <img
-            src="/images/hero-img.png"
+            src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"
             width={1122}
             height={1268}

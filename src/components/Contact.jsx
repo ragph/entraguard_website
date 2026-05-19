@@ -48,7 +48,7 @@ export default function Contact() {
 
   return (
     <section id="contact" ref={ref} className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Get In Touch"
           subtitle="Have questions about Entraguard? We'd love to hear from you. Send us a message and we'll get back to you as soon as possible."
