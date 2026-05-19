@@ -27,7 +27,7 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative overflow-hidden pt-32 md:pt-4 md:pb-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
+      className="relative overflow-hidden min-h-screen flex flex-col pt-32 xl:pt-4 xl:pb-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
     >
       {/* Background underlay image */}
       <div
@@ -38,29 +38,29 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1720px] relative mx-auto px-4 sm:px-6 md:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-0">
+      <div className="max-w-[1720px] w-full relative mx-auto px-4 sm:px-6 md:px-12 xl:px-20 flex-1 flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-0">
         {/* Left Content */}
         <div
-          className={`flex-1 text-center md:text-left md:pt-32 md:pb-24 transition-all duration-700 ${
+          className={`flex-1 text-center xl:text-left xl:pt-32 xl:pb-24 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="inline-block bg-emerald-400/20 text-emerald-200 text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-emerald-500 text-white text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
             A Parent-First School Companion
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
             Know Your Child's School Day —{' '}
             <span className="text-amber-400">Every Step, Every Class,</span>{' '}
             In Real Time.
           </h1>
-          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-4 max-w-xl mx-auto md:mx-0">
+          <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-4 max-w-xl mx-auto xl:mx-0">
             Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.
           </p>
-          <p className="text-amber-300 text-base sm:text-lg font-semibold mb-6 md:mb-8 max-w-xl mx-auto md:mx-0">
+          <p className="font-script text-amber-300 text-base sm:text-lg md:text-xl leading-tight mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
             Because peace of mind shouldn't wait until the end of the day.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start mb-8">
             <a
               href="#pricing"
               className="flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
@@ -79,7 +79,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div
-          className={`flex-1 hidden md:flex justify-end items-end self-end transition-all duration-700 delay-200 ${
+          className={`flex-1 hidden xl:flex justify-end items-end self-end transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -97,7 +97,7 @@ export default function Hero() {
 
         {/* Mobile Image */}
         <div
-          className={`md:hidden flex justify-center transition-all duration-700 delay-200 ${
+          className={`xl:hidden flex justify-center transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -109,7 +109,7 @@ export default function Hero() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="w-72 sm:w-80 h-auto drop-shadow-lg"
+            className="w-72 sm:w-80 md:w-96 h-auto drop-shadow-lg"
           />
         </div>
       </div>

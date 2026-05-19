@@ -7,7 +7,7 @@ export default function CTA() {
     <section ref={ref} className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-20">
         <div
-          className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl p-6 sm:p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-2 overflow-hidden relative transition-all duration-700 ${
+          className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl p-6 sm:p-10 md:p-16 flex flex-col xl:flex-row items-center gap-8 xl:gap-2 overflow-hidden relative transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -18,11 +18,11 @@ export default function CTA() {
           <div className="absolute top-8 right-1/4 w-16 h-16 bg-emerald-400/10 rounded-full" />
 
           {/* Left */}
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <div className="flex-1 text-center xl:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
               Stay Connected. Stay Informed. Stay Confident.
             </h2>
-            <p className="text-blue-100 text-sm sm:text-base mb-6 md:mb-8 max-w-xl">
+            <p className="text-blue-100 text-sm sm:text-base mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
               Join parents who choose clarity and peace of mind — with real-time
               updates on attendance, grades, and school activity, all in one app.
             </p>
@@ -35,7 +35,7 @@ export default function CTA() {
           </div>
 
           {/* Right */}
-          <div className="md:block flex-shrink-0 self-end relative z-10">
+          <div className="flex-shrink-0 self-center xl:self-end relative z-10">
             <img
               src="/images/cta.webp"
               alt="Student celebrating with EntraGuard"
@@ -43,7 +43,7 @@ export default function CTA() {
               height={1268}
               loading="lazy"
               decoding="async"
-              className="w-full lg:w-[500px] h-auto -mb-10 sm:-mb-16"
+              className="w-64 sm:w-80 xl:w-[500px] h-auto -mb-10 sm:-mb-16"
             />
           </div>
         </div>

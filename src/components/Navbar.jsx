@@ -120,7 +120,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = isHomePage && activeSection === link.href.slice(1)
             return (
@@ -149,7 +149,7 @@ export default function Navbar() {
         <a
           href="#pricing"
           onClick={(e) => handleNavClick(e, '#pricing')}
-          className={`hidden md:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
+          className={`hidden lg:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
             showDark
               ? 'bg-white text-blue-950 hover:bg-slate-200'
               : 'bg-amber-400 hover:bg-amber-500 text-blue-950'
@@ -161,7 +161,7 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className={`md:hidden text-2xl bg-transparent border-none cursor-pointer transition-colors duration-300 ${
+          className={`lg:hidden text-2xl bg-transparent border-none cursor-pointer transition-colors duration-300 ${
             showDark ? 'text-white' : 'text-gray-700'
           }`}
           aria-label="Toggle menu"
@@ -177,7 +177,7 @@ export default function Navbar() {
         id="mobile-menu"
         aria-hidden={!open}
         inert={open ? undefined : true}
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
           open ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >

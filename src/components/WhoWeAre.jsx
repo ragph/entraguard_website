@@ -68,7 +68,9 @@ export default function WhoWeAre() {
   const [desktopRef, progress] = useScrollProgress(400)
   const [mobileRef, isVisible] = useScrollAnimation(0.15)
   const eased = easeOut(progress)
-  const mobile = useIsMobile()
+  // Below xl the section is stacked single-column, so use the simpler
+  // (non-scroll-driven) card/image treatment up to that width.
+  const mobile = useIsMobile(1280)
 
   // Merge both refs so both hooks always track the element
   const mergedRef = useCallback(
@@ -97,7 +99,7 @@ export default function WhoWeAre() {
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading title="Who We Are" />
 
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+        <div className="flex flex-col xl:flex-row items-center gap-6 xl:gap-10">
           {/* Left Cards */}
           <div className="flex-1 flex flex-col gap-5">
             {leftCards.map((card, index) => (
@@ -114,7 +116,7 @@ export default function WhoWeAre() {
           </div>
 
           {/* Center - Image */}
-          <div className="order-last md:order-0 shrink-0 flex justify-center">
+          <div className="shrink-0 flex justify-center">
             <div
               className={mobile ? imageMobileClass : 'relative'}
               style={mobile ? undefined : imageDesktopStyle}
@@ -126,7 +128,7 @@ export default function WhoWeAre() {
                 height={1195}
                 loading="lazy"
                 decoding="async"
-                className="w-72 sm:w-96 md:w-[28rem] h-auto"
+                className="w-72 sm:w-96 lg:w-[26rem] xl:w-[28rem] h-auto"
               />
               <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-emerald-400 rounded-full -z-10" />
               <div className="absolute -top-2 -left-4 w-16 h-16 bg-blue-500 rounded-full -z-10" />

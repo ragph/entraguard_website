@@ -85,7 +85,7 @@ export default function Features() {
         />
 
         {/* Mobile: stacked list */}
-        <div className="flex flex-col items-center gap-10 lg:hidden">
+        <div className="flex flex-col items-center gap-10 xl:hidden">
           {features.map((feature, index) => (
             <div
               key={feature.title}
@@ -100,7 +100,7 @@ export default function Features() {
         </div>
 
         {/* Desktop: radial hub layout with scroll-driven animation */}
-        <div className="hidden lg:flex flex-col items-center gap-10">
+        <div className="hidden xl:flex flex-col items-center gap-10">
           {/* Row 1 — Top feature (slides down) */}
           <div
             style={{
