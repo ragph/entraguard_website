@@ -99,6 +99,7 @@ export default function Testimonials() {
             breakpoints={{
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
+              1536: { slidesPerView: 4 },
             }}
             autoplay={{
               delay: 4000,

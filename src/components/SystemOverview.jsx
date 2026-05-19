@@ -99,7 +99,7 @@ export default function SystemOverview() {
           light
         />
 
-        <div className="flex flex-col gap-20 mt-12">
+        <div className="flex flex-col gap-20 mt-12 max-w-7xl mx-auto">
           {systems.map((system, index) => (
             <SystemRow key={system.title} system={system} index={index} />
           ))}
