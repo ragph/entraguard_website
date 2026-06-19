@@ -2,10 +2,10 @@ import { useCallback } from 'react'
 import {
   HiBell,
   HiChartBar,
-  HiTrendingUp,
   HiChat,
-  HiClipboardCheck,
-  HiShieldCheck,
+  HiDatabase,
+  HiDocumentReport,
+  HiLightBulb,
 } from 'react-icons/hi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useScrollProgress } from '../hooks/useScrollProgress'
@@ -14,33 +14,33 @@ import SectionHeading from './SectionHeading'
 const features = [
   {
     icon: <HiBell className="text-2xl text-amber-500" />,
-    title: 'Real-Time Attendance Notifications',
-    description: 'Get notified instantly when your child is marked present or absent in every class.',
+    title: 'Attendance Monitoring',
+    description: 'Know when attendance is recorded in every subject.',
   },
   {
     icon: <HiChartBar className="text-2xl text-amber-500" />,
-    title: 'Grades & Performance Tracking',
-    description: 'View grades, subject performance, and evaluation insights anytime.',
-  },
-  {
-    icon: <HiTrendingUp className="text-2xl text-amber-500" />,
-    title: 'Performance Evaluation Insights',
-    description: "Understand trends in your child's academic behavior and attendance patterns.",
+    title: 'Academic Progress Tracking',
+    description: 'Monitor grades, teacher remarks, and student performance throughout the school year.',
   },
   {
     icon: <HiChat className="text-2xl text-amber-500" />,
-    title: 'School & Teacher Communication',
-    description: 'Receive announcements and communicate directly with teachers and school staff.',
+    title: 'Parent-Teacher Communication',
+    description: 'Strengthen collaboration through announcements, updates, and messaging.',
   },
   {
-    icon: <HiClipboardCheck className="text-2xl text-amber-500" />,
-    title: 'Digital Roll Call Monitoring',
-    description: 'Transparent, subject-level attendance logs — no hidden gaps.',
+    icon: <HiDatabase className="text-2xl text-amber-500" />,
+    title: 'Student Records Management',
+    description: 'Maintain centralized attendance and academic records.',
   },
   {
-    icon: <HiShieldCheck className="text-2xl text-amber-500" />,
-    title: 'Secure & Reliable System',
-    description: "Your child's data is protected and always accessible — built with security and reliability in mind.",
+    icon: <HiDocumentReport className="text-2xl text-amber-500" />,
+    title: 'School Forms & Reports',
+    description: 'Generate attendance reports, academic reports, and school forms efficiently.',
+  },
+  {
+    icon: <HiLightBulb className="text-2xl text-amber-500" />,
+    title: 'Student Success Insights',
+    description: 'Identify attendance and academic concerns before they become larger problems.',
   },
 ]
 
@@ -80,8 +80,8 @@ export default function Features() {
     <section id="features" ref={mergedRef} className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-0">
         <SectionHeading
-          title="Everything You Need to Stay Connected to Your Child's School Life"
-          subtitle="Real-time visibility into attendance, grades, and your child's daily progress."
+          title="Key Features"
+          subtitle="Everything parents, teachers, and schools need to stay connected — from attendance and grades to communication, records, and reports."
         />
 
         {/* Mobile: stacked list */}

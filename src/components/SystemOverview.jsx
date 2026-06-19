@@ -58,33 +58,35 @@ function SystemRow({ system, index }) {
 
 const systems = [
   {
-    title: 'Your Parent Mobile App',
+    title: 'For Parents',
     image: '/images/parent-system.webp',
     features: [
-      'Real-time classroom attendance notifications',
-      'Grades & subject performance reports',
-      'Performance evaluation insights',
-      'School & teacher announcements',
-      'Direct communication with teachers',
+      'Attendance monitoring — notified whenever attendance is recorded',
+      'Academic progress tracking — grades, remarks & performance summaries',
+      'School announcements and advisories',
+      'Student records access anytime',
+      'Direct parent-teacher communication',
     ],
   },
   {
-    title: 'Backed by Your Child\'s Teachers',
+    title: 'For Teachers',
     image: '/images/teacher-system.webp',
     features: [
-      'Teachers mark classroom attendance per subject',
-      'Subject-level roll call you can see instantly',
-      'Grades and evaluations shared with parents',
-      'Updates synced to your app the moment they happen',
+      'Subject-based attendance recording',
+      'Academic record uploads & student profiles',
+      'DepEd-compliant school forms generation',
+      'Attendance reports & class management tools',
+      'Built-in parent communication tools',
     ],
   },
   {
-    title: 'Trusted by the School',
+    title: 'For Schools',
     image: '/images/school-system.webp',
     features: [
-      'Verified, accurate attendance and grade records',
-      'Official school announcements delivered to parents',
-      'A secure, school-adopted platform you can rely on',
+      'School-wide attendance monitoring',
+      'Academic performance & teacher compliance visibility',
+      'Centralized reporting and digital student records',
+      'Improved school-home communication',
     ],
   },
 ]
@@ -94,8 +96,8 @@ export default function SystemOverview() {
     <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
-          title="One App for Your Child's Whole School Day"
-          subtitle="Real-time attendance, grades, and communication — built around what every parent wants to know, and backed by teachers and the school."
+          title="One Platform Connecting Parents, Teachers, and Schools"
+          subtitle="EntraGuard serves as a digital companion throughout the student's educational journey — providing transparency, communication, attendance monitoring, and academic visibility, instead of paper notices, delayed reports, and fragmented communication."
           light
         />
 

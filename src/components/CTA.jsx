@@ -20,17 +20,18 @@ export default function CTA() {
           {/* Left */}
           <div className="flex-1 text-center xl:text-left">
             <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
-              Stay Connected. Stay Informed. Stay Confident.
+              Join Schools Building Stronger Parent Partnerships
             </h2>
             <p className="text-blue-100 text-sm sm:text-base mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
-              Join parents who choose clarity and peace of mind — with real-time
-              updates on attendance, grades, and school activity, all in one app.
+              Help parents stay informed, support teachers, and create a more
+              connected learning experience for every student. Request a demo and
+              discover how EntraGuard can transform school-home communication.
             </p>
             <a
-              href="#pricing"
+              href="#contact"
               className="inline-block bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold rounded-full px-8 py-3.5 transition-all duration-300"
             >
-              Get Started for Your Child
+              Request a Demo
             </a>
           </div>
 

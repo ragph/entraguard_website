@@ -1,26 +1,43 @@
+import { HiCheck } from 'react-icons/hi'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
 
-const features = [
+const pillars = [
   {
     image: '/images/identity.webp',
-    title: 'Real-Time Classroom Visibility',
-    description: 'Know exactly when your child enters every class with instant roll call notifications — no more guessing if they made it to school.',
+    title: 'Stay Connected to Every Class',
+    description:
+      "Receive attendance updates from every subject and stay informed about your child's participation throughout the school day.",
+    benefits: [
+      'Subject-based attendance updates',
+      'Real-time notifications',
+      'Attendance history tracking',
+      'Better student accountability',
+    ],
   },
   {
     image: '/images/growth.webp',
-    title: 'Stay Updated on Academic Performance',
-    description: "Access grades, subject performance, and evaluation reports anytime — so you're always aware of your child's progress.",
+    title: 'Follow Academic Progress Beyond Report Cards',
+    description:
+      'Monitor grades, teacher remarks, and academic standing throughout the school year instead of waiting until the end of the grading period.',
+    benefits: [
+      'View academic performance',
+      'Access teacher feedback',
+      'Monitor student progress',
+      'Identify concerns early',
+    ],
   },
   {
     image: '/images/opportunity.webp',
-    title: 'Direct Communication with Teachers',
-    description: 'Receive announcements, updates, and communicate directly with teachers and the school — all in one place.',
-  },
-  {
-    image: '/images/quality-assurance.webp',
-    title: 'Daily Peace of Mind',
-    description: "From attendance to performance, Entraguard keeps you connected to your child's school life — wherever you are.",
+    title: 'Stronger Parent-Teacher Collaboration',
+    description:
+      'Receive announcements, reminders, and important school updates directly through the platform.',
+    benefits: [
+      'Faster communication',
+      'School announcements',
+      'Activity reminders',
+      'Improved parent involvement',
+    ],
   },
 ]
 
@@ -31,23 +48,23 @@ export default function WhyChoose() {
     <section ref={ref} className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Built for Parents. Designed for Peace of Mind."
-          subtitle="Entraguard keeps you connected to your child's daily progress — real-time attendance, grades, and direct communication with teachers, all in one app."
+          title="Why Parents Love EntraGuard"
+          subtitle="When parents, teachers, and schools stay connected, students receive the support they need to thrive academically and personally."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
+          {pillars.map((pillar, index) => (
             <div
-              key={feature.title}
-              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-gray-200/50 transition-all duration-300 ${
+              key={pillar.title}
+              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >
-              <div className="w-16 h-16 mx-auto mb-5">
+              <div className="w-16 h-16 mb-5">
                 <img
-                  src={feature.image}
-                  alt={feature.title}
+                  src={pillar.image}
+                  alt={pillar.title}
                   width={512}
                   height={512}
                   loading="lazy"
@@ -55,8 +72,18 @@ export default function WhyChoose() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-blue-950 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-blue-950 mb-3">{pillar.title}</h3>
+              <p className="text-gray-600 text-base leading-relaxed mb-6">{pillar.description}</p>
+              <ul className="space-y-3 border-t border-gray-100 pt-6">
+                {pillar.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3 text-base text-gray-700">
+                    <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <HiCheck className="text-xs" />
+                    </span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

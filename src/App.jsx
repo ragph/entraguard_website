@@ -1,8 +1,11 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WhoWeAre from './components/WhoWeAre'
-import WhyChoose from './components/WhyChoose'
+import BuiltFor from './components/BuiltFor'
 import SystemOverview from './components/SystemOverview'
+import WhyChoose from './components/WhyChoose'
+import WhyTeachers from './components/WhyTeachers'
+import WhySchools from './components/WhySchools'
 import Features from './components/Features'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
@@ -14,8 +17,8 @@ import { useDocumentMeta } from './hooks/useDocumentMeta'
 
 export default function App() {
   useDocumentMeta(
-    'Entraguard - A Parent-Centered School Companion',
-    'Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.'
+    'EntraGuard — Connecting Parents, Teachers & Schools',
+    'EntraGuard is the school companion platform that connects parents, teachers, and schools through attendance, academic progress, classroom updates, and communication — all in one secure, easy-to-use platform.'
   )
 
   return (
@@ -23,8 +26,11 @@ export default function App() {
       <Navbar />
       <Hero />
       <WhoWeAre />
-      <WhyChoose />
+      <BuiltFor />
       <SystemOverview />
+      <WhyChoose />
+      <WhyTeachers />
+      <WhySchools />
       <Features />
       <Testimonials />
       <Pricing />

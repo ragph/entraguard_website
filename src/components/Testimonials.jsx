@@ -10,39 +10,27 @@ import SectionHeading from './SectionHeading'
 const testimonials = [
   {
     quote:
-      'Now I know the moment my child shows up to class. The instant notifications give me peace of mind every single day.',
+      'EntraGuard helps me stay informed about my child\'s attendance and school activities even when I\'m busy at work.',
     name: 'Maria Santos',
     role: 'Parent',
   },
   {
     quote:
-      'I can see my son\'s grades and performance reports right on my phone. I no longer wait for report cards to know how he\'s doing.',
+      'I no longer need to wait until report card day to understand how my child is doing in school.',
     name: 'Grace Mendoza',
     role: 'Parent',
   },
   {
     quote:
-      'I love seeing subject-level attendance updates throughout the day. It keeps me involved in my child\'s education.',
+      'The platform makes communication with parents easier and helps me monitor student attendance more efficiently.',
     name: 'James Reyes',
-    role: 'Parent',
+    role: 'Teacher',
   },
   {
     quote:
-      'Being able to message my daughter\'s teacher directly through the app makes me feel truly connected to her school.',
+      'EntraGuard gives us better visibility into attendance and helps strengthen our connection with parents.',
     name: 'Dennis Aquino',
-    role: 'Parent',
-  },
-  {
-    quote:
-      'For less than a peso a day, I always know if my child made it to every class. It\'s the best peace of mind I\'ve had.',
-    name: 'Rowena Lim',
-    role: 'Parent',
-  },
-  {
-    quote:
-      'It feels good knowing I\'m always updated about my daughter\'s school day.',
-    name: 'Lisa Tan',
-    role: 'Parent',
+    role: 'School Administrator',
   },
 ]
 
@@ -81,8 +69,8 @@ export default function Testimonials() {
     <section ref={ref} className="py-24 bg-amber-400">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="What Parents Are Saying"
-          subtitle="Real peace of mind, from parents who always know how their child's school day is going."
+          title="What Parents, Teachers, and Schools Are Saying"
+          subtitle="Real stories from the families, teachers, and school leaders staying connected through EntraGuard."
           className="[&_h2]:text-blue-950 [&_p]:text-blue-950/70"
           dotColors={['bg-white', 'bg-white', 'bg-white']}
         />

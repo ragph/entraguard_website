@@ -46,32 +46,31 @@ export default function Hero() {
           }`}
         >
           <span className="inline-block bg-emerald-500 text-white text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
-            A Parent-First School Companion
+            Connecting Parents, Teachers &amp; Schools
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
-            Know Your Child's School Day —{' '}
-            <span className="text-amber-400">Every Step, Every Class,</span>{' '}
-            In Real Time.
+            Stay Connected to Your Child's Education —{' '}
+            <span className="text-amber-400">Every Day, Every Subject, Every Milestone.</span>
           </h1>
           <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-4 max-w-xl mx-auto xl:mx-0">
-            Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.
+            EntraGuard is the school companion platform that connects parents, teachers, and schools through attendance, academic progress, classroom updates, and meaningful communication — all in one secure and easy-to-use platform.
           </p>
           <p className="font-script text-amber-300 text-base sm:text-lg md:text-xl leading-tight mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
-            Because peace of mind shouldn't wait until the end of the day.
+            Built for parents. Empowering teachers. Supporting schools.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start mb-8">
             <a
-              href="#pricing"
+              href="#contact"
               className="flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
-              Get Started for Your Child
+              Get Started
             </a>
             <a
-              href="#about"
+              href="#contact"
               className="flex items-center justify-center border-2 border-white text-white hover:bg-white/10 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
-              Learn More
+              Request a Demo
             </a>
           </div>
 
