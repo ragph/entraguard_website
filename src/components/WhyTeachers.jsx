@@ -48,40 +48,31 @@ export default function WhyTeachers() {
           dotColors={['bg-blue-600', 'bg-blue-600', 'bg-blue-600']}
         />
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
           {reasons.map((reason, index) => (
             <div
               key={reason.title}
-              className={`flex items-start gap-5 py-6 transition-all duration-700 ${
-                index < reasons.length - 1 ? 'border-b border-gray-100' : ''
-              } ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
+              className={`flex flex-col items-center text-center rounded-2xl bg-blue-50 p-6 transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 90}ms` : '0ms' }}
             >
-              <div className="w-12 h-12 shrink-0 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white">
                 {reason.icon}
               </div>
-              <div className="pt-0.5">
-                <h3 className="text-lg font-bold text-blue-950 mb-1">{reason.title}</h3>
-                <p className="text-gray-600 text-base leading-relaxed">{reason.description}</p>
-              </div>
+              <h3 className="mb-1.5 text-base font-bold text-blue-950">{reason.title}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{reason.description}</p>
             </div>
           ))}
-
-          {/* Closing accent cell to balance the 5-item odd grid */}
-          <div
-            className={`flex items-center py-6 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
-            }`}
-            style={{ transitionDelay: isVisible ? `${reasons.length * 90}ms` : '0ms' }}
-          >
-            <p className="text-blue-950 font-semibold text-lg leading-snug">
-              Built around the way teachers actually work —{' '}
-              <span className="text-blue-600">so the platform saves time instead of adding to the day.</span>
-            </p>
-          </div>
         </div>
+
+        {/* Closing subtitle */}
+        <p className="mx-auto mt-12 max-w-3xl text-center text-lg leading-relaxed text-gray-600">
+          Built around the way teachers actually work —{' '}
+          <span className="font-semibold text-blue-600">
+            so the platform saves time instead of adding to the day.
+          </span>
+        </p>
       </div>
     </section>
   )
