@@ -50,6 +50,7 @@ export default function WhyChoose() {
         <SectionHeading
           title="Why Parents Love EntraGuard"
           subtitle="When parents, teachers, and schools stay connected, students receive the support they need to thrive academically and personally."
+          dotColors={['bg-amber-400', 'bg-amber-400', 'bg-amber-400']}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">

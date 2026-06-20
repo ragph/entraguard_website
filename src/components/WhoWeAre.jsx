@@ -122,16 +122,14 @@ export default function WhoWeAre() {
               style={mobile ? undefined : imageDesktopStyle}
             >
               <img
-                src="/images/family.webp"
-                alt="Parent receiving real-time school attendance notification"
-                width={1207}
-                height={1195}
+                src="/images/family-shield.webp"
+                alt="A family protected and connected by EntraGuard"
+                width={1128}
+                height={1128}
                 loading="lazy"
                 decoding="async"
                 className="w-72 sm:w-96 lg:w-[26rem] xl:w-[28rem] h-auto"
               />
-              <div className="absolute -bottom-8 -right-4 w-24 h-24 bg-emerald-400 rounded-full -z-10" />
-              <div className="absolute -top-2 -left-4 w-16 h-16 bg-blue-500 rounded-full -z-10" />
             </div>
           </div>
 

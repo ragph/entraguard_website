@@ -22,6 +22,7 @@ export default function WhySchools() {
           title="Why Schools Choose EntraGuard"
           subtitle="School leaders need visibility into student attendance, academic progress, teacher compliance, and parent engagement. EntraGuard provides school-wide monitoring and reporting tools to support better decision-making."
           light
+          dotColors={['bg-emerald-400', 'bg-emerald-400', 'bg-emerald-400']}
         />
 
         <div
@@ -32,7 +33,7 @@ export default function WhySchools() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3 text-base md:text-lg text-blue-100">
-                <HiCheckCircle className="text-amber-400 mt-0.5 shrink-0 text-2xl" />
+                <HiCheckCircle className="text-emerald-400 mt-0.5 shrink-0 text-2xl" />
                 {benefit}
               </li>
             ))}
