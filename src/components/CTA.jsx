@@ -7,29 +7,23 @@ export default function CTA() {
     <section ref={ref} className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-20">
         <div
-          className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl p-6 sm:p-10 md:p-16 flex flex-col xl:flex-row items-center gap-8 xl:gap-2 overflow-hidden relative transition-all duration-700 ${
+          className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-[2.5rem] p-6 sm:p-10 md:p-16 flex flex-col xl:flex-row items-center gap-8 xl:gap-2 overflow-hidden relative transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Decorative circles */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full" />
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-amber-400/10 rounded-full" />
-          <div className="absolute -bottom-12 -right-12 w-56 h-56 bg-white/5 rounded-full" />
-          <div className="absolute top-8 right-1/4 w-16 h-16 bg-emerald-400/10 rounded-full" />
-
           {/* Left */}
           <div className="flex-1 text-center xl:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-5 md:mb-6 leading-tight">
               Join Schools Building Stronger Parent Partnerships
             </h2>
-            <p className="text-blue-100 text-sm sm:text-base mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
+            <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-8 md:mb-10 max-w-2xl mx-auto xl:mx-0 leading-relaxed">
               Help parents stay informed, support teachers, and create a more
               connected learning experience for every student. Request a demo and
               discover how EntraGuard can transform school-home communication.
             </p>
             <a
               href="#contact"
-              className="inline-block bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold rounded-full px-8 py-3.5 transition-all duration-300"
+              className="inline-block bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold text-base md:text-lg rounded-full px-9 py-4 transition-all duration-300"
             >
               Request a Demo
             </a>
