@@ -1,11 +1,9 @@
-import { useLayoutEffect, useRef } from 'react'
 import {
   HiClipboardCheck,
   HiTrendingUp,
   HiChatAlt2,
   HiCheck,
 } from 'react-icons/hi'
-import gsap from 'gsap'
 import { useReveal } from '../hooks/useReveal'
 
 const reasons = [
@@ -36,34 +34,6 @@ const FAMILY_IMG = '/images/parent-child.webp'
 
 export default function WhyChoose() {
   const gridRef = useReveal({ children: true })
-  const notifRef = useRef(null)
-  const gradeRef = useRef(null)
-
-  useLayoutEffect(() => {
-    // Gentle, continuous bob so the overlay cards read as a live app rather
-    // than a flat screenshot. Slightly different timing keeps them out of sync.
-    // matchMedia opts out for users who prefer reduced motion.
-    const mm = gsap.matchMedia()
-    mm.add('(prefers-reduced-motion: no-preference)', () => {
-      gsap.to(notifRef.current, {
-        y: -12,
-        duration: 3,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-      })
-      gsap.to(gradeRef.current, {
-        y: 10,
-        duration: 3.6,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-        delay: 0.4,
-      })
-    })
-
-    return () => mm.revert()
-  }, [])
 
   return (
     <section className="py-20 md:py-28">
@@ -108,7 +78,7 @@ export default function WhyChoose() {
             />
 
             {/* Floating attendance notification */}
-            <div ref={notifRef} className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+            <div className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
                 <HiClipboardCheck className="text-xl" />
               </div>
@@ -122,7 +92,7 @@ export default function WhyChoose() {
             </div>
 
             {/* Floating grade card */}
-            <div ref={gradeRef} className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+            <div className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
               <div className="flex items-end gap-1">
                 <span className="h-3 w-1.5 rounded-sm bg-blue-300" />
                 <span className="h-6 w-1.5 rounded-sm bg-blue-500" />
