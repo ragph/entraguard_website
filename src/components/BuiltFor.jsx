@@ -7,7 +7,7 @@ import {
 } from 'react-icons/hi'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -75,7 +75,7 @@ const rows = [
   },
 ]
 
-function AudienceRow({ row, index, isVisible }) {
+function AudienceRow({ row, index }) {
   // Even rows put the media on the left, odd on the right — so the Teachers
   // row (index 1) sits on the right, matching the source mockup.
   const mediaLeft = index % 2 === 0
@@ -118,13 +118,7 @@ function AudienceRow({ row, index, isVisible }) {
   }, [hasImage])
 
   return (
-    <div
-      ref={rowRef}
-      className={`relative transition-all duration-700 ${hasImage ? 'md:pt-20' : ''} ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: isVisible ? `${index * 120}ms` : '0ms' }}
-    >
+    <div ref={rowRef} className={`relative ${hasImage ? 'md:pt-20' : ''}`}>
       <div className={`relative rounded-3xl ${row.bg} overflow-hidden md:overflow-visible`}>
         <div className="grid grid-cols-1 md:grid-cols-2 items-stretch md:min-h-[460px]">
           {/* Text */}
@@ -173,19 +167,19 @@ function AudienceRow({ row, index, isVisible }) {
 }
 
 export default function BuiltFor() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const rowsRef = useReveal({ children: true })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Built for Parents. Empowering Teachers. Supporting Schools."
           subtitle="Three roles, one shared view of every learner's day — so everyone has the information they need to support student success."
         />
 
-        <div className="max-w-5xl mx-auto flex flex-col gap-8">
+        <div ref={rowsRef} className="max-w-5xl mx-auto flex flex-col gap-8">
           {rows.map((row, index) => (
-            <AudienceRow key={row.audience} row={row} index={index} isVisible={isVisible} />
+            <AudienceRow key={row.audience} row={row} index={index} />
           ))}
         </div>
       </div>

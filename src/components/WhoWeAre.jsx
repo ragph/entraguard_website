@@ -1,8 +1,9 @@
-import { useCallback } from 'react'
-import { useScrollProgress } from '../hooks/useScrollProgress'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-import { useIsMobile } from '../hooks/useIsMobile'
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeading from './SectionHeading'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const leftCards = [
   {
@@ -30,34 +31,9 @@ const rightCards = [
   },
 ]
 
-function easeOut(t) {
-  return 1 - Math.pow(1 - t, 3)
-}
-
-function InfoCard({ card, index, progress, slideFrom, isVisible, mobile }) {
-  if (mobile) {
-    return (
-      <div
-        className={`bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-        style={{ transitionDelay: `${index * 150}ms` }}
-      >
-        <h3 className="text-xl font-bold text-blue-950 mb-2">{card.title}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{card.description}</p>
-      </div>
-    )
-  }
-
-  const eased = easeOut(progress)
-  const offset = (1 - eased) * 200 * (1 + index * 0.4)
-  const tx = slideFrom === 'left' ? -offset : offset
-
+function InfoCard({ card }) {
   return (
-    <div
-      className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50"
-      style={{ transform: `translateX(${tx}px)`, opacity: eased }}
-    >
+    <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50">
       <h3 className="text-xl font-bold text-blue-950 mb-2">{card.title}</h3>
       <p className="text-gray-600 text-sm leading-relaxed">{card.description}</p>
     </div>
@@ -65,86 +41,77 @@ function InfoCard({ card, index, progress, slideFrom, isVisible, mobile }) {
 }
 
 export default function WhoWeAre() {
-  const [desktopRef, progress] = useScrollProgress(400)
-  const [mobileRef, isVisible] = useScrollAnimation(0.15)
-  const eased = easeOut(progress)
-  // Below xl the section is stacked single-column, so use the simpler
-  // (non-scroll-driven) card/image treatment up to that width.
-  const mobile = useIsMobile(1280)
+  const sectionRef = useRef(null)
+  const leftColRef = useRef(null)
+  const rightColRef = useRef(null)
+  const imageRef = useRef(null)
 
-  // Merge both refs so both hooks always track the element
-  const mergedRef = useCallback(
-    (node) => {
-      mobileRef.current = node
-      desktopRef.current = node
-    },
-    [mobileRef, desktopRef]
-  )
+  useLayoutEffect(() => {
+    const mm = gsap.matchMedia()
 
-  const imageDesktopStyle = {
-    transform: `scale(${0.2 + eased * 0.8})`,
-    opacity: eased,
-    transformOrigin: 'center center',
-  }
-  const imageMobileClass = `relative transition-all duration-700 ${
-    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-  }`
+    // Desktop: scroll-scrubbed — the columns slide in from the sides while the
+    // shield scales up, all tied to scroll position as the section enters.
+    mm.add('(min-width: 1280px) and (prefers-reduced-motion: no-preference)', () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            end: 'center center',
+            scrub: true,
+          },
+        })
+        .fromTo(imageRef.current, { scale: 0.4, opacity: 0.3 }, { scale: 1, opacity: 1, ease: 'none' }, 0)
+        .fromTo(leftColRef.current, { x: -120, opacity: 0 }, { x: 0, opacity: 1, ease: 'none' }, 0)
+        .fromTo(rightColRef.current, { x: 120, opacity: 0 }, { x: 0, opacity: 1, ease: 'none' }, 0)
+    })
+
+    // Mobile/tablet: a simple staggered fade-up reveal.
+    mm.add('(max-width: 1279px) and (prefers-reduced-motion: no-preference)', () => {
+      gsap.from([leftColRef.current, imageRef.current, rightColRef.current], {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.15,
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', once: true },
+      })
+    })
+
+    return () => mm.revert()
+  }, [])
 
   return (
-    <section
-      id="about"
-      ref={mergedRef}
-      className="py-20"
-    >
+    <section id="about" ref={sectionRef} className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading title="Who We Are" />
 
         <div className="flex flex-col xl:flex-row items-center gap-6 xl:gap-10">
           {/* Left Cards */}
-          <div className="flex-1 flex flex-col gap-5">
-            {leftCards.map((card, index) => (
-              <InfoCard
-                key={card.title}
-                card={card}
-                index={index}
-                progress={progress}
-                slideFrom="left"
-                isVisible={isVisible}
-                mobile={mobile}
-              />
+          <div ref={leftColRef} className="flex-1 flex flex-col gap-5">
+            {leftCards.map((card) => (
+              <InfoCard key={card.title} card={card} />
             ))}
           </div>
 
           {/* Center - Image */}
           <div className="shrink-0 flex justify-center">
-            <div
-              className={mobile ? imageMobileClass : 'relative'}
-              style={mobile ? undefined : imageDesktopStyle}
-            >
-              <img
-                src="/images/family-shield.webp"
-                alt="A family protected and connected by EntraGuard"
-                width={1128}
-                height={1128}
-                loading="lazy"
-                decoding="async"
-                className="w-72 sm:w-96 lg:w-[26rem] xl:w-[28rem] h-auto"
-              />
-            </div>
+            <img
+              ref={imageRef}
+              src="/images/family-shield.webp"
+              alt="A family protected and connected by EntraGuard"
+              width={1128}
+              height={1128}
+              loading="lazy"
+              decoding="async"
+              className="w-72 sm:w-96 lg:w-[26rem] xl:w-[28rem] h-auto"
+            />
           </div>
 
           {/* Right Cards */}
-          <div className="flex-1 flex flex-col gap-5">
-            {rightCards.map((card, index) => (
-              <InfoCard
-                key={card.title}
-                card={card}
-                index={index}
-                progress={progress}
-                slideFrom="right"
-                isVisible={isVisible}
-                mobile={mobile}
-              />
+          <div ref={rightColRef} className="flex-1 flex flex-col gap-5">
+            {rightCards.map((card) => (
+              <InfoCard key={card.title} card={card} />
             ))}
           </div>
         </div>

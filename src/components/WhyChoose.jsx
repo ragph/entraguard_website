@@ -6,7 +6,7 @@ import {
   HiCheck,
 } from 'react-icons/hi'
 import gsap from 'gsap'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 
 const reasons = [
   {
@@ -35,7 +35,7 @@ const reasons = [
 const FAMILY_IMG = '/images/parent-child.webp'
 
 export default function WhyChoose() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const gridRef = useReveal({ children: true })
   const notifRef = useRef(null)
   const gradeRef = useRef(null)
 
@@ -66,15 +66,11 @@ export default function WhyChoose() {
   }, [])
 
   return (
-    <section ref={ref} className="py-20 md:py-28">
+    <section className="py-20 md:py-28">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
           {/* Left — copy + reasons */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div>
             <h2 className="max-w-md text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.05] text-blue-950">
               Why parents love EntraGuard
             </h2>
@@ -102,11 +98,7 @@ export default function WhyChoose() {
           </div>
 
           {/* Right — image with floating UI accents */}
-          <div
-            className={`relative transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="relative">
             <img
               src={FAMILY_IMG}
               alt="Parents staying connected to their child's school day"

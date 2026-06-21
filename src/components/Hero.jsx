@@ -1,32 +1,54 @@
-import { useEffect, useRef } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Hero() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const sectionRef = useRef(null)
   const bgRef = useRef(null)
+  const contentRef = useRef(null)
+  const deskImgRef = useRef(null)
+  const mobImgRef = useRef(null)
 
-  useEffect(() => {
-    let rafId = null
-    const onScroll = () => {
-      if (rafId) return
-      rafId = requestAnimationFrame(() => {
-        if (bgRef.current) {
-          bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`
-        }
-        rafId = null
+  useLayoutEffect(() => {
+    const mm = gsap.matchMedia()
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      // Entrance — plays on load since the hero is above the fold.
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out',
       })
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      if (rafId) cancelAnimationFrame(rafId)
-    }
+      gsap.from([deskImgRef.current, mobImgRef.current], {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power3.out',
+      })
+
+      // Background parallax — scrubbed and Lenis-synced via ScrollTrigger.
+      gsap.to(bgRef.current, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+    })
+
+    return () => mm.revert()
   }, [])
 
   return (
     <section
       id="home"
-      ref={ref}
+      ref={sectionRef}
       className="relative overflow-hidden min-h-screen flex flex-col pt-32 xl:pt-4 xl:pb-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
     >
       {/* Background underlay image */}
@@ -40,11 +62,7 @@ export default function Hero() {
 
       <div className="max-w-[1720px] w-full relative mx-auto px-4 sm:px-6 md:px-12 xl:px-20 flex-1 flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-0">
         {/* Left Content */}
-        <div
-          className={`flex-1 text-center xl:text-left xl:pt-32 xl:pb-24 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={contentRef} className="flex-1 text-center xl:text-left xl:pt-32 xl:pb-24">
           <span className="inline-block bg-emerald-500 text-white text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
             Connecting Parents, Teachers &amp; Schools
           </span>
@@ -77,11 +95,7 @@ export default function Hero() {
         </div>
 
         {/* Right Image */}
-        <div
-          className={`flex-1 hidden xl:flex justify-end items-end self-end transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={deskImgRef} className="flex-1 hidden xl:flex justify-end items-end self-end">
           <img
             src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"
@@ -95,11 +109,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Image */}
-        <div
-          className={`xl:hidden flex justify-center transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={mobImgRef} className="xl:hidden flex justify-center">
           <img
             src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"

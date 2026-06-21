@@ -5,7 +5,7 @@ import {
   HiDatabase,
   HiEye,
 } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 const reasons = [
@@ -37,10 +37,10 @@ const reasons = [
 ]
 
 export default function WhyTeachers() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const gridRef = useReveal({ children: true })
 
   return (
-    <section id="teachers" ref={ref} className="py-20 md:py-28 bg-white">
+    <section id="teachers" className="py-20 md:py-28 bg-white">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Why Teachers Love EntraGuard"
@@ -48,14 +48,11 @@ export default function WhyTeachers() {
           dotColors={['bg-blue-600', 'bg-blue-600', 'bg-blue-600']}
         />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
-          {reasons.map((reason, index) => (
+        <div ref={gridRef} className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+          {reasons.map((reason) => (
             <div
               key={reason.title}
-              className={`flex flex-col items-center text-center rounded-2xl bg-blue-50 p-6 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: isVisible ? `${index * 90}ms` : '0ms' }}
+              className="flex flex-col items-center text-center rounded-2xl bg-blue-50 p-6"
             >
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white">
                 {reason.icon}

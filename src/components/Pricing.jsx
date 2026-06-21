@@ -1,5 +1,5 @@
 import { HiCheck } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 const features = [
@@ -13,10 +13,10 @@ const features = [
 ]
 
 export default function Pricing() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const ref = useReveal()
 
   return (
-    <section id="pricing" ref={ref} className="py-20">
+    <section id="pricing" className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Affordable School-Home Connection"
@@ -25,9 +25,8 @@ export default function Pricing() {
 
         <div className="flex justify-center">
           <div
-            className={`bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-10 md:p-14 max-w-lg w-full border border-gray-200/50 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            ref={ref}
+            className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-10 md:p-14 max-w-lg w-full border border-gray-200/50"
           >
             <div className="text-center mb-8">
               <img

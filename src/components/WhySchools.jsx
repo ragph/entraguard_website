@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 // Labels are placed on an arc around the circle. `angle` is in degrees
@@ -66,7 +66,7 @@ function FeatureLabel({ text, side, angle }) {
 }
 
 export default function WhySchools() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const ref = useReveal()
 
   return (
     <section
@@ -81,12 +81,7 @@ export default function WhySchools() {
           dotColors={['bg-emerald-400', 'bg-emerald-400', 'bg-emerald-400']}
         />
 
-        <div
-          ref={ref}
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={ref}>
           {/* Desktop — radial constellation */}
           <div className="relative mx-auto mt-4 hidden h-[600px] max-w-6xl lg:block">
             {/* radial backdrop: concentric rings + solid emerald circle */}

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, FreeMode } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/free-mode'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 const testimonials = [
@@ -63,10 +63,10 @@ function TestimonialCard({ testimonial }) {
 }
 
 export default function Testimonials() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const ref = useReveal()
 
   return (
-    <section ref={ref} className="py-24 bg-amber-400">
+    <section className="py-24 bg-amber-400">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="What Parents, Teachers, and Schools Are Saying"
@@ -75,11 +75,7 @@ export default function Testimonials() {
           dotColors={['bg-white', 'bg-white', 'bg-white']}
         />
 
-        <div
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={ref}>
           <Swiper
             modules={[Autoplay, FreeMode]}
             spaceBetween={24}

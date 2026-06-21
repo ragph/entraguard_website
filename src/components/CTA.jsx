@@ -1,15 +1,14 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 
 export default function CTA() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const ref = useReveal()
 
   return (
-    <section ref={ref} className="py-20">
+    <section className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-20">
         <div
-          className={`bg-gradient-to-br from-blue-600 to-blue-900 rounded-[2.5rem] p-6 sm:p-10 md:p-16 flex flex-col xl:flex-row items-center gap-8 xl:gap-2 overflow-hidden relative transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          ref={ref}
+          className="bg-gradient-to-br from-blue-600 to-blue-900 rounded-[2.5rem] p-6 sm:p-10 md:p-16 flex flex-col xl:flex-row items-center gap-8 xl:gap-2 overflow-hidden relative"
         >
           {/* Left */}
           <div className="flex-1 text-center xl:text-left">
