@@ -1,32 +1,54 @@
-import { useEffect, useRef } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Hero() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const sectionRef = useRef(null)
   const bgRef = useRef(null)
+  const contentRef = useRef(null)
+  const deskImgRef = useRef(null)
+  const mobImgRef = useRef(null)
 
-  useEffect(() => {
-    let rafId = null
-    const onScroll = () => {
-      if (rafId) return
-      rafId = requestAnimationFrame(() => {
-        if (bgRef.current) {
-          bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`
-        }
-        rafId = null
+  useLayoutEffect(() => {
+    const mm = gsap.matchMedia()
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      // Entrance — plays on load since the hero is above the fold.
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out',
       })
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      if (rafId) cancelAnimationFrame(rafId)
-    }
+      gsap.from([deskImgRef.current, mobImgRef.current], {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power3.out',
+      })
+
+      // Background parallax — scrubbed and Lenis-synced via ScrollTrigger.
+      gsap.to(bgRef.current, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+    })
+
+    return () => mm.revert()
   }, [])
 
   return (
     <section
       id="home"
-      ref={ref}
+      ref={sectionRef}
       className="relative overflow-hidden min-h-screen flex flex-col pt-32 xl:pt-4 xl:pb-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-500"
     >
       {/* Background underlay image */}
@@ -40,49 +62,40 @@ export default function Hero() {
 
       <div className="max-w-[1720px] w-full relative mx-auto px-4 sm:px-6 md:px-12 xl:px-20 flex-1 flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-0">
         {/* Left Content */}
-        <div
-          className={`flex-1 text-center xl:text-left xl:pt-32 xl:pb-24 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={contentRef} className="flex-1 text-center xl:text-left xl:pt-32 xl:pb-24">
           <span className="inline-block bg-emerald-500 text-white text-sm font-extrabold px-4 py-1.5 rounded-full mb-6">
-            A Parent-First School Companion
+            Connecting Parents, Teachers &amp; Schools
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6">
-            Know Your Child's School Day —{' '}
-            <span className="text-amber-400">Every Step, Every Class,</span>{' '}
-            In Real Time.
+            Stay Connected to Your Child's Education —{' '}
+            <span className="text-amber-400">Every Day, Every Subject, Every Milestone.</span>
           </h1>
           <p className="text-blue-100 text-base sm:text-lg md:text-xl mb-4 max-w-xl mx-auto xl:mx-0">
-            Entraguard is a parent-first school companion that gives you real-time classroom attendance, grade visibility, performance insights, and direct communication with teachers — all in one secure app.
+            EntraGuard is the school companion platform that connects parents, teachers, and schools through attendance, academic progress, classroom updates, and meaningful communication — all in one secure and easy-to-use platform.
           </p>
           <p className="font-script text-amber-300 text-base sm:text-lg md:text-xl leading-tight mb-6 md:mb-8 max-w-xl mx-auto xl:mx-0">
-            Because peace of mind shouldn't wait until the end of the day.
+            Built for parents. Empowering teachers. Supporting schools.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start mb-8">
             <a
-              href="#pricing"
+              href="#contact"
               className="flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
-              Get Started for Your Child
+              Get Started
             </a>
             <a
-              href="#about"
+              href="#contact"
               className="flex items-center justify-center border-2 border-white text-white hover:bg-white/10 font-semibold rounded-full px-8 py-3.5 text-center transition-all duration-300"
             >
-              Learn More
+              Request a Demo
             </a>
           </div>
 
         </div>
 
         {/* Right Image */}
-        <div
-          className={`flex-1 hidden xl:flex justify-end items-end self-end transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={deskImgRef} className="flex-1 hidden xl:flex justify-end items-end self-end">
           <img
             src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"
@@ -96,11 +109,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Image */}
-        <div
-          className={`xl:hidden flex justify-center transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div ref={mobImgRef} className="xl:hidden flex justify-center">
           <img
             src="/images/hero-img.webp"
             alt="Student protected by EntraGuard"

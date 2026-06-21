@@ -1,26 +1,70 @@
+import { useLayoutEffect, useRef } from 'react'
 import { HiCheckCircle } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeading from './SectionHeading'
 
+gsap.registerPlugin(ScrollTrigger)
+
 function SystemRow({ system, index }) {
-  const [ref, isVisible] = useScrollAnimation(0.15)
+  const rowRef = useRef(null)
+  const imageRef = useRef(null)
+  const contentRef = useRef(null)
   const isEven = index % 2 === 1
+
+  useLayoutEffect(() => {
+    // Only animate on tablet/desktop (the md+ side-by-side layout). On the
+    // stacked mobile layout the slide-ins and parallax fight the small
+    // viewport, so leave content in its natural, visible state there.
+    // matchMedia also opts out of reduced-motion automatically.
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+      // Scroll-reveal: image and copy slide in from opposite sides, once.
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        xPercent: isEven ? 12 : -12,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: rowRef.current, start: 'top 80%', once: true },
+      })
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        xPercent: isEven ? -10 : 10,
+        duration: 1,
+        ease: 'power3.out',
+        delay: 0.12,
+        scrollTrigger: { trigger: rowRef.current, start: 'top 80%', once: true },
+      })
+
+      // Scrubbed parallax: the mockup drifts as the row passes through the
+      // viewport, tying its motion directly to scroll position.
+      gsap.fromTo(
+        imageRef.current,
+        { yPercent: 8 },
+        {
+          yPercent: -8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rowRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      )
+    })
+
+    return () => mm.revert()
+  }, [isEven])
 
   return (
     <div
-      ref={ref}
+      ref={rowRef}
       className={`flex flex-col md:flex-row items-center gap-10 ${isEven ? 'md:flex-row-reverse' : ''}`}
     >
       {/* System mockup image */}
-      <div
-        className={`w-full md:w-5/12 shrink-0 transition-all duration-700 ease-out ${
-          isVisible
-            ? 'opacity-100 translate-x-0'
-            : isEven
-            ? 'opacity-0 translate-x-16'
-            : 'opacity-0 -translate-x-16'
-        }`}
-      >
+      <div ref={imageRef} className="w-full md:w-5/12 shrink-0">
         <img
           src={system.image}
           alt={system.title}
@@ -28,20 +72,13 @@ function SystemRow({ system, index }) {
           height={722}
           loading="lazy"
           decoding="async"
+          onLoad={() => ScrollTrigger.refresh()}
           className="w-full h-auto object-contain"
         />
       </div>
 
       {/* Content */}
-      <div
-        className={`w-full md:w-7/12 transition-all duration-700 ease-out delay-150 ${
-          isVisible
-            ? 'opacity-100 translate-x-0'
-            : isEven
-            ? 'opacity-0 -translate-x-16'
-            : 'opacity-0 translate-x-16'
-        }`}
-      >
+      <div ref={contentRef} className="w-full md:w-7/12">
         <h3 className="text-2xl md:text-4xl font-bold text-white mb-5">{system.title}</h3>
         <ul className="space-y-1">
           {system.features.map((feature) => (
@@ -58,33 +95,35 @@ function SystemRow({ system, index }) {
 
 const systems = [
   {
-    title: 'Your Parent Mobile App',
+    title: 'For Parents',
     image: '/images/parent-system.webp',
     features: [
-      'Real-time classroom attendance notifications',
-      'Grades & subject performance reports',
-      'Performance evaluation insights',
-      'School & teacher announcements',
-      'Direct communication with teachers',
+      'Attendance monitoring — notified whenever attendance is recorded',
+      'Academic progress tracking — grades, remarks & performance summaries',
+      'School announcements and advisories',
+      'Student records access anytime',
+      'Direct parent-teacher communication',
     ],
   },
   {
-    title: 'Backed by Your Child\'s Teachers',
+    title: 'For Teachers',
     image: '/images/teacher-system.webp',
     features: [
-      'Teachers mark classroom attendance per subject',
-      'Subject-level roll call you can see instantly',
-      'Grades and evaluations shared with parents',
-      'Updates synced to your app the moment they happen',
+      'Subject-based attendance recording',
+      'Academic record uploads & student profiles',
+      'DepEd-compliant school forms generation',
+      'Attendance reports & class management tools',
+      'Built-in parent communication tools',
     ],
   },
   {
-    title: 'Trusted by the School',
+    title: 'For Schools',
     image: '/images/school-system.webp',
     features: [
-      'Verified, accurate attendance and grade records',
-      'Official school announcements delivered to parents',
-      'A secure, school-adopted platform you can rely on',
+      'School-wide attendance monitoring',
+      'Academic performance & teacher compliance visibility',
+      'Centralized reporting and digital student records',
+      'Improved school-home communication',
     ],
   },
 ]
@@ -94,8 +133,8 @@ export default function SystemOverview() {
     <section id="system-overview" className="py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
-          title="One App for Your Child's Whole School Day"
-          subtitle="Real-time attendance, grades, and communication — built around what every parent wants to know, and backed by teachers and the school."
+          title="One Platform Connecting Parents, Teachers, and Schools"
+          subtitle="EntraGuard serves as a digital companion throughout the student's educational journey — providing transparency, communication, attendance monitoring, and academic visibility, instead of paper notices, delayed reports, and fragmented communication."
           light
         />
 

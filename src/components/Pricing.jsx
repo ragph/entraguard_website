@@ -1,41 +1,46 @@
 import { HiCheck } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
 
 const features = [
-  'Real-time classroom attendance notifications',
-  'Full access to grades and performance reports',
-  'Direct communication with teachers and school',
-  'Subject-level attendance tracking (roll call visibility)',
-  'Performance insights and evaluation tracking',
+  'Real-time, subject-based attendance updates',
+  'Grades, remarks & academic progress tracking',
+  'Parent-teacher communication & school announcements',
+  'Centralized digital student records',
+  'DepEd-compliant school forms & reports',
   'Secure parent mobile app access',
   'Continuous updates and system improvements',
 ]
 
 export default function Pricing() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const ref = useReveal()
 
   return (
-    <section id="pricing" ref={ref} className="py-20">
+    <section id="pricing" className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
-          title="Affordable Peace of Mind for Every Parent"
-          subtitle="Less than ₱1 per day to stay connected to your child's education."
+          title="Affordable School-Home Connection"
+          subtitle="For less than ₱1 per day, stay connected to your child's attendance, academic progress, and school life."
         />
 
         <div className="flex justify-center">
           <div
-            className={`bg-white/70 backdrop-blur-sm rounded-2xl hover:scale-105 p-6 sm:p-10 md:p-14 max-w-lg w-full border border-gray-200/50 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            ref={ref}
+            className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-10 md:p-14 max-w-lg w-full border border-gray-200/50"
           >
             <div className="text-center mb-8">
-              <p className="text-gray-500 text-base font-medium mb-2">Per Student / Year</p>
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-600">&#8369;99</span>
-                <span className="text-gray-400 text-lg">.00</span>
-              </div>
-              <p className="text-gray-500 text-base mt-2">Billed annually</p>
+              <img
+                src="/images/entraguard.png"
+                alt="EntraGuard"
+                width={878}
+                height={878}
+                loading="lazy"
+                decoding="async"
+                className="mx-auto mb-6 h-32 w-32 object-contain"
+              />
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                EntraGuard provides parents, teachers, and schools with the tools they need to support student success through better communication and visibility.
+              </p>
             </div>
 
             <div className="border-t border-gray-100 pt-8 mb-8">
@@ -55,7 +60,7 @@ export default function Pricing() {
               href="#contact"
               className="block w-full bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full py-4 text-center transition-all duration-300"
             >
-              Get Started for Your Child Today
+              Request a Demo
             </a>
           </div>
         </div>

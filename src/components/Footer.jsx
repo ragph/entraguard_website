@@ -4,15 +4,15 @@ import { FaFacebookF } from 'react-icons/fa'
 const quickLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
-  { label: 'Features', href: '#features' },
+  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ]
 
 const solutionLinks = [
-  { label: 'Real-Time Attendance', href: '#features' },
-  { label: 'Grades & Performance', href: '#features' },
-  { label: 'Teacher Communication', href: '#features' },
+  { label: 'For Parents', href: '#system-overview' },
+  { label: 'For Teachers', href: '#teachers' },
+  { label: 'For Schools', href: '#schools' },
 ]
 
 // Add more entries here as the other social accounts go live.
@@ -43,8 +43,8 @@ export default function Footer() {
               />
             </a>
             <p className="text-base leading-relaxed text-gray-400">
-              Entraguard is a parent-first school companion that keeps you connected
-              to your child's attendance, grades, and school day — in real time.
+              EntraGuard is the digital companion platform that connects parents,
+              teachers, and schools to support student success every day.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold mb-4">What You Get</h4>
+            <h4 className="text-white font-semibold mb-4">Who It's For</h4>
             <ul className="space-y-2">
               {solutionLinks.map((link) => (
                 <li key={link.label}>

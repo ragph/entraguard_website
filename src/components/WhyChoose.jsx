@@ -1,64 +1,109 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-import SectionHeading from './SectionHeading'
+import {
+  HiClipboardCheck,
+  HiTrendingUp,
+  HiChatAlt2,
+  HiCheck,
+} from 'react-icons/hi'
+import { useReveal } from '../hooks/useReveal'
 
-const features = [
+const reasons = [
   {
-    image: '/images/identity.webp',
-    title: 'Real-Time Classroom Visibility',
-    description: 'Know exactly when your child enters every class with instant roll call notifications — no more guessing if they made it to school.',
+    icon: <HiClipboardCheck className="text-xl" />,
+    chip: 'bg-blue-600',
+    title: 'Stay Connected to Every Class',
+    description:
+      "Receive attendance updates from every subject and stay informed about your child's participation throughout the school day.",
   },
   {
-    image: '/images/growth.webp',
-    title: 'Stay Updated on Academic Performance',
-    description: "Access grades, subject performance, and evaluation reports anytime — so you're always aware of your child's progress.",
+    icon: <HiTrendingUp className="text-xl" />,
+    chip: 'bg-emerald-500',
+    title: 'Follow Academic Progress Beyond Report Cards',
+    description:
+      'Monitor grades, teacher remarks, and academic standing throughout the school year instead of waiting until the end of the grading period.',
   },
   {
-    image: '/images/opportunity.webp',
-    title: 'Direct Communication with Teachers',
-    description: 'Receive announcements, updates, and communicate directly with teachers and the school — all in one place.',
-  },
-  {
-    image: '/images/quality-assurance.webp',
-    title: 'Daily Peace of Mind',
-    description: "From attendance to performance, Entraguard keeps you connected to your child's school life — wherever you are.",
+    icon: <HiChatAlt2 className="text-xl" />,
+    chip: 'bg-amber-500',
+    title: 'Stronger Parent-Teacher Collaboration',
+    description:
+      'Receive announcements, reminders, and important school updates directly through the platform.',
   },
 ]
 
+const FAMILY_IMG = '/images/parent-child.webp'
+
 export default function WhyChoose() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const gridRef = useReveal({ children: true })
 
   return (
-    <section ref={ref} className="py-20">
+    <section className="py-20 md:py-28">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
-        <SectionHeading
-          title="Built for Parents. Designed for Peace of Mind."
-          subtitle="Entraguard keeps you connected to your child's daily progress — real-time attendance, grades, and direct communication with teachers, all in one app."
-        />
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
+          {/* Left — copy + reasons */}
+          <div>
+            <h2 className="max-w-md text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.05] text-blue-950">
+              Why parents love EntraGuard
+            </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className={`bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-gray-200/50 transition-all duration-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
-            >
-              <div className="w-16 h-16 mx-auto mb-5">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  width={512}
-                  height={512}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-blue-950 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>
+            <p className="mt-6 max-w-lg text-base md:text-lg leading-relaxed text-gray-600">
+              When parents, teachers, and schools stay connected, students receive the support they
+              need to thrive academically and personally.
+            </p>
+
+            <div className="mt-10 space-y-7">
+              {reasons.map((reason) => (
+                <div key={reason.title} className="flex items-start gap-4">
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${reason.chip}`}>
+                    {reason.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-blue-950">{reason.title}</h3>
+                    <p className="mt-1 text-base leading-relaxed text-gray-600">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Right — image with floating UI accents */}
+          <div className="relative">
+            <img
+              src={FAMILY_IMG}
+              alt="Parents staying connected to their child's school day"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/5] w-full rounded-[2rem] object-cover ring-1 ring-blue-100"
+            />
+
+            {/* Floating attendance notification */}
+            <div className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+                <HiClipboardCheck className="text-xl" />
+              </div>
+              <div className="pr-1">
+                <p className="text-sm font-bold leading-tight text-blue-950">Attendance recorded</p>
+                <p className="text-xs leading-tight text-gray-500">Math · Present</p>
+              </div>
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <HiCheck className="text-base" />
+              </div>
+            </div>
+
+            {/* Floating grade card */}
+            <div className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+              <div className="flex items-end gap-1">
+                <span className="h-3 w-1.5 rounded-sm bg-blue-300" />
+                <span className="h-6 w-1.5 rounded-sm bg-blue-500" />
+                <span className="h-4 w-1.5 rounded-sm bg-amber-400" />
+              </div>
+              <div>
+                <p className="text-sm font-bold leading-tight text-blue-950">English</p>
+                <p className="text-xs leading-tight text-gray-500">87.7 · Very Good</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

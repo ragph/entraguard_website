@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useReveal } from '../hooks/useReveal'
 import { submitForm } from '../lib/web3forms'
 import SectionHeading from './SectionHeading'
 
@@ -23,7 +23,8 @@ const contactInfo = [
 ]
 
 export default function Contact() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
+  const infoRef = useReveal({ children: true })
+  const formRef = useReveal({ delay: 0.15 })
   // status: 'idle' | 'sending' | 'success' | 'error'
   const [status, setStatus] = useState('idle')
 
@@ -47,7 +48,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={ref} className="py-20">
+    <section id="contact" className="py-20">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
         <SectionHeading
           title="Get In Touch"
@@ -56,16 +57,11 @@ export default function Contact() {
 
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
           {/* Contact Info */}
-          <div
-            className={`lg:w-2/5 flex flex-col gap-4 sm:gap-6 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            {contactInfo.map((item, index) => (
+          <div ref={infoRef} className="lg:w-2/5 flex flex-col gap-4 sm:gap-6">
+            {contactInfo.map((item) => (
               <div
                 key={item.label}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 flex items-start gap-4 transition-all duration-500"
-                style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
+                className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 flex items-start gap-4"
               >
                 <div className="w-11 h-11 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                   {item.icon}
@@ -79,11 +75,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div
-            className={`lg:w-3/5 transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div ref={formRef} className="lg:w-3/5">
             <form
               onSubmit={handleSubmit}
               className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-5 sm:p-8 md:p-10"
