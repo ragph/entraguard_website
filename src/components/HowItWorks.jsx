@@ -93,8 +93,8 @@ export default function HowItWorks() {
                     {index + 1}
                   </span>
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-blue-950">{step.title}</h3>
-                <p className="max-w-xs text-base leading-relaxed text-gray-500">{step.description}</p>
+                <h3 className="mb-2 text-base sm:text-lg font-bold text-blue-950">{step.title}</h3>
+                <p className="max-w-xs text-sm sm:text-base leading-relaxed text-gray-500">{step.description}</p>
               </li>
             ))}
           </ol>

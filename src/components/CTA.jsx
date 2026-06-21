@@ -22,7 +22,7 @@ export default function CTA() {
             </p>
             <a
               href="#contact"
-              className="inline-block bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold text-base md:text-lg rounded-full px-9 py-4 transition-all duration-300"
+              className="block w-full sm:inline-block sm:w-auto bg-amber-400 text-blue-950 hover:bg-amber-500 font-semibold rounded-full px-9 py-2.5 text-sm sm:py-3.5 sm:text-base md:text-lg text-center transition-all duration-300"
             >
               Request a Demo
             </a>

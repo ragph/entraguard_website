@@ -8,6 +8,8 @@ import SmoothScroll from './components/SmoothScroll.jsx'
 
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'))
 const TermsOfService = lazy(() => import('./pages/TermsOfService.jsx'))
+const WhyChooseUs = lazy(() => import('./pages/WhyChooseUs.jsx'))
+const FAQ = lazy(() => import('./pages/FAQ.jsx'))
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +18,8 @@ createRoot(document.getElementById('root')).render(
         <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/why-choose-us" element={<WhyChooseUs />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
