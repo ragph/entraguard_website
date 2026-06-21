@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { HiCheck } from 'react-icons/hi'
 import { useReveal } from '../hooks/useReveal'
 import SectionHeading from './SectionHeading'
@@ -14,6 +15,9 @@ const features = [
 
 export default function Pricing() {
   const ref = useReveal()
+  // Bumping this changes the <img> key, remounting it so the SVG's CSS
+  // entrance/draw animations replay on click — from cache, no re-fetch.
+  const [logoPlay, setLogoPlay] = useState(0)
 
   return (
     <section id="pricing" className="py-20">
@@ -29,16 +33,24 @@ export default function Pricing() {
             className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-10 md:p-14 max-w-lg w-full border border-gray-200/50"
           >
             <div className="text-center mb-8">
-              <img
-                src="/images/entraguard.png"
-                alt="EntraGuard"
-                width={878}
-                height={878}
-                loading="lazy"
-                decoding="async"
-                className="mx-auto mb-6 h-32 w-32 object-contain"
-              />
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+              <button
+                type="button"
+                onClick={() => setLogoPlay((n) => n + 1)}
+                aria-label="Replay EntraGuard logo animation"
+                className="mx-auto mb-6 block h-32 w-32 cursor-pointer border-0 bg-transparent p-0"
+              >
+                <img
+                  key={logoPlay}
+                  src="/images/logo-animated.svg"
+                  alt="EntraGuard"
+                  width={360}
+                  height={360}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-32 w-32 object-contain"
+                />
+              </button>
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
                 EntraGuard provides parents, teachers, and schools with the tools they need to support student success through better communication and visibility.
               </p>
             </div>
@@ -46,7 +58,7 @@ export default function Pricing() {
             <div className="border-t border-gray-100 pt-8 mb-8">
               <ul className="space-y-4">
                 {features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-base text-gray-700">
+                  <li key={feature} className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
                     <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                       <HiCheck className="text-xs" />
                     </span>
@@ -58,7 +70,7 @@ export default function Pricing() {
 
             <a
               href="#contact"
-              className="block w-full bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full py-4 text-center transition-all duration-300"
+              className="block w-full bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full py-2.5 text-sm sm:py-3.5 sm:text-base text-center transition-all duration-300"
             >
               Request a Demo
             </a>

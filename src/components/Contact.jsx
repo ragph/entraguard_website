@@ -63,12 +63,12 @@ export default function Contact() {
                 key={item.label}
                 className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-6 flex items-start gap-4"
               >
-                <div className="w-11 h-11 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-500 mb-1">{item.label}</p>
-                  <p className="text-base font-medium text-gray-900">{item.value}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-500 mb-1">{item.label}</p>
+                  <p className="text-sm sm:text-base font-medium text-gray-900">{item.value}</p>
                 </div>
               </div>
             ))}
@@ -150,7 +150,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full md:w-auto bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-10 py-3.5 text-base transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-blue-950 font-semibold rounded-full px-10 py-2.5 text-sm sm:py-3.5 sm:text-base transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === 'sending' ? 'Sending…' : 'Send Message'}
               </button>

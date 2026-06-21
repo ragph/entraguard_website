@@ -82,7 +82,7 @@ function SystemRow({ system, index }) {
         <h3 className="text-2xl md:text-4xl font-bold text-white mb-5">{system.title}</h3>
         <ul className="space-y-1">
           {system.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2 bg-white/0 py-4 rounded-2xl text-base md:text-xl text-blue-100">
+            <li key={feature} className="flex items-start gap-2 bg-white/0 py-4 rounded-2xl text-sm sm:text-base md:text-xl text-blue-100">
               <HiCheckCircle className="text-amber-400 mt-0.5 shrink-0 text-2xl" />
               {feature}
             </li>

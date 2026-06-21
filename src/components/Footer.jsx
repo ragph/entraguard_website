@@ -1,18 +1,22 @@
 import { Link } from 'react-router-dom'
 import { FaFacebookF } from 'react-icons/fa'
 
+// All entries use a router `to` so they work from any page — hash entries point
+// at the homepage (e.g. '/#contact'), which useHashScroll() resolves on arrival.
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', to: '/#home' },
+  { label: 'About Us', to: '/#about' },
+  { label: 'How It Works', to: '/#how-it-works' },
+  { label: 'Why Choose Us', to: '/why-choose-us' },
+  { label: 'Pricing', to: '/#pricing' },
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Contact', to: '/#contact' },
 ]
 
 const solutionLinks = [
-  { label: 'For Parents', href: '#system-overview' },
-  { label: 'For Teachers', href: '#teachers' },
-  { label: 'For Schools', href: '#schools' },
+  { label: 'For Parents', to: '/why-choose-us#parents' },
+  { label: 'For Teachers', to: '/why-choose-us#teachers' },
+  { label: 'For Schools', to: '/why-choose-us#schools' },
 ]
 
 // Add more entries here as the other social accounts go live.
@@ -23,6 +27,17 @@ const socialLinks = [
     href: 'https://www.facebook.com/profile.php?id=61589757824545',
   },
 ]
+
+function FooterLink({ link }) {
+  return (
+    <Link
+      to={link.to}
+      className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors duration-300"
+    >
+      {link.label}
+    </Link>
+  )
+}
 
 export default function Footer() {
   return (
@@ -42,7 +57,7 @@ export default function Footer() {
                 className="h-10 md:h-12 w-auto"
               />
             </a>
-            <p className="text-base leading-relaxed text-gray-400">
+            <p className="text-sm sm:text-base leading-relaxed text-gray-400">
               EntraGuard is the digital companion platform that connects parents,
               teachers, and schools to support student success every day.
             </p>
@@ -50,13 +65,11 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm sm:text-base">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-base text-gray-400 hover:text-white transition-colors duration-300">
-                    {link.label}
-                  </a>
+                  <FooterLink link={link} />
                 </li>
               ))}
             </ul>
@@ -64,13 +77,11 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Who It's For</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm sm:text-base">Who It's For</h4>
             <ul className="space-y-2">
               {solutionLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-base text-gray-400 hover:text-white transition-colors duration-300">
-                    {link.label}
-                  </a>
+                  <FooterLink link={link} />
                 </li>
               ))}
             </ul>
@@ -78,8 +89,8 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-base text-gray-400 mb-6">
+            <h4 className="text-white font-semibold mb-4 text-sm sm:text-base">Contact</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-gray-400 mb-6">
               <li>
                 <a href="mailto:info@entraguard.online" className="hover:text-white transition-colors duration-300">
                   info@entraguard.online
@@ -121,16 +132,16 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-500/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left - Copyright */}
-          <p className="text-base text-gray-500">
+          <p className="text-sm sm:text-base text-gray-500">
             &copy; {new Date().getFullYear()} Entraguard. All rights reserved.
           </p>
 
           {/* Center - Privacy & Terms */}
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
+            <Link to="/privacy-policy" className="text-sm sm:text-base text-gray-500 hover:text-white transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-base text-gray-500 hover:text-white transition-colors duration-300">
+            <Link to="/terms-of-service" className="text-sm sm:text-base text-gray-500 hover:text-white transition-colors duration-300">
               Terms of Service
             </Link>
           </div>

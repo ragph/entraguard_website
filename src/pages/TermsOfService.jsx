@@ -3,8 +3,10 @@ import { HiDocumentText, HiUserCircle, HiShieldCheck, HiExclamationCircle, HiBan
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
+import PageHeader from '../components/PageHeader'
 import { scrollTo } from '../lib/lenis'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
+import { useHashScroll } from '../hooks/useHashScroll'
 
 const sections = [
   { id: 'acceptance', label: 'Acceptance of Terms', icon: HiCheckCircle },
@@ -26,9 +28,7 @@ export default function TermsOfService() {
     'The terms governing your use of the EntraGuard parent-school companion platform.'
   )
 
-  useEffect(() => {
-    scrollTo(0, { immediate: true })
-  }, [])
+  useHashScroll(100)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,27 +59,17 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Header */}
-      <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Terms of Service</h1>
-              <p className="text-blue-200 mt-1">Please read these terms carefully before using our platform</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm">
-            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-blue-100">
-              <HiClock className="w-4 h-4" />
-              Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-            </span>
-            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-blue-100">
-              <HiDocumentText className="w-4 h-4" />
-              7 min read
-            </span>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        title="Terms of Service"
+        subtitle="Please read these terms carefully before using our platform"
+        meta={[
+          {
+            icon: HiClock,
+            label: `Last updated: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,
+          },
+          { icon: HiDocumentText, label: '7 min read' },
+        ]}
+      />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-24 py-12">

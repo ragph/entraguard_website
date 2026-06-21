@@ -129,7 +129,7 @@ function AudienceRow({ row, index }) {
             <h3 className={`text-3xl md:text-4xl font-bold mb-4 leading-tight ${row.titleColor}`}>
               {row.title}
             </h3>
-            <p className={`text-base md:text-lg leading-relaxed max-w-md ${row.descColor}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-md ${row.descColor}`}>
               {row.description}
             </p>
             <div className={`flex items-center gap-2.5 mt-6 pt-6 border-t ${row.divider}`}>

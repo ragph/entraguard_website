@@ -2,50 +2,52 @@ import {
   HiClipboardCheck,
   HiTrendingUp,
   HiChatAlt2,
-  HiCheck,
 } from 'react-icons/hi'
 import { useReveal } from '../hooks/useReveal'
 
 const reasons = [
   {
     icon: <HiClipboardCheck className="text-xl" />,
-    chip: 'bg-blue-600',
+    chip: 'bg-blue-500',
     title: 'Stay Connected to Every Class',
     description:
       "Receive attendance updates from every subject and stay informed about your child's participation throughout the school day.",
   },
   {
     icon: <HiTrendingUp className="text-xl" />,
-    chip: 'bg-emerald-500',
+    chip: 'bg-blue-500',
     title: 'Follow Academic Progress Beyond Report Cards',
     description:
       'Monitor grades, teacher remarks, and academic standing throughout the school year instead of waiting until the end of the grading period.',
   },
   {
     icon: <HiChatAlt2 className="text-xl" />,
-    chip: 'bg-amber-500',
+    chip: 'bg-blue-500',
     title: 'Stronger Parent-Teacher Collaboration',
     description:
       'Receive announcements, reminders, and important school updates directly through the platform.',
   },
 ]
 
-const FAMILY_IMG = '/images/parent-child.webp'
+const PARENT_APP_IMG = '/images/parent-app.webp'
 
 export default function WhyChoose() {
   const gridRef = useReveal({ children: true })
 
   return (
-    <section className="py-20 md:py-28">
+    <section id="parents" className="py-20 md:py-28 bg-white">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 md:px-12">
-        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
           {/* Left — copy + reasons */}
           <div>
-            <h2 className="max-w-md text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.05] text-blue-950">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-600 mb-3">
+              For Parents
+            </p>
+            <h2 className="max-w-md text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.05] text-blue-950">
               Why parents love EntraGuard
             </h2>
 
-            <p className="mt-6 max-w-lg text-base md:text-lg leading-relaxed text-gray-600">
+            <p className="mt-6 max-w-lg text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
               When parents, teachers, and schools stay connected, students receive the support they
               need to thrive academically and personally.
             </p>
@@ -57,8 +59,8 @@ export default function WhyChoose() {
                     {reason.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-blue-950">{reason.title}</h3>
-                    <p className="mt-1 text-base leading-relaxed text-gray-600">
+                    <h3 className="text-base sm:text-lg font-bold text-blue-950">{reason.title}</h3>
+                    <p className="mt-1 text-sm sm:text-base leading-relaxed text-gray-600">
                       {reason.description}
                     </p>
                   </div>
@@ -67,42 +69,17 @@ export default function WhyChoose() {
             </div>
           </div>
 
-          {/* Right — image with floating UI accents */}
-          <div className="relative">
+          {/* Right — EntraGuard parent app */}
+          <div className="flex justify-center">
             <img
-              src={FAMILY_IMG}
-              alt="Parents staying connected to their child's school day"
+              src={PARENT_APP_IMG}
+              alt="The EntraGuard parent app on a phone"
+              width={634}
+              height={1327}
               loading="lazy"
               decoding="async"
-              className="aspect-[4/5] w-full rounded-[2rem] object-cover ring-1 ring-blue-100"
+              className="h-[520px] w-auto drop-shadow-2xl sm:h-[660px] lg:h-[780px]"
             />
-
-            {/* Floating attendance notification */}
-            <div className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
-                <HiClipboardCheck className="text-xl" />
-              </div>
-              <div className="pr-1">
-                <p className="text-sm font-bold leading-tight text-blue-950">Attendance recorded</p>
-                <p className="text-xs leading-tight text-gray-500">Math · Present</p>
-              </div>
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                <HiCheck className="text-base" />
-              </div>
-            </div>
-
-            {/* Floating grade card */}
-            <div className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
-              <div className="flex items-end gap-1">
-                <span className="h-3 w-1.5 rounded-sm bg-blue-300" />
-                <span className="h-6 w-1.5 rounded-sm bg-blue-500" />
-                <span className="h-4 w-1.5 rounded-sm bg-amber-400" />
-              </div>
-              <div>
-                <p className="text-sm font-bold leading-tight text-blue-950">English</p>
-                <p className="text-xs leading-tight text-gray-500">87.7 · Very Good</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

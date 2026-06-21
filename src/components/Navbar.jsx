@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { HiMenu, HiX } from 'react-icons/hi'
 import { scrollTo } from '../lib/lenis'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Why Choose Us', to: '/why-choose-us' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -39,7 +39,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!isHomePage) return
 
-    const sectionIds = navLinks.map((link) => link.href.slice(1))
+    const sectionIds = navLinks.filter((link) => link.href).map((link) => link.href.slice(1))
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean)
@@ -62,33 +62,33 @@ export default function Navbar() {
     return () => sections.forEach((section) => observer.unobserve(section))
   }, [isHomePage])
 
-  const handleNavClick = useCallback((e, href) => {
+  const handleNavClick = useCallback((e, link) => {
     e.preventDefault()
-    const id = href.slice(1)
     setOpen(false)
+
+    // `link` is either a hash string ('#home') or a nav object that may carry
+    // a route (`to`) for an inner page or a hash (`href`) for a homepage section.
+    const to = typeof link === 'object' ? link.to : undefined
+    const href = typeof link === 'string' ? link : link.href
+
+    if (to) {
+      navigate(to)
+      return
+    }
 
     if (!isHomePage) {
       navigate('/' + href)
       return
     }
 
-    const el = document.getElementById(id)
+    const el = document.getElementById(href.slice(1))
     if (!el) return
 
     scrollTo(el, { offset: -NAVBAR_HEIGHT })
   }, [isHomePage, navigate])
 
-  useEffect(() => {
-    if (isHomePage && location.hash) {
-      const id = location.hash.slice(1)
-      const el = document.getElementById(id)
-      if (el) {
-        setTimeout(() => {
-          scrollTo(el, { offset: -NAVBAR_HEIGHT })
-        }, 100)
-      }
-    }
-  }, [isHomePage, location.hash])
+  // Arriving at the homepage with a hash (e.g. from /faq, or a footer link) is
+  // handled by useHashScroll() in App — kept in one place to avoid drift.
 
   const atHero = !scrolled && isHomePage
   const mobileOpen = open
@@ -102,12 +102,8 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between h-16">
-        {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleNavClick(e, '#home')}
-          className="flex items-center"
-        >
+        {/* Logo — full page refresh back to home */}
+        <a href="/" className="flex items-center">
           <img
             src={logoSrc}
             alt="EntraGuard"
@@ -120,14 +116,16 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-6 2xl:gap-8">
           {navLinks.map((link) => {
-            const isActive = isHomePage && activeSection === link.href.slice(1)
+            const isActive = link.to
+              ? location.pathname === link.to
+              : isHomePage && activeSection === link.href.slice(1)
             return (
               <a
                 key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={link.to || link.href}
+                onClick={(e) => handleNavClick(e, link)}
                 aria-current={isActive ? 'page' : undefined}
                 className={`transition-colors duration-300 text-base font-semibold ${
                   showDark
@@ -149,7 +147,7 @@ export default function Navbar() {
         <a
           href="#pricing"
           onClick={(e) => handleNavClick(e, '#pricing')}
-          className={`hidden lg:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
+          className={`hidden xl:inline-block text-base font-semibold rounded-full px-6 py-2.5 transition-all duration-300 ${
             showDark
               ? 'bg-white text-blue-950 hover:bg-slate-200'
               : 'bg-amber-400 hover:bg-amber-500 text-blue-950'
@@ -158,17 +156,28 @@ export default function Navbar() {
           Get Started
         </a>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger — two lines that morph into an X */}
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden text-2xl bg-transparent border-none cursor-pointer transition-colors duration-300 ${
+          className={`xl:hidden flex h-10 w-10 items-center justify-center bg-transparent border-none cursor-pointer transition-colors duration-300 ${
             showDark ? 'text-white' : 'text-gray-700'
           }`}
           aria-label="Toggle menu"
           aria-expanded={open}
           aria-controls="mobile-menu"
         >
-          {open ? <HiX /> : <HiMenu />}
+          <span className="relative block h-3.5 w-5" aria-hidden="true">
+            <span
+              className={`absolute left-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-in-out ${
+                open ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-1'
+              }`}
+            />
+            <span
+              className={`absolute left-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-in-out ${
+                open ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'top-3'
+              }`}
+            />
+          </span>
         </button>
       </div>
 
@@ -177,23 +186,25 @@ export default function Navbar() {
         id="mobile-menu"
         aria-hidden={!open}
         inert={open ? undefined : true}
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          open ? 'max-h-96 opacity-100 visible' : 'max-h-0 opacity-0 invisible'
+        className={`xl:hidden overflow-hidden transition-all duration-300 ${
+          open ? 'max-h-[36rem] opacity-100 visible' : 'max-h-0 opacity-0 invisible'
         }`}
       >
         <div className="px-4 sm:px-6 pb-5 pt-2 flex flex-col gap-1">
           {navLinks.map((link) => {
-            const isActive = isHomePage && activeSection === link.href.slice(1)
+            const isActive = link.to
+              ? location.pathname === link.to
+              : isHomePage && activeSection === link.href.slice(1)
             return (
               <a
                 key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={link.to || link.href}
+                onClick={(e) => handleNavClick(e, link)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`transition-colors duration-300 text-base font-medium py-3 text-center border-b border-gray-100 ${
+                className={`rounded-xl py-3 text-center text-base font-medium transition-colors duration-300 ${
                   isActive
-                    ? 'text-blue-600 font-semibold'
-                    : 'text-gray-600 hover:text-blue-600'
+                    ? 'bg-blue-50 text-blue-600 font-semibold'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
                 }`}
               >
                 {link.label}
@@ -203,7 +214,7 @@ export default function Navbar() {
           <a
             href="#pricing"
             onClick={(e) => handleNavClick(e, '#pricing')}
-            className="bg-amber-400 hover:bg-amber-500 text-blue-950 text-base font-semibold rounded-full px-6 py-2.5 text-center transition-all duration-300"
+            className="mt-3 bg-amber-400 hover:bg-amber-500 text-blue-950 text-base font-semibold rounded-full px-6 py-3 text-center transition-all duration-300"
           >
             Get Started
           </a>
