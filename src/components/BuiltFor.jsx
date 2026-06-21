@@ -1,11 +1,16 @@
+import { useLayoutEffect, useRef } from 'react'
 import {
   HiUserGroup,
   HiAcademicCap,
   HiOfficeBuilding,
   HiCheckCircle,
 } from 'react-icons/hi'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import SectionHeading from './SectionHeading'
+
+gsap.registerPlugin(ScrollTrigger)
 
 // To light up a row with a real person, set `image` to the path of a
 // person-only PNG/WebP with a TRANSPARENT background (not a full mockup
@@ -76,8 +81,45 @@ function AudienceRow({ row, index, isVisible }) {
   const mediaLeft = index % 2 === 0
   const hasImage = Boolean(row.image)
 
+  const rowRef = useRef(null)
+  const imageRef = useRef(null)
+
+  useLayoutEffect(() => {
+    if (!hasImage) return
+
+    // Tablet/desktop only (matchMedia also opts out of reduced-motion). The
+    // cutout drifts upward as the card passes through the viewport, so the
+    // person appears to rise out of the colored block. GSAP animates the
+    // inner <img> while the wrapper keeps the horizontal centering.
+    const mm = gsap.matchMedia()
+    mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+      // The cutout has a flat bottom crop, so translating it vertically either
+      // pokes below the rounded corner or exposes that crop. Instead scale from
+      // the bottom edge: the bottom stays pinned to the card while the figure
+      // grows upward into the open top space.
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 1 },
+        {
+          scale: 1.08,
+          transformOrigin: 'center bottom',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rowRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      )
+    })
+
+    return () => mm.revert()
+  }, [hasImage])
+
   return (
     <div
+      ref={rowRef}
       className={`relative transition-all duration-700 ${hasImage ? 'md:pt-20' : ''} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
@@ -105,13 +147,17 @@ function AudienceRow({ row, index, isVisible }) {
           {/* Media — real cutout when available, systematic placeholder until then */}
           <div className={`relative min-h-[300px] md:min-h-[360px] ${mediaLeft ? 'md:order-1' : ''}`}>
             {hasImage ? (
-              <img
-                src={row.image}
-                alt={`${row.audience} — EntraGuard`}
-                loading="lazy"
-                decoding="async"
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full md:h-[114%] w-auto max-w-none object-contain object-bottom"
-              />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full md:h-[114%]">
+                <img
+                  ref={imageRef}
+                  src={row.image}
+                  alt={`${row.audience} — EntraGuard`}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={() => ScrollTrigger.refresh()}
+                  className="h-full w-auto max-w-none object-contain object-bottom"
+                />
+              </div>
             ) : (
               <div className={`absolute inset-5 rounded-2xl ${row.media} flex items-center justify-center`}>
                 <div className={`w-24 h-24 rounded-3xl flex items-center justify-center ${row.chip}`}>
