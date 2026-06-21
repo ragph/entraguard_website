@@ -96,7 +96,7 @@ function SystemRow({ system, index }) {
 const systems = [
   {
     title: 'For Parents',
-    image: '/images/parent-system.webp',
+    image: '/images/parent-system.webp?v=2',
     features: [
       'Attendance monitoring — notified whenever attendance is recorded',
       'Academic progress tracking — grades, remarks & performance summaries',
@@ -107,7 +107,7 @@ const systems = [
   },
   {
     title: 'For Teachers',
-    image: '/images/teacher-system.webp',
+    image: '/images/teacher-system.webp?v=2',
     features: [
       'Subject-based attendance recording',
       'Academic record uploads & student profiles',
@@ -118,7 +118,7 @@ const systems = [
   },
   {
     title: 'For Schools',
-    image: '/images/school-system.webp',
+    image: '/images/school-system.webp?v=2',
     features: [
       'School-wide attendance monitoring',
       'Academic performance & teacher compliance visibility',
