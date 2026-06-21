@@ -1,26 +1,70 @@
+import { useLayoutEffect, useRef } from 'react'
 import { HiCheckCircle } from 'react-icons/hi'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeading from './SectionHeading'
 
+gsap.registerPlugin(ScrollTrigger)
+
 function SystemRow({ system, index }) {
-  const [ref, isVisible] = useScrollAnimation(0.15)
+  const rowRef = useRef(null)
+  const imageRef = useRef(null)
+  const contentRef = useRef(null)
   const isEven = index % 2 === 1
+
+  useLayoutEffect(() => {
+    // Only animate on tablet/desktop (the md+ side-by-side layout). On the
+    // stacked mobile layout the slide-ins and parallax fight the small
+    // viewport, so leave content in its natural, visible state there.
+    // matchMedia also opts out of reduced-motion automatically.
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+      // Scroll-reveal: image and copy slide in from opposite sides, once.
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        xPercent: isEven ? 12 : -12,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: rowRef.current, start: 'top 80%', once: true },
+      })
+      gsap.from(contentRef.current, {
+        opacity: 0,
+        xPercent: isEven ? -10 : 10,
+        duration: 1,
+        ease: 'power3.out',
+        delay: 0.12,
+        scrollTrigger: { trigger: rowRef.current, start: 'top 80%', once: true },
+      })
+
+      // Scrubbed parallax: the mockup drifts as the row passes through the
+      // viewport, tying its motion directly to scroll position.
+      gsap.fromTo(
+        imageRef.current,
+        { yPercent: 8 },
+        {
+          yPercent: -8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rowRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      )
+    })
+
+    return () => mm.revert()
+  }, [isEven])
 
   return (
     <div
-      ref={ref}
+      ref={rowRef}
       className={`flex flex-col md:flex-row items-center gap-10 ${isEven ? 'md:flex-row-reverse' : ''}`}
     >
       {/* System mockup image */}
-      <div
-        className={`w-full md:w-5/12 shrink-0 transition-all duration-700 ease-out ${
-          isVisible
-            ? 'opacity-100 translate-x-0'
-            : isEven
-            ? 'opacity-0 translate-x-16'
-            : 'opacity-0 -translate-x-16'
-        }`}
-      >
+      <div ref={imageRef} className="w-full md:w-5/12 shrink-0">
         <img
           src={system.image}
           alt={system.title}
@@ -28,20 +72,13 @@ function SystemRow({ system, index }) {
           height={722}
           loading="lazy"
           decoding="async"
+          onLoad={() => ScrollTrigger.refresh()}
           className="w-full h-auto object-contain"
         />
       </div>
 
       {/* Content */}
-      <div
-        className={`w-full md:w-7/12 transition-all duration-700 ease-out delay-150 ${
-          isVisible
-            ? 'opacity-100 translate-x-0'
-            : isEven
-            ? 'opacity-0 -translate-x-16'
-            : 'opacity-0 translate-x-16'
-        }`}
-      >
+      <div ref={contentRef} className="w-full md:w-7/12">
         <h3 className="text-2xl md:text-4xl font-bold text-white mb-5">{system.title}</h3>
         <ul className="space-y-1">
           {system.features.map((feature) => (
