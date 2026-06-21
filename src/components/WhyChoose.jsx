@@ -1,29 +1,31 @@
+import { useLayoutEffect, useRef } from 'react'
 import {
   HiClipboardCheck,
   HiTrendingUp,
   HiChatAlt2,
   HiCheck,
 } from 'react-icons/hi'
+import gsap from 'gsap'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const reasons = [
   {
     icon: <HiClipboardCheck className="text-xl" />,
-    chip: 'bg-gradient-to-br from-blue-500 to-blue-700',
+    chip: 'bg-blue-600',
     title: 'Stay Connected to Every Class',
     description:
       "Receive attendance updates from every subject and stay informed about your child's participation throughout the school day.",
   },
   {
     icon: <HiTrendingUp className="text-xl" />,
-    chip: 'bg-gradient-to-br from-emerald-500 to-emerald-600',
+    chip: 'bg-emerald-500',
     title: 'Follow Academic Progress Beyond Report Cards',
     description:
       'Monitor grades, teacher remarks, and academic standing throughout the school year instead of waiting until the end of the grading period.',
   },
   {
     icon: <HiChatAlt2 className="text-xl" />,
-    chip: 'bg-gradient-to-br from-amber-500 to-amber-600',
+    chip: 'bg-amber-500',
     title: 'Stronger Parent-Teacher Collaboration',
     description:
       'Receive announcements, reminders, and important school updates directly through the platform.',
@@ -34,6 +36,34 @@ const FAMILY_IMG = '/images/parent-child.webp'
 
 export default function WhyChoose() {
   const [ref, isVisible] = useScrollAnimation(0.1)
+  const notifRef = useRef(null)
+  const gradeRef = useRef(null)
+
+  useLayoutEffect(() => {
+    // Gentle, continuous bob so the overlay cards read as a live app rather
+    // than a flat screenshot. Slightly different timing keeps them out of sync.
+    // matchMedia opts out for users who prefer reduced motion.
+    const mm = gsap.matchMedia()
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.to(notifRef.current, {
+        y: -12,
+        duration: 3,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+      })
+      gsap.to(gradeRef.current, {
+        y: 10,
+        duration: 3.6,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: 0.4,
+      })
+    })
+
+    return () => mm.revert()
+  }, [])
 
   return (
     <section ref={ref} className="py-20 md:py-28">
@@ -86,8 +116,8 @@ export default function WhyChoose() {
             />
 
             {/* Floating attendance notification */}
-            <div className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600 text-white">
+            <div ref={notifRef} className="absolute -top-4 left-3 sm:left-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
                 <HiClipboardCheck className="text-xl" />
               </div>
               <div className="pr-1">
@@ -100,7 +130,7 @@ export default function WhyChoose() {
             </div>
 
             {/* Floating grade card */}
-            <div className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
+            <div ref={gradeRef} className="absolute -bottom-4 right-3 sm:right-6 flex items-center gap-3 rounded-2xl border border-blue-100 bg-white/95 px-5 py-3.5 shadow-xl backdrop-blur-sm">
               <div className="flex items-end gap-1">
                 <span className="h-3 w-1.5 rounded-sm bg-blue-300" />
                 <span className="h-6 w-1.5 rounded-sm bg-blue-500" />
