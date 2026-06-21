@@ -10,6 +10,9 @@ import SectionHeading from './SectionHeading'
 // To light up a row with a real person, set `image` to the path of a
 // person-only PNG/WebP with a TRANSPARENT background (not a full mockup
 // frame). Drop the file in /public/images and reference it here.
+// Each card is one solid, saturated brand color. Text colors are tuned per
+// card for contrast: dark navy on the bright amber, white on the deep blue
+// and emerald.
 const rows = [
   {
     icon: <HiUserGroup className="text-4xl" />,
@@ -18,11 +21,15 @@ const rows = [
     description:
       "Follow your child's attendance, grades, and school updates as they happen — no more waiting until the end of the day.",
     proof: 'Real-time alerts the moment attendance is recorded',
-    tint: 'bg-amber-50 border-amber-100',
-    media: 'bg-amber-100/50',
-    chip: 'bg-amber-400 text-white',
-    eyebrow: 'text-amber-600',
-    check: 'text-amber-500',
+    bg: 'bg-amber-700',
+    media: 'bg-white/10',
+    chip: 'bg-white text-amber-700',
+    eyebrow: 'text-amber-100',
+    titleColor: 'text-white',
+    descColor: 'text-amber-50/90',
+    proofColor: 'text-white',
+    check: 'text-amber-300',
+    divider: 'border-white/20',
     image: '/images/parent-cutout.webp',
   },
   {
@@ -32,11 +39,15 @@ const rows = [
     description:
       'Record attendance, share progress, and reach parents from one platform — with far less manual work.',
     proof: 'DepEd-compliant forms and reports, generated for you',
-    tint: 'bg-blue-50 border-blue-100',
-    media: 'bg-blue-100/50',
-    chip: 'bg-blue-600 text-white',
-    eyebrow: 'text-blue-600',
-    check: 'text-blue-600',
+    bg: 'bg-blue-600',
+    media: 'bg-white/10',
+    chip: 'bg-white text-blue-600',
+    eyebrow: 'text-blue-100',
+    titleColor: 'text-white',
+    descColor: 'text-blue-50/90',
+    proofColor: 'text-white',
+    check: 'text-emerald-300',
+    divider: 'border-white/20',
     image: '/images/teacher-cutout.webp',
   },
   {
@@ -46,11 +57,15 @@ const rows = [
     description:
       'See school-wide attendance, communication, and academic performance at a glance to support better decisions.',
     proof: 'School-wide monitoring with centralized reporting',
-    tint: 'bg-emerald-50 border-emerald-100',
-    media: 'bg-emerald-100/50',
-    chip: 'bg-emerald-500 text-white',
-    eyebrow: 'text-emerald-600',
-    check: 'text-emerald-600',
+    bg: 'bg-emerald-600',
+    media: 'bg-white/10',
+    chip: 'bg-white text-emerald-600',
+    eyebrow: 'text-emerald-100',
+    titleColor: 'text-white',
+    descColor: 'text-emerald-50/90',
+    proofColor: 'text-white',
+    check: 'text-white',
+    divider: 'border-white/20',
     image: '/images/school-cutout.webp',
   },
 ]
@@ -68,22 +83,22 @@ function AudienceRow({ row, index, isVisible }) {
       }`}
       style={{ transitionDelay: isVisible ? `${index * 120}ms` : '0ms' }}
     >
-      <div className={`relative rounded-3xl border ${row.tint} overflow-hidden md:overflow-visible`}>
+      <div className={`relative rounded-3xl ${row.bg} overflow-hidden md:overflow-visible`}>
         <div className="grid grid-cols-1 md:grid-cols-2 items-stretch md:min-h-[460px]">
           {/* Text */}
           <div className={`p-8 sm:p-10 md:p-14 flex flex-col justify-center ${mediaLeft ? 'md:order-2' : ''}`}>
             <p className={`text-xs font-bold uppercase tracking-[0.14em] mb-3 ${row.eyebrow}`}>
               {row.audience}
             </p>
-            <h3 className="text-3xl md:text-4xl font-bold text-blue-950 mb-4 leading-tight">
+            <h3 className={`text-3xl md:text-4xl font-bold mb-4 leading-tight ${row.titleColor}`}>
               {row.title}
             </h3>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-md">
+            <p className={`text-base md:text-lg leading-relaxed max-w-md ${row.descColor}`}>
               {row.description}
             </p>
-            <div className="flex items-center gap-2.5 mt-6 pt-6 border-t border-black/5">
+            <div className={`flex items-center gap-2.5 mt-6 pt-6 border-t ${row.divider}`}>
               <HiCheckCircle className={`text-xl shrink-0 ${row.check}`} />
-              <p className="text-sm font-semibold text-blue-950/80 leading-snug">{row.proof}</p>
+              <p className={`text-sm font-semibold leading-snug ${row.proofColor}`}>{row.proof}</p>
             </div>
           </div>
 

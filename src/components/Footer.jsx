@@ -4,7 +4,7 @@ import { FaFacebookF } from 'react-icons/fa'
 const quickLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
-  { label: 'Features', href: '#features' },
+  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ]

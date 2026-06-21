@@ -6,7 +6,7 @@ import SystemOverview from './components/SystemOverview'
 import WhyChoose from './components/WhyChoose'
 import WhyTeachers from './components/WhyTeachers'
 import WhySchools from './components/WhySchools'
-import Features from './components/Features'
+import HowItWorks from './components/HowItWorks'
 import Testimonials from './components/Testimonials'
 import Pricing from './components/Pricing'
 import CTA from './components/CTA'
@@ -31,7 +31,7 @@ export default function App() {
       <WhyChoose />
       <WhyTeachers />
       <WhySchools />
-      <Features />
+      <HowItWorks />
       <Testimonials />
       <Pricing />
       <CTA />

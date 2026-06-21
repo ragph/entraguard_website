@@ -30,6 +30,15 @@ export default function Pricing() {
             }`}
           >
             <div className="text-center mb-8">
+              <img
+                src="/images/entraguard.png"
+                alt="EntraGuard"
+                width={878}
+                height={878}
+                loading="lazy"
+                decoding="async"
+                className="mx-auto mb-6 h-32 w-32 object-contain"
+              />
               <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                 EntraGuard provides parents, teachers, and schools with the tools they need to support student success through better communication and visibility.
               </p>
