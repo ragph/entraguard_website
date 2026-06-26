@@ -126,10 +126,10 @@ function AudienceRow({ row, index }) {
             <p className={`text-xs font-bold uppercase tracking-[0.14em] mb-3 ${row.eyebrow}`}>
               {row.audience}
             </p>
-            <h3 className={`text-3xl md:text-4xl font-bold mb-4 leading-tight ${row.titleColor}`}>
+            <h3 className={`text-5xl md:text-6xl font-bold mb-4 leading-[1.05] ${row.titleColor}`}>
               {row.title}
             </h3>
-            <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-md ${row.descColor}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl ${row.descColor}`}>
               {row.description}
             </p>
             <div className={`flex items-center gap-2.5 mt-6 pt-6 border-t ${row.divider}`}>
@@ -177,7 +177,7 @@ export default function BuiltFor() {
           subtitle="Three roles, one shared view of every learner's day — so everyone has the information they need to support student success."
         />
 
-        <div ref={rowsRef} className="max-w-5xl mx-auto flex flex-col gap-8">
+        <div ref={rowsRef} className="flex flex-col gap-8">
           {rows.map((row, index) => (
             <AudienceRow key={row.audience} row={row} index={index} />
           ))}

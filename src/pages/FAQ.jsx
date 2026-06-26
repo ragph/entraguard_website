@@ -34,6 +34,10 @@ const faqs = [
     a: 'Yes. Because the school adopts the platform, teachers record subject-level attendance and grades directly in EntraGuard, so the records parents see are verified and accurate.',
   },
   {
+    q: 'What are the Gate Keeper and Fetcher add-ons?',
+    a: 'They are an optional safety package. Gate Keeper is an on-site kiosk at the school gate: students scan the barcode on their ID as they enter and exit, so the school knows who is on campus and parents get a real-time notification in the app the moment their child arrives or leaves. Fetcher is the authorization layer — parents pre-register trusted people (a lola, yaya, tito/tita, family driver, or neighbor) to pick up their child. The parent creates the fetcher\'s account, sets a password, and chooses exactly which children that person may collect. A fetcher logs in to a single, focused screen showing only their assigned children and each one\'s "In school / Out" status — they cannot see grades, attendance history, messages, announcements, or payments. Both are available on request.',
+  },
+  {
     q: 'Is EntraGuard DepEd-compliant?',
     a: 'Yes. EntraGuard generates DepEd-compliant forms and reports for teachers, reducing manual paperwork while keeping records aligned with requirements.',
   },
