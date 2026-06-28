@@ -97,7 +97,7 @@ export default function WhySchools() {
             />
 
             <img
-              src="/images/school-admin-circle.webp"
+              src="/images/school-admin-circle.webp?v=2"
               alt="School administrator using EntraGuard"
               width={1280}
               height={1280}
@@ -123,7 +123,7 @@ export default function WhySchools() {
               ))}
             </ul>
             <img
-              src="/images/school-admin-circle.webp"
+              src="/images/school-admin-circle.webp?v=2"
               alt="School administrator using EntraGuard"
               width={1280}
               height={1280}

@@ -29,7 +29,7 @@ const reasons = [
   },
 ]
 
-const PARENT_APP_IMG = '/images/parent-app.webp'
+const PARENT_APP_IMG = '/images/parent-app.webp?v=2'
 
 export default function WhyChoose() {
   const gridRef = useReveal({ children: true })
@@ -74,8 +74,8 @@ export default function WhyChoose() {
             <img
               src={PARENT_APP_IMG}
               alt="The EntraGuard parent app on a phone"
-              width={634}
-              height={1327}
+              width={978}
+              height={2000}
               loading="lazy"
               decoding="async"
               className="h-[520px] w-auto drop-shadow-2xl sm:h-[660px] lg:h-[780px]"
