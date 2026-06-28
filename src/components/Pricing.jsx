@@ -76,6 +76,15 @@ export default function Pricing() {
             </a>
           </div>
         </div>
+
+        {/* Optional add-ons */}
+        <p className="text-center text-sm sm:text-base text-gray-500 mt-8">
+          Looking for more? Schools can add the optional{' '}
+          <a href="#fetcher" className="font-semibold text-blue-600 hover:text-blue-700 underline underline-offset-2">
+            Gate Keeper &amp; Fetcher
+          </a>{' '}
+          add-on for safer arrivals and verified pickup.
+        </p>
       </div>
     </section>
   )

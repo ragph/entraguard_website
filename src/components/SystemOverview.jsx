@@ -36,23 +36,6 @@ function SystemRow({ system, index }) {
         delay: 0.12,
         scrollTrigger: { trigger: rowRef.current, start: 'top 80%', once: true },
       })
-
-      // Scrubbed parallax: the mockup drifts as the row passes through the
-      // viewport, tying its motion directly to scroll position.
-      gsap.fromTo(
-        imageRef.current,
-        { yPercent: 8 },
-        {
-          yPercent: -8,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: rowRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      )
     })
 
     return () => mm.revert()
@@ -64,7 +47,7 @@ function SystemRow({ system, index }) {
       className={`flex flex-col md:flex-row items-center gap-10 ${isEven ? 'md:flex-row-reverse' : ''}`}
     >
       {/* System mockup image */}
-      <div ref={imageRef} className="w-full md:w-5/12 shrink-0">
+      <div ref={imageRef} className="w-full md:w-1/2 shrink-0">
         <img
           src={system.image}
           alt={system.title}
@@ -78,11 +61,11 @@ function SystemRow({ system, index }) {
       </div>
 
       {/* Content */}
-      <div ref={contentRef} className="w-full md:w-7/12">
+      <div ref={contentRef} className="w-full md:w-1/2">
         <h3 className="text-2xl md:text-4xl font-bold text-white mb-5">{system.title}</h3>
         <ul className="space-y-1">
           {system.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2 bg-white/0 py-4 rounded-2xl text-sm sm:text-base md:text-xl text-blue-100">
+            <li key={feature} className="flex items-start gap-2 bg-white/0 py-4 rounded-2xl text-sm sm:text-base md:text-lg text-blue-100">
               <HiCheckCircle className="text-amber-400 mt-0.5 shrink-0 text-2xl" />
               {feature}
             </li>

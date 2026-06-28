@@ -1,35 +1,35 @@
 import {
-  HiClipboardCheck,
-  HiTrendingUp,
-  HiChatAlt2,
-} from 'react-icons/hi'
+  PiClipboardTextDuotone,
+  PiTrendUpDuotone,
+  PiChatsDuotone,
+} from 'react-icons/pi'
 import { useReveal } from '../hooks/useReveal'
 
 const reasons = [
   {
-    icon: <HiClipboardCheck className="text-xl" />,
-    chip: 'bg-blue-500',
+    icon: <PiClipboardTextDuotone className="text-3xl" />,
+    color: 'text-blue-600',
     title: 'Stay Connected to Every Class',
     description:
       "Receive attendance updates from every subject and stay informed about your child's participation throughout the school day.",
   },
   {
-    icon: <HiTrendingUp className="text-xl" />,
-    chip: 'bg-blue-500',
+    icon: <PiTrendUpDuotone className="text-3xl" />,
+    color: 'text-blue-600',
     title: 'Follow Academic Progress Beyond Report Cards',
     description:
       'Monitor grades, teacher remarks, and academic standing throughout the school year instead of waiting until the end of the grading period.',
   },
   {
-    icon: <HiChatAlt2 className="text-xl" />,
-    chip: 'bg-blue-500',
+    icon: <PiChatsDuotone className="text-3xl" />,
+    color: 'text-blue-600',
     title: 'Stronger Parent-Teacher Collaboration',
     description:
       'Receive announcements, reminders, and important school updates directly through the platform.',
   },
 ]
 
-const PARENT_APP_IMG = '/images/parent-app.webp'
+const PARENT_APP_IMG = '/images/parent-app.webp?v=2'
 
 export default function WhyChoose() {
   const gridRef = useReveal({ children: true })
@@ -55,7 +55,7 @@ export default function WhyChoose() {
             <div className="mt-10 space-y-7">
               {reasons.map((reason) => (
                 <div key={reason.title} className="flex items-start gap-4">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ${reason.chip}`}>
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center ${reason.color}`}>
                     {reason.icon}
                   </div>
                   <div>
@@ -74,8 +74,8 @@ export default function WhyChoose() {
             <img
               src={PARENT_APP_IMG}
               alt="The EntraGuard parent app on a phone"
-              width={634}
-              height={1327}
+              width={978}
+              height={2000}
               loading="lazy"
               decoding="async"
               className="h-[520px] w-auto drop-shadow-2xl sm:h-[660px] lg:h-[780px]"

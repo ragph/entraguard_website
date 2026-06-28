@@ -5,6 +5,7 @@ import WhoWeAre from './components/WhoWeAre'
 import BuiltFor from './components/BuiltFor'
 import SystemOverview from './components/SystemOverview'
 import HowItWorks from './components/HowItWorks'
+import Fetcher from './components/Fetcher'
 import Pricing from './components/Pricing'
 
 // Below the fold + pulls in Swiper — load it as a separate async chunk so the
@@ -33,6 +34,7 @@ export default function App() {
       <BuiltFor />
       <SystemOverview />
       <HowItWorks />
+      <Fetcher />
       <Suspense fallback={<div className="min-h-[480px] bg-amber-400" />}>
         <Testimonials />
       </Suspense>

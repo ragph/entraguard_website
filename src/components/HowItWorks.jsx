@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef } from 'react'
 import {
-  HiOfficeBuilding,
-  HiClipboardCheck,
-  HiBell,
-  HiChartBar,
-} from 'react-icons/hi'
+  PiBuildingsDuotone,
+  PiClipboardTextDuotone,
+  PiBellDuotone,
+  PiChartBarDuotone,
+} from 'react-icons/pi'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeading from './SectionHeading'
@@ -13,22 +13,22 @@ gsap.registerPlugin(ScrollTrigger)
 
 const steps = [
   {
-    icon: <HiOfficeBuilding className="text-2xl" />,
+    icon: <PiBuildingsDuotone className="text-5xl" />,
     title: 'School sets up',
     description: 'Roles, classes, and student records are configured in minutes — no complex setup.',
   },
   {
-    icon: <HiClipboardCheck className="text-2xl" />,
+    icon: <PiClipboardTextDuotone className="text-5xl" />,
     title: 'Teachers record',
     description: 'Attendance is logged per subject, with grades and remarks added from any device.',
   },
   {
-    icon: <HiBell className="text-2xl" />,
+    icon: <PiBellDuotone className="text-5xl" />,
     title: 'Parents stay informed',
     description: 'Parents get real-time alerts the moment attendance or grades are posted.',
   },
   {
-    icon: <HiChartBar className="text-2xl" />,
+    icon: <PiChartBarDuotone className="text-5xl" />,
     title: 'Schools get visibility',
     description: 'Schools see centralized reports and insights across every class, anytime.',
   },
@@ -81,13 +81,13 @@ export default function HowItWorks() {
           <div
             ref={lineRef}
             aria-hidden="true"
-            className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] border-t-2 border-dashed border-blue-200"
+            className="hidden lg:block absolute top-6 left-[12.5%] right-[12.5%] border-t-2 border-dashed border-blue-200"
           />
 
           <ol ref={listRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
             {steps.map((step, index) => (
               <li key={step.title} className="relative flex flex-col items-center text-center">
-                <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white">
+                <div className="relative z-10 mb-6 flex h-12 items-center justify-center bg-white px-3 text-blue-600">
                   {step.icon}
                   <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-xs font-extrabold text-blue-950 ring-2 ring-white">
                     {index + 1}

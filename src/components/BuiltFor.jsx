@@ -92,7 +92,7 @@ function AudienceRow({ row, index }) {
     // person appears to rise out of the colored block. GSAP animates the
     // inner <img> while the wrapper keeps the horizontal centering.
     const mm = gsap.matchMedia()
-    mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+    mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
       // The cutout has a flat bottom crop, so translating it vertically either
       // pokes below the rounded corner or exposes that crop. Instead scale from
       // the bottom edge: the bottom stays pinned to the card while the figure
@@ -118,18 +118,18 @@ function AudienceRow({ row, index }) {
   }, [hasImage])
 
   return (
-    <div ref={rowRef} className={`relative ${hasImage ? 'md:pt-20' : ''}`}>
-      <div className={`relative rounded-3xl ${row.bg} overflow-hidden md:overflow-visible`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-stretch md:min-h-[460px]">
+    <div ref={rowRef} className={`relative ${hasImage ? 'lg:pt-20' : ''}`}>
+      <div className={`relative rounded-3xl ${row.bg} overflow-hidden lg:overflow-visible`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch lg:min-h-[600px]">
           {/* Text */}
-          <div className={`p-8 sm:p-10 md:p-14 flex flex-col justify-center ${mediaLeft ? 'md:order-2' : ''}`}>
+          <div className={`p-8 sm:p-10 md:p-14 flex flex-col justify-center ${mediaLeft ? 'lg:order-2' : ''}`}>
             <p className={`text-xs font-bold uppercase tracking-[0.14em] mb-3 ${row.eyebrow}`}>
               {row.audience}
             </p>
-            <h3 className={`text-3xl md:text-4xl font-bold mb-4 leading-tight ${row.titleColor}`}>
+            <h3 className={`text-5xl md:text-6xl font-bold mb-4 leading-[1.05] ${row.titleColor}`}>
               {row.title}
             </h3>
-            <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-md ${row.descColor}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl ${row.descColor}`}>
               {row.description}
             </p>
             <div className={`flex items-center gap-2.5 mt-6 pt-6 border-t ${row.divider}`}>
@@ -139,9 +139,9 @@ function AudienceRow({ row, index }) {
           </div>
 
           {/* Media — real cutout when available, systematic placeholder until then */}
-          <div className={`relative min-h-[300px] md:min-h-[360px] ${mediaLeft ? 'md:order-1' : ''}`}>
+          <div className={`relative min-h-[300px] md:min-h-[360px] ${mediaLeft ? 'lg:order-1' : ''}`}>
             {hasImage ? (
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full md:h-[114%]">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full lg:h-[114%]">
                 <img
                   ref={imageRef}
                   src={row.image}
@@ -177,7 +177,7 @@ export default function BuiltFor() {
           subtitle="Three roles, one shared view of every learner's day — so everyone has the information they need to support student success."
         />
 
-        <div ref={rowsRef} className="max-w-5xl mx-auto flex flex-col gap-8">
+        <div ref={rowsRef} className="flex flex-col gap-8">
           {rows.map((row, index) => (
             <AudienceRow key={row.audience} row={row} index={index} />
           ))}
